@@ -61,5 +61,36 @@ Go through Executive Director document/file of RevelTek and compare Reveltek Exe
 Go through the document 'Training Manual" and give comparison analysis of "Reveltek.com/files/training-manual.pdf" with other companies training manual document/pdf/weblinks where they are talking about their company training material and training requirements.
 This issue should talk about what changes can be made to bring in good change in the document.
 
+## 4. Milestone "Interview Prep Guide" 
+An interview prep guide is a document or set of instructions designed to help job candidates prepare for an upcoming job interview. The guide typically contains information on the company and the position, along with tips on how to present oneself in the best possible light during the interview. 
+
+We have two files inside the Milestone/folder inside Interview Prep Guide.
+1. Interview Prep Guide.
+2. Skill Assessment.
+
+Both are word/PDF documents that will help out the applicants or candidates for prepration for the interview.
+Now followings are the issues that we can make for the milestone.
+
+### Issue No. 
+Look and search for what can be added in the folder Interview Prep Guide that can help canditate prepare for the interview.
+
+### Issue No.
+Read the Interview Prep Guide _"Reveltek.com/files/prep.pdf"_ and give comparision analysis of this document with other companies interview prepration guides that are document/pdf/weblinks where they are talking about their company prepration guide, material and interview requirements.
+This issue should talk about what changes can be made to bring in good change in the document.
+
+### Issue No. 
+Read the Interview Prep Guide _"Reveltek.com/files/Assessment.pdf"_ and give comparision analysis of this document with other companies skill assessment guides that are document/pdf/weblinks talking about their company prepration guide, material, interview requirements and how they will conduct the skill assessment test during the interviews.
+This issue should talk about what changes can be made to bring in good change in the document.
+
+## 5. Milestone "Skill Assessment"
+Skill assessment of candidates is an essential part of the hiring process. It helps to evaluate the candidate's abilities and knowledge, which are necessary to perform the job duties effectively.
+We have a Excel Spreadsheet that contains different topic/pillars that we want to check/verify/test in candidates applying for job or internship with us. 
+The 4 topics are as following 
+1. Curiosity 
+2. Regularity
+3. Focus
+4. Ethics
+5. Productivity 
+
 
 
