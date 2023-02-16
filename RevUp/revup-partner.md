@@ -6,7 +6,7 @@ Our for-profit company donates data intelligence, survey results, candidate info
 
 We have a shared mission with these education partners to increase STEAM / STEM Literacy in areas that we know are important for the talent, their families, their communities, and agencies like ours to be successful in the future of work.
 
-We also focus heavily on involving and empowering underserved and underrepreseented communited from these regions such as Women, Children, Low-Income, and Low-English populations.
+We also focus heavily on involving and empowering underserved and underrepresented communities from these regions such as Women, Children, Low-Income, and Low-English populations.
 
 Our current partners for this program include:
 - Tao Learning Institute
