@@ -20,7 +20,8 @@ If "candidate application program" is used to refer to a hiring, recruiting, and
 6. Job Offer
 7. Employeement Agreement 
 8. Onboarding Handbook
-9. 30-90-180 onboarding plan 
+9. 30-60-90 onboarding plan
+10. 180 Days Onboarding Plan 
 
 
 ## Milestones and issues
