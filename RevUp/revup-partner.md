@@ -15,6 +15,8 @@ Our current partners for this program include:
   - Data Intelligence Program
 
 
-If you'd like to be involved with us, please reach out to info@reveltek.com for more information.  Please include information about your organization, your position within your organization, and how you think collaborating will be beneficial for both our organizations.  You may desire to reach out to Source Now: info@sourcenow.org or Tao Learning's Ignite Curiosity department info@ignitecuriosity.org to get access to the information we share with those non-profit initiatives.
+If you'd like to be involved with us, please reach out to info@reveltek.com for more information.  Please include information about your organization, your position within your organization, and how you think collaborating will be beneficial for both our organizations.  
+
+You may desire to reach out to Source Now: info@sourcenow.org or Tao Learning's Ignite Curiosity department info@ignitecuriosity.org to get access to the information we share with those non-profit initiatives.
 
 Thank you!
