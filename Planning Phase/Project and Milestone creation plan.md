@@ -10,7 +10,7 @@ We believe in empowering our employees and giving them the tools to unleash thei
 !(![image](https://user-images.githubusercontent.com/111142573/219293172-9d838327-11ce-437c-81d1-a7c220ae5fcb.png))
 
 
-## Coming Soon
+## Coming Soon!
 
 1. Introduction to RevelTek
 2. Job Description
