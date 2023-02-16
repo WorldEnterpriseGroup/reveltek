@@ -1,19 +1,13 @@
-# R.E.V U.P - 
-# REACHING EXCELLENT VALUES FOR UNIFIED PERFORMANCE 
+# REVELTEK R.E.V U.P TALENT EXPERIENCE PROGRAM 
 
-## REVELTEK R.E.V U.P TALENT EXPERIENCE PROGRAM 
+## Reaching Excellent Values For Unified Performance
 
 # 🎉Introducing RevelTek's new "Rev Up" program 🎉
 We believe in empowering our employees and giving them the tools to unleash their full potential. That's why we are proud to launch our new "Rev Up" program. This innovative program will provide our employees with the skills, resources and guidance needed to take their career to the next level. We also welcome candidates who are looking to make a career transition and want to join a dynamic, passionate team. At RevelTek, we are proud to rev people  up and help them achieve their goals. We are excited to show you what we have in store with the "Rev Up" program. 
 
 ## Join us and let us help you rev up your career today! 🚀
 
-**Canditate application program**
-
-If "candidate application program" is used to refer to a hiring, recruiting, and onboarding program, then it would typically be a software system or application used by organizations to manage the process of attracting, evaluating, and selecting candidates for job openings. This type of program may include features such as job posting and applicant tracking, resume screening and parsing, scheduling and conducting interviews, and managing new hire paperwork and onboarding processes. The goal of a candidate application program in this context would be to streamline and optimize the hiring process, making it more efficient, effective, and data-driven.
-
-
-**Milestones**
+## Coming Soon
 
 1. Introduction to RevelTek
 2. Job Description
