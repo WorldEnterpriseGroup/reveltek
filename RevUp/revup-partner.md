@@ -4,7 +4,7 @@ RevelTek Inc has a Career Journey for candidates and talent known as "RevelTek R
 
 Our for-profit company donates data intelligence, survey results, candidate information, and provides free business consulting services over to non-profits and education partners aligned with our mission.
 
-We have a shared mission with these education partners to increase STEAM / STEM Literacy in areas that we know are important for agencies like ours to be successful.
+We have a shared mission with these education partners to increase STEAM / STEM Literacy in areas that we know are important for the talent, their families, their communities, and agencies like ours to be successful in the future of work.
 
 We also focus heavily on involving and empowering underserved and underrepreseented communited from these regions such as Women, Children, Low-Income, and Low-English populations.
 
