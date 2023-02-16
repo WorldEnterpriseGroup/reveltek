@@ -2,7 +2,7 @@
 
 RevelTek Inc has a Career Journey for candidates and talent known as "RevelTek RevUp." In this program, we help candidates and current staff become more literate, confident, and help with career advancement through our international branches in the South Asian Region, including Philippines, Pakistan, Vietnam, China, Afghanistan, Myanmar, Nepal, India, Sri Lanka, and surrounding areas.
 
-Our for-profit company donates data intelligence, survey results, candidate information, and provides free business consulting services over to our education partners.
+Our for-profit company donates data intelligence, survey results, candidate information, and provides free business consulting services over to non-profits and education partners aligned with our mission.
 
 We have a shared mission with these education partners to increase STEAM / STEM Literacy in areas that we know are important for agencies like ours to be successful.
 
