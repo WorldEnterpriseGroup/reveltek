@@ -1,6 +1,6 @@
 # RevelTek RevUp: A Career Journey 
 
-## Reaching Excellent Values For Unified Performance
+## Reaching Excellent Values for Unified Performance
 
 # 🎉Introducing RevelTek's new "Rev Up" program 🎉
 We believe in empowering our employees and giving them the tools to unleash their full potential. That's why we are proud to launch our new "Rev Up" program. This innovative program will provide our employees with the skills, resources and guidance needed to take their career to the next level. We also welcome candidates who are looking to make a career transition and want to join a dynamic, passionate team. At RevelTek, we are proud to rev people  up and help them achieve their goals. We are excited to show you what we have in store with the "Rev Up" program. 
