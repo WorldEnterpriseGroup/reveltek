@@ -3,13 +3,14 @@
 ## Website: careers.reveltek.com
 
 ## Revel Up™️
-RevelTek Basic Manual
-Interview Prep Guide
-Skill Assessment
-Job Offer
-First 90 Days
-First 180 Days
-How We Work
+* RevelTek Basic Manual
+* Interview Prep Guide
+* Skill Assessment
+* Job Offer
+* First 90 Days
+* First 180 Days
+
+## How We Work
 Entire RevelTek 
 Handbook
 Employment Agreement
