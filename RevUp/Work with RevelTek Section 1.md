@@ -35,4 +35,5 @@
 5. Executive Director
 
 # First 90 days
-We need to create a 90 days onboarding planWe already have a few points/tasks we are following that we need to improve and clean for a better and clear understanding 
+* We need to create a 90 days onboarding plan
+* We already have a few points/tasks we are following that we need to improve and clean for a better and clear understanding 
