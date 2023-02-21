@@ -1,16 +1,16 @@
-# PROJECT CANDITATE APPLICATION PROGRAM 
-FOLLOWING ARE THE FILE STONES FOR THE PROJECT CANDITATE APPLICATION PROGRAM
-1. GO THROUGH POINT 1- 10.
-2. IMPROVE FILE 1 INTRODUCTION TO REVELTEK
-3. IMPROVE FILE 2 JOB DESCRIPTION
-4. IMPROVE 
+# RevelTek RevUp: A Career Journey 
 
-**Canditate application program**
+## Reaching Excellent Values for Unified Performance
 
-If "candidate application program" is used to refer to a hiring, recruiting, and onboarding program, then it would typically be a software system or application used by organizations to manage the process of attracting, evaluating, and selecting candidates for job openings. This type of program may include features such as job posting and applicant tracking, resume screening and parsing, scheduling and conducting interviews, and managing new hire paperwork and onboarding processes. The goal of a candidate application program in this context would be to streamline and optimize the hiring process, making it more efficient, effective, and data-driven.
+# 🎉Introducing RevelTek's new "Rev Up" program 🎉
+We believe in empowering our employees and giving them the tools to unleash their full potential. That's why we are proud to launch our new "Rev Up" program. This innovative program will provide our employees with the skills, resources and guidance needed to take their career to the next level. We also welcome candidates who are looking to make a career transition and want to join a dynamic, passionate team. At RevelTek, we are proud to rev people  up and help them achieve their goals. We are excited to show you what we have in store with the "Rev Up" program. 
+
+## Join us and let us help you rev up your career today! 🚀
+
+!(![image](https://user-images.githubusercontent.com/111142573/219293172-9d838327-11ce-437c-81d1-a7c220ae5fcb.png))
 
 
-**Milestones**
+## Coming Soon!
 
 1. Introduction to RevelTek
 2. Job Description
@@ -20,7 +20,8 @@ If "candidate application program" is used to refer to a hiring, recruiting, and
 6. Job Offer
 7. Employeement Agreement 
 8. Onboarding Handbook
-9. 30-90-180 onboarding plan 
+9. 30-60-90 onboarding plan
+10. 180 Days Onboarding Plan 
 
 
 ## Milestones and issues
