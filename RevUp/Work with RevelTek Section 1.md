@@ -22,8 +22,8 @@
 * We already have an interview prep guide
 
 ## Skill Assessment 
-We already have a skill assessment spreadsheet.
-It is 95% completed just the description of questions of the section Regularity is left.
+* We already have a skill assessment spreadsheet.
+* It is 95% completed just the description of questions of the section Regularity is left.
 Other than that the discussion and critical analysis are left so that changes can be made to make it look beautiful and perfect.
 
 
