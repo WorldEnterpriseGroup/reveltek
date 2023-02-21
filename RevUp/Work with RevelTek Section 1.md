@@ -27,5 +27,4 @@
 * Other than that the discussion and critical analysis are left so that changes can be made to make it look beautiful and perfect.
 
 # Job Offer
-
-
+We have proper templates for the job offer we are offeringBusiness Development ApprenticeBusiness Development AssociateBusiness Development Officer Business Development DirectorExecutive Director
