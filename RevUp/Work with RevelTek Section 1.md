@@ -37,3 +37,5 @@
 # First 90 days
 * We need to create a 90 days onboarding plan
 * We already have a few points/tasks we are following that we need to improve and clean for a better and clear understanding 
+
+First 180 days
