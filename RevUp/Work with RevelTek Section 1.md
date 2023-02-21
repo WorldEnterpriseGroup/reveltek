@@ -14,7 +14,7 @@
 ### We already have reading materials (RevelTek Basic Manual)
 * Welcome to RevelTek 
 * Training Manual
-RevelTek Handbook
+* RevelTek Handbook
 S.I.L.K Handbook
 DanHup Handbook
 
