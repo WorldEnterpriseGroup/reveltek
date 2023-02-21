@@ -28,8 +28,8 @@
 
 # Job Offer
 * We have proper templates for the job offer we are offering:
-Business Development Apprentice
-Business Development Associate
-Business Development Officer 
-Business Development Director
-Executive Director
+1. Business Development Apprentice
+2. Business Development Associate
+3. Business Development Officer 
+4. Business Development Director
+5. Executive Director
