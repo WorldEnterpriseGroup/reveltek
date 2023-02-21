@@ -11,12 +11,12 @@
 * First 180 Days
 
 ## How We Work
-Entire RevelTek 
-Handbook
-Employment Agreement
-Work Shifts
-Focus App
-Remote Work
+* Entire RevelTek 
+* Handbook
+* Employment Agreement
+* Work Shifts
+* Focus App
+* Remote Work
 Jobs
 Apply
 Life at RevelTek
