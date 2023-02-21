@@ -17,10 +17,12 @@
 * Work Shifts
 * Focus App
 * Remote Work
-Jobs
-Apply
-Life at RevelTek
-Who We Are
-1st Year at RevelTek
-2nd Year at RevelTek
-Immigration with RevelTek
+
+## Jobs
+* Apply
+
+## Life at RevelTek
+* Who We Are
+* 1st Year at RevelTek
+* 2nd Year at RevelTek
+* Immigration with RevelTek
