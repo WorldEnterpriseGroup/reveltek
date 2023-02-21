@@ -15,5 +15,6 @@
 Welcome to RevelTek 
 Training Manual
 RevelTek Handbook
-S.I.L.K HandbookDanHup Handbook
+S.I.L.K Handbook
+DanHup Handbook
 
