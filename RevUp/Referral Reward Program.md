@@ -2,6 +2,10 @@
 
 Thank you for your interest in our Referral Reward Program. We are excited to offer our the opportunity to earn a referral fee for bringing in qualified candidates to our company that can be placed infront of internation clients like Amercian Clients.
 
+Please note that the referral fee will only be paid out if the candidate is hired and successfully completes their probationary period. The fee will be paid out in two installments, with half paid after the candidate's first three months and the remaining half paid after their six-month anniversary.
+
+We believe that our employees are our greatest asset, and we trust that you will only refer candidates who meet our high standards and align with our company culture. Thank you for your participation in our Referral Reward Program.
+
 Here are the details of the program:
 
 👥 Who can participate?
