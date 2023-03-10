@@ -1,5 +1,7 @@
 # Referral Reward Program
 
+Thank you for your interest in our Referral Reward Program. We are excited to offer our the opportunity to earn a referral fee for bringing in qualified candidates to our company that can be placed infront of internation clients like Amercian Clients.
+
 Here are the details of the program:
 
 👥 Who can participate?
