@@ -3,7 +3,7 @@
 RevelTek, an International Technical Consulting frim, is seeking a highly experienced and skilled Tech Consultant to lead Technical Business Development team and help steer the thought leadership. The ideal candidate will have a strong background in technical consulting, a deep understanding of the tech industry, and a passion for helping organizations succeed in the tech industry. A tech consultant will be responsible for providing technical advice and solutions to clients. The Tech consultant will assess the client’s current technology infrastructure and make recommendations for improvements or upgrades. Tech Consultant will also assist with the implementation and integration of new systems and technologies. A tech consultant should have strong technical knowledge and excellent communication skills to effectively work with clients and team members.
 
 * Assessing the current technology infrastructure of a business or organization.
-* Identifying areas where technology can be used to improve efficiency, productivity, and profitability.
+* Identifying areas where technology can be used to improve efficiency, productivity, and profitability. 
 * Developing and implementing technology strategies and plans.
 * Providing guidance on hardware and software selection and implementation.
 * Managing technology projects from start to finish.
