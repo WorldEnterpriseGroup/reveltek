@@ -19,3 +19,5 @@ We offer a referral fee of up to 2 lac per referral. To be eligible for the full
 🤑 How can you claim their reward?
 
 Once the referred candidate has successfully passed our training process and is employed with our company, the employee who referred them can claim their reward through our HR department.
+
+The Referred applicant should be capable of following our entire training manual with perfect scores and perfect communication in English on our calls. It should be ensured by you that the referred candidate meets our standards, they must have their video turned on, fast internet, and great audio. They should also be smiling and happy during the call. 🎗️
