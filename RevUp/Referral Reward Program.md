@@ -10,7 +10,7 @@ Here are the details of the program:
 
 👥 Who can participate?
 
-Everyone is eligible to participate in the referral program.
+Everyone is eligible to participate in the referral program. 
 
 💰 How much do we offer?
 
