@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   canonicalPath="/shop.html"
   header="inner"
   footer="inner"
->
+  heroPreload="/assets/img/breadcrumb.avif">
 <!--====== Breadcrumb part Start ======-->
     <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">
@@ -98,7 +98,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img fetchpriority="high" decoding="async" width="270" height="285" src="assets/img/shop/01.avif" alt="image">
+                                    <img loading="eager" fetchpriority="high" decoding="async" width="270" height="285" src="assets/img/shop/01.avif" srcset="assets/img/shop/01.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -131,7 +131,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/02.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/02.avif" srcset="assets/img/shop/02.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -164,7 +164,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/03.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/03.avif" srcset="assets/img/shop/03.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -197,7 +197,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/04.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/04.avif" srcset="assets/img/shop/04.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -230,7 +230,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/05.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/05.avif" srcset="assets/img/shop/05.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -263,7 +263,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/06.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/06.avif" srcset="assets/img/shop/06.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -296,7 +296,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/07.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/07.avif" srcset="assets/img/shop/07.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -329,7 +329,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/08.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/08.avif" srcset="assets/img/shop/08.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
@@ -362,7 +362,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-lg-4 col-sm-6">
                             <div class="single-product">
                                 <div class="product-img">
-                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/09.avif" alt="image">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/09.avif" srcset="assets/img/shop/09.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="image">
                                     <div class="product-action">
                                         <a href="#"><i class="far fa-shopping-cart"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
