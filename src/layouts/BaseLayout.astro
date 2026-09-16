@@ -66,6 +66,8 @@ interface Props {
   footer?: FooterKind;
   /** Absolute OG image URL. */
   ogImage?: string;
+  /** Set true to emit a noindex/nofollow robots meta (e.g. 404 page). */
+  noindex?: boolean;
   /** AVIF hero/LCP image to preload (relative to site root). */
   heroPreload?: string;
   /** Extra raw head markup captured from the legacy page (first-party only). */
@@ -79,6 +81,7 @@ const {
   header = 'main',
   footer = 'main',
   ogImage = 'https://reveltek.com/assets/img/banner/01.avif',
+  noindex = false,
   heroPreload,
   extraHead = '',
 } = Astro.props;
@@ -112,6 +115,7 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>{title}</title>
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
