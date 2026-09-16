@@ -86,6 +86,21 @@ const {
 const HeaderTag = HEADERS[header] as typeof Header;
 const FooterTag = FOOTERS[footer] as typeof Footer;
 
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'RevelTek Inc.',
+  url: 'https://reveltek.com',
+  logo: 'https://reveltek.com/assets/img/svg/revel.svg',
+  description:
+    'RevelTek Inc. is a US-based technical consulting firm delivering SaaS solutions, strategic IT consulting, AI, cloud, and product development management.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lewes, Delaware, USA',
+  },
+  naics: ['541511', '541611', '541512'],
+};
+
 const canonical = `https://reveltek.com${canonicalPath}`;
 ---
 
@@ -104,22 +119,7 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      name: 'RevelTek Inc.',
-      url: 'https://reveltek.com',
-      logo: 'https://reveltek.com/assets/img/svg/revel.svg',
-      description:
-        'RevelTek Inc. is a US-based technical consulting firm delivering SaaS solutions, strategic IT consulting, AI, cloud, and product development management.',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Lewes, Delaware, USA',
-      },
-      naics: ['541511', '541611', '541512'],
-    })}
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   <!--====== Favicon Icon ======-->
   <link rel="icon" href="/assets/img/svg/swirl_white.svg" sizes="any" />
   <!--====== Fonts: preconnect + swap (same families as theme CSS @import) ======-->
@@ -149,9 +149,7 @@ const canonical = `https://reveltek.com${canonicalPath}`;
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
   </noscript>
   <script type="speculationrules">
-    {JSON.stringify({
-      prerender: [{ where: { href_matches: '/*' }, eagerness: 'moderate' }],
-    })}
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
   </script>
   <Fragment set:html={extraHead} />
 </head>
@@ -198,5 +196,9 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   :focus-visible {
     outline: 3px solid #ff4a17;
     outline-offset: 2px;
+  }
+  /* Additive mega-panel divider inside the Services submenu (theme tokens). */
+  .menu-items .submenu li.submenu-featured > a {
+    border-top: 1px solid #f5f5f5;
   }
 </style>
