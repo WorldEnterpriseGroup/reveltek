@@ -7768,3 +7768,52 @@ footer.grey-bg-footer .footer-copyright .back-to-top {
 footer.grey-bg-footer .footer-copyright .back-to-top:hover {
   background-color: #ff4a17;
 }
+/*======= Site Logo: white mark on orange wedge =======*/
+/* White revelwhite.svg sits ON the orange wedge ::before (#ff4a17, 445px
+   default; 265px <=1599px; 245px <=1199px; 220px <=991px). The ::before has
+   no z-index by default so the height-capped logo is lifted above it; the
+   nav-container joins the same stacking context. Widths stay inside the
+   wedge including its slanted clip-path. Scoped to .site-logo-img so the
+   index-2/index-3 AVIF logos are unaffected. Sticky bar is 100px so the
+   sticky logo is a definite 80px tall (height + max-height: width:auto with
+   max-height alone collapses to 0x0 in the flex nav-container). */
+header .header-nav::before {
+  z-index: 0;
+}
+header .header-nav .nav-container {
+  z-index: 1;
+}
+.site-logo {
+  position: relative;
+  z-index: 1;
+}
+.site-logo .site-logo-img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+@media (max-width: 1599px) {
+  .site-logo .site-logo-img {
+    width: 170px;
+  }
+}
+@media (max-width: 1199px) {
+  .site-logo .site-logo-img {
+    width: 150px;
+  }
+}
+@media (max-width: 991px) {
+  .site-logo .site-logo-img {
+    width: 140px;
+  }
+}
+@media (max-width: 575px) {
+  .site-logo .site-logo-img {
+    width: 120px;
+  }
+}
+header.sticky-header.sticky-on .site-logo .site-logo-img {
+  height: 80px;
+  max-height: 80px;
+  width: auto;
+}
