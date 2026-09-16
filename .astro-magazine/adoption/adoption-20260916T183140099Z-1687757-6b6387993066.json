@@ -1,0 +1,536 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "existing_site_adoption",
+  "adoption_id": "adoption-20260916T183140099Z-1687757-6b6387993066",
+  "recorded_at": "2026-09-16T18:31:40.099Z",
+  "mode": "upgrade_existing_site",
+  "status": "unknown",
+  "site_root": "/home/mrh/repos/worldenterprisegroup/reveltek",
+  "state_before": {
+    "path": ".astro-magazine",
+    "exists": false,
+    "meaningful": false,
+    "entries": []
+  },
+  "state_after_initialization": {
+    "path": ".astro-magazine",
+    "exists": true,
+    "meaningful": true,
+    "entries": [
+      {
+        "name": "adoption",
+        "kind": "directory"
+      },
+      {
+        "name": "authority-policy.md",
+        "kind": "file"
+      },
+      {
+        "name": "briefs",
+        "kind": "directory"
+      },
+      {
+        "name": "checkpoint.json",
+        "kind": "file"
+      },
+      {
+        "name": "checkpoints",
+        "kind": "directory"
+      },
+      {
+        "name": "claims",
+        "kind": "directory"
+      },
+      {
+        "name": "commission.json",
+        "kind": "file"
+      },
+      {
+        "name": "content-records",
+        "kind": "directory"
+      },
+      {
+        "name": "conversions",
+        "kind": "directory"
+      },
+      {
+        "name": "decisions.md",
+        "kind": "file"
+      },
+      {
+        "name": "events.ndjson",
+        "kind": "file"
+      },
+      {
+        "name": "interactions",
+        "kind": "directory"
+      },
+      {
+        "name": "links",
+        "kind": "directory"
+      },
+      {
+        "name": "locks",
+        "kind": "directory"
+      },
+      {
+        "name": "media",
+        "kind": "directory"
+      },
+      {
+        "name": "ownership.json",
+        "kind": "file"
+      },
+      {
+        "name": "priorities",
+        "kind": "directory"
+      },
+      {
+        "name": "README.md",
+        "kind": "file"
+      },
+      {
+        "name": "reviews",
+        "kind": "directory"
+      },
+      {
+        "name": "schemas",
+        "kind": "directory"
+      },
+      {
+        "name": "scope.json",
+        "kind": "file"
+      },
+      {
+        "name": "sources",
+        "kind": "directory"
+      },
+      {
+        "name": "templates",
+        "kind": "directory"
+      }
+    ],
+    "meaningful_entries": [
+      "adoption",
+      "authority-policy.md",
+      "briefs",
+      "checkpoint.json",
+      "checkpoints",
+      "claims",
+      "commission.json",
+      "content-records",
+      "conversions",
+      "decisions.md",
+      "events.ndjson",
+      "interactions",
+      "links",
+      "media",
+      "ownership.json",
+      "priorities",
+      "README.md",
+      "reviews",
+      "schemas",
+      "scope.json",
+      "sources",
+      "templates"
+    ]
+  },
+  "initialization": {
+    "invoked": true,
+    "script": "init-editorial-studio.mjs",
+    "result": "reconciled_missing_state",
+    "report": {
+      "schema_version": "1.0.0",
+      "studio_directory": "/home/mrh/repos/worldenterprisegroup/reveltek/.astro-magazine",
+      "created": [
+        "commission.json",
+        "scope.json",
+        "ownership.json",
+        "authority-policy.md",
+        "checkpoint.json",
+        "README.md",
+        "templates/content-record.example.json",
+        "templates/brief-storyboard.example.json",
+        "templates/route-record.example.json",
+        "templates/source-record.example.json",
+        "templates/claim-record.example.json",
+        "templates/media-record.example.json",
+        "templates/interaction-record.example.json",
+        "templates/conversion-record.example.json",
+        "templates/adoption-record.example.json",
+        "templates/rice-backlog.example.json",
+        "templates/baseline-build-evidence.example.json",
+        "templates/visual-evidence-manifest.example.json",
+        "templates/route-lifecycle.example.json",
+        "templates/seo-resolution.example.json",
+        "schemas/commission.schema.json",
+        "schemas/content-record.schema.json",
+        "schemas/brief-storyboard.schema.json",
+        "schemas/checkpoint.schema.json",
+        "schemas/route-lifecycle.schema.json",
+        "events.ndjson",
+        "decisions.md"
+      ],
+      "preserved": [],
+      "destructive_reset": false
+    }
+  },
+  "inventory": {
+    "captured_at": "2026-09-16T18:31:40.084Z",
+    "package": {
+      "path": "package.json",
+      "present": false,
+      "file": null,
+      "parse": "absent",
+      "parse_error": null,
+      "name": null,
+      "version": null,
+      "scripts": [],
+      "dependency_signals": [],
+      "package_manager_files": []
+    },
+    "astro": {
+      "detected": false,
+      "dependency_signals": [],
+      "config_files": [],
+      "source_signals": [],
+      "script_signals": [],
+      "signals": []
+    },
+    "routes": {
+      "root": "src/pages",
+      "present": false,
+      "count": 0,
+      "file_count": 0,
+      "files": [],
+      "symlinks": [],
+      "errors": []
+    },
+    "content": {
+      "root": "src/content",
+      "present": false,
+      "count": 0,
+      "editorial_file_count": 0,
+      "file_count": 0,
+      "files": [],
+      "other_files": [],
+      "symlinks": [],
+      "errors": []
+    },
+    "media": {
+      "public": {
+        "root": "public",
+        "present": false,
+        "count": 0,
+        "file_count": 0,
+        "by_type": {},
+        "files": [],
+        "symlinks": [],
+        "errors": []
+      },
+      "src_assets": {
+        "root": "src/assets",
+        "present": false,
+        "count": 0,
+        "file_count": 0,
+        "by_type": {},
+        "files": [],
+        "symlinks": [],
+        "errors": []
+      },
+      "count": 0,
+      "file_count": 0
+    },
+    "rendered_html": {
+      "root": "dist",
+      "present": false,
+      "count": 0,
+      "html_file_count": 0,
+      "files": [],
+      "symlinks": [],
+      "errors": []
+    },
+    "counts": {
+      "routes": 0,
+      "editorial_files": 0,
+      "content_files_total": 0,
+      "media_public": 0,
+      "media_src_assets": 0,
+      "media_total": 0,
+      "rendered_html": 0
+    },
+    "gaps": [
+      {
+        "id": "package-manifest",
+        "category": "package",
+        "status": "unknown",
+        "reason": "No package.json was found; package manager and dependency signals remain unknown.",
+        "paths": [
+          "package.json"
+        ]
+      },
+      {
+        "id": "astro-signals",
+        "category": "framework",
+        "status": "unknown",
+        "reason": "No Astro dependency, configuration, source directory, or package-script signal was observed.",
+        "paths": [
+          "package.json",
+          "astro.config.*",
+          "src/"
+        ]
+      },
+      {
+        "id": "route-inventory",
+        "category": "routing",
+        "status": "unknown",
+        "reason": "No route source files were found under src/pages.",
+        "paths": [
+          "src/pages/"
+        ]
+      },
+      {
+        "id": "editorial-inventory",
+        "category": "editorial",
+        "status": "unknown",
+        "reason": "No recognized editorial files were found under src/content.",
+        "paths": [
+          "src/content/"
+        ]
+      },
+      {
+        "id": "media-inventory",
+        "category": "media",
+        "status": "unknown",
+        "reason": "No recognized image, audio, or video files were found in public or src/assets.",
+        "paths": [
+          "public/",
+          "src/assets/"
+        ]
+      },
+      {
+        "id": "rendered-html",
+        "category": "rendering",
+        "status": "unknown",
+        "reason": "No rendered HTML evidence was found under dist.",
+        "paths": [
+          "dist/"
+        ]
+      },
+      {
+        "id": "editorial-workflow-state",
+        "category": "editorial",
+        "status": "unknown",
+        "reason": "Source files do not prove assignment, review, approval, or current workflow state.",
+        "paths": [
+          "src/content/",
+          "src/pages/"
+        ]
+      },
+      {
+        "id": "provenance-rights-and-alt-text",
+        "category": "media",
+        "status": "unknown",
+        "reason": "Inventory hashes media but cannot verify provenance, rights, focal-point decisions, captions, or accessibility treatment.",
+        "paths": [
+          "public/",
+          "src/assets/"
+        ]
+      },
+      {
+        "id": "content-schemas-and-claims",
+        "category": "evidence",
+        "status": "unknown",
+        "reason": "Inventory cannot establish content schemas, claim registers, source records, or fact-check evidence.",
+        "paths": [
+          "src/content/",
+          ".astro-magazine/"
+        ]
+      },
+      {
+        "id": "current-astro-contract-audit",
+        "category": "modernization",
+        "status": "unknown",
+        "reason": "Signals identify the implementation surface but do not prove current Astro contracts or identify every deprecated pattern.",
+        "paths": [
+          "package.json",
+          "astro.config.*",
+          "src/"
+        ]
+      },
+      {
+        "id": "url-authority-review",
+        "category": "routing",
+        "status": "unknown",
+        "reason": "Route files are inventoried, but canonical, redirect, locale, and URL ownership decisions require editorial review.",
+        "paths": [
+          "src/pages/",
+          "dist/"
+        ]
+      }
+    ],
+    "unknown_gap_count": 11
+  },
+  "imported_work": {
+    "status": "unknown",
+    "workflow_state": "unknown",
+    "publication_state": "unknown",
+    "records_created": 0,
+    "note": "The command records evidence and boundaries only; existing work is not promoted into an editorial or release state."
+  },
+  "gaps": [
+    {
+      "id": "package-manifest",
+      "category": "package",
+      "status": "unknown",
+      "reason": "No package.json was found; package manager and dependency signals remain unknown.",
+      "paths": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "astro-signals",
+      "category": "framework",
+      "status": "unknown",
+      "reason": "No Astro dependency, configuration, source directory, or package-script signal was observed.",
+      "paths": [
+        "package.json",
+        "astro.config.*",
+        "src/"
+      ]
+    },
+    {
+      "id": "route-inventory",
+      "category": "routing",
+      "status": "unknown",
+      "reason": "No route source files were found under src/pages.",
+      "paths": [
+        "src/pages/"
+      ]
+    },
+    {
+      "id": "editorial-inventory",
+      "category": "editorial",
+      "status": "unknown",
+      "reason": "No recognized editorial files were found under src/content.",
+      "paths": [
+        "src/content/"
+      ]
+    },
+    {
+      "id": "media-inventory",
+      "category": "media",
+      "status": "unknown",
+      "reason": "No recognized image, audio, or video files were found in public or src/assets.",
+      "paths": [
+        "public/",
+        "src/assets/"
+      ]
+    },
+    {
+      "id": "rendered-html",
+      "category": "rendering",
+      "status": "unknown",
+      "reason": "No rendered HTML evidence was found under dist.",
+      "paths": [
+        "dist/"
+      ]
+    },
+    {
+      "id": "editorial-workflow-state",
+      "category": "editorial",
+      "status": "unknown",
+      "reason": "Source files do not prove assignment, review, approval, or current workflow state.",
+      "paths": [
+        "src/content/",
+        "src/pages/"
+      ]
+    },
+    {
+      "id": "provenance-rights-and-alt-text",
+      "category": "media",
+      "status": "unknown",
+      "reason": "Inventory hashes media but cannot verify provenance, rights, focal-point decisions, captions, or accessibility treatment.",
+      "paths": [
+        "public/",
+        "src/assets/"
+      ]
+    },
+    {
+      "id": "content-schemas-and-claims",
+      "category": "evidence",
+      "status": "unknown",
+      "reason": "Inventory cannot establish content schemas, claim registers, source records, or fact-check evidence.",
+      "paths": [
+        "src/content/",
+        ".astro-magazine/"
+      ]
+    },
+    {
+      "id": "current-astro-contract-audit",
+      "category": "modernization",
+      "status": "unknown",
+      "reason": "Signals identify the implementation surface but do not prove current Astro contracts or identify every deprecated pattern.",
+      "paths": [
+        "package.json",
+        "astro.config.*",
+        "src/"
+      ]
+    },
+    {
+      "id": "url-authority-review",
+      "category": "routing",
+      "status": "unknown",
+      "reason": "Route files are inventoried, but canonical, redirect, locale, and URL ownership decisions require editorial review.",
+      "paths": [
+        "src/pages/",
+        "dist/"
+      ]
+    }
+  ],
+  "preservation_constraints": [
+    {
+      "id": "approved-repository-material",
+      "paths": [
+        "package.json",
+        "astro.config.*",
+        "src/pages/**",
+        "src/content/**",
+        "public/**",
+        "src/assets/**",
+        "dist/**"
+      ],
+      "constraint": "Read and hash existing content, brand, media, routes, and rendered evidence only; do not overwrite, delete, or rewrite these paths."
+    },
+    {
+      "id": "studio-history",
+      "paths": [
+        ".astro-magazine/**"
+      ],
+      "constraint": "Preserve existing studio files and event history; only missing initializer artifacts, a new immutable adoption record, the current pointer, and one appended event may be written."
+    },
+    {
+      "id": "evidence-honesty",
+      "paths": [
+        ".astro-magazine/adoption/**"
+      ],
+      "constraint": "Imported work remains unknown until current editorial, evidence, accessibility, rights, and release gates establish its state."
+    },
+    {
+      "id": "forward-modernization",
+      "paths": [
+        "src/**",
+        "astro.config.*",
+        "package.json"
+      ],
+      "constraint": "Use the inventory as an upgrade baseline for current contracts; do not add compatibility shims or retain deprecated patterns without an explicit requirement."
+    }
+  ],
+  "evidence": {
+    "source_files_hashed": 0,
+    "source_inventory_read_only": true,
+    "existing_studio_history_preserved": false,
+    "no_source_paths_written": true,
+    "record_path": ".astro-magazine/adoption/adoption-20260916T183140099Z-1687757-6b6387993066.json"
+  }
+}
