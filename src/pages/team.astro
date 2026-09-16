@@ -6,9 +6,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="RevelTek | Team Members"
   description="RevelTek | Team Members"
   canonicalPath="/team.html"
+  ogImage="https://reveltek.com/assets/img/team/01.avif"
   header="inner"
   footer="inner"
->
+  heroPreload="/assets/img/breadcrumb.avif">
 <!--====== Breadcrumb part Start ======-->
     <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">
@@ -43,7 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img fetchpriority="high" decoding="async" width="270" height="320" src="assets/img/team/01.avif" alt="TeamMember">
+                                <img loading="eager" fetchpriority="high" decoding="async" width="270" height="320" src="assets/img/team/01.avif" srcset="assets/img/team/01.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -70,7 +71,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/02.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/02.avif" srcset="assets/img/team/02.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -97,7 +98,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/03.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/03.avif" srcset="assets/img/team/03.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -124,7 +125,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/04.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/04.avif" srcset="assets/img/team/04.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -151,7 +152,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/10.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/10.avif" srcset="assets/img/team/10.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -178,7 +179,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/11.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/11.avif" srcset="assets/img/team/11.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -205,7 +206,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/12.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/12.avif" srcset="assets/img/team/12.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -232,7 +233,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="team-member">
                         <div class="member-picture-wrap">
                             <div class="member-picture">
-                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/13.avif" alt="TeamMember">
+                                <img loading="lazy" decoding="async" width="270" height="320" src="assets/img/team/13.avif" srcset="assets/img/team/13.avif 270w" sizes="(max-width: 768px) 100vw, 270px" alt="TeamMember">
                                 <div class="social-icons">
                                     <a href="#">
                                         <i class="fab fa-facebook-f"></i>
@@ -282,7 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="col-lg-3 col-lg-4 col-md-2 order-1 order-md-2">
                     <div class="video-btn text-md-center">
                         <a href="#" class="play-btn popup-video">
-                            <img src="assets/img/icons/play.svg" alt="">
+                            <img src="assets/img/icons/play.svg" alt="Play video" width="169" height="158" loading="lazy" decoding="async">
                             <i class="fas fa-play"></i>
                         </a>
                     </div>
@@ -290,7 +291,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
         </div>
         <div class="line-shape">
-            <img loading="lazy" decoding="async" width="1263" height="597" src="assets/img/lines/08.avif" alt="Line">
+            <img loading="lazy" decoding="async" width="1263" height="597" src="assets/img/lines/08.avif" srcset="assets/img/lines/08.avif 1263w" sizes="(max-width: 768px) 100vw, 1263px" alt="Line">
         </div>
     </section>
     <!--====== Video end ======-->
@@ -360,52 +361,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="row align-items-center justify-content-between" id="clientSlider">
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client logo 1">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client logo 2">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client logo 3">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client logo 4">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client logo 5">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client logo 1">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client logo 2">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client logo 3">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client logo 4">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client logo 5">
                         </a>
                     </div>
                 </div>

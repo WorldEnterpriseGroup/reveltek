@@ -40,11 +40,28 @@
 (function ($) {
 	'use strict';
 
+	/* View Transitions: the Astro ClientRouter swaps page DOM without a full
+	   reload, so these deferred bundles execute once while fresh markup
+	   arrives on every navigation. Each initializer below is idempotent
+	   (skips missing or already-initialized elements) and the full set is
+	   exposed as window.RevelWidgets.init(), re-invoked on astro:page-load
+	   by the MobileNav vanilla island. */
+	function skipSlick($el) {
+		return !$el.length || $el.hasClass('slick-initialized');
+	}
+	function initSlick($el, opts) {
+		if (!skipSlick($el)) $el.slick(opts);
+	}
+
 	/*-----------------------------
 	=== ALL ESSENTIAL FUNCTIONS ===
 	------------------------------*/
 	// ===== 01. Main Menu
 	function mianMenu() {
+		// Zero-dependency vanilla island owns this when present
+		// (src/components/islands/MobileNav.astro). Skip so the mobile
+		// .dd-trigger is injected exactly once.
+		if (document.querySelector('[data-island="mobile-nav"]')) return;
 		// Variables
 		var var_window = $(window),
 			navContainer = $('.nav-container'),
@@ -117,6 +134,8 @@
 
 	// ===== 02. OffCanvasMenu
 	function offcanvasMenu() {
+		// Owned by the MobileNav vanilla island when present.
+		if (document.querySelector('[data-island="mobile-nav"]')) return;
 		// Set Click Function For open
 		$('.offcanvas-toggler').on('click', function (e) {
 			e.preventDefault();
@@ -139,6 +158,7 @@
 	// ===== 03. Banner Slider
 	function bannerSlider() {
 		var banner = $('#bannerSlider');
+		if (skipSlick(banner)) return;
 		var bannerFirst = $('.single-banner:first-child');
 
 		banner.on('init', function (e, slick) {
@@ -204,7 +224,8 @@
 
 	// ===== 04. Bootstrap accordion
 	function bootstrapAccordion() {
-		$('.accordion').on('hide.bs.collapse show.bs.collapse', (e) => {
+		// Namespaced so re-init across View Transitions never double-binds.
+		$('.accordion').off('hide.bs.collapse.revel show.bs.collapse.revel').on('hide.bs.collapse.revel show.bs.collapse.revel', (e) => {
 			$(e.target).prev().find('i').toggleClass('fa-minus fa-plus');
 			$(e.target).prev().toggleClass('active-header');
 		});
@@ -212,12 +233,12 @@
 
 	// ===== 05. Popup video
 	function popupVideo() {
-		$('.popup-video').magnificPopup({
+		$('.popup-video').not('[data-mfp-init]').attr('data-mfp-init', '1').magnificPopup({
 			type: 'iframe',
 		});
 	}
 	function popupImg() {
-		$('.img-popup').magnificPopup({
+		$('.img-popup').not('[data-mfp-init]').attr('data-mfp-init', '1').magnificPopup({
 			type: "image",
 			gallery: { 
 				enabled: true 
@@ -226,6 +247,9 @@
 	}
 	// ===== 06. Counter Up
 	function counterToUp() {
+		// Owned by the Counters vanilla island when present
+		// (IntersectionObserver, no jQuery/inview dependency).
+		if (document.querySelector('[data-island="counters"]')) return;
 		$('.fact-box').bind('inview', function (
 			event,
 			visible,
@@ -257,7 +281,7 @@
 	// ===== 07. Team Slider
 	function teamSlider() {
 		var slideOne = $('#teamSliderOne');
-		slideOne.slick({
+		initSlick(slideOne, {
 			infinite: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
@@ -284,7 +308,7 @@
 		});
 
 		var slideTwo = $('#teamSliderTwo');
-		slideTwo.slick({
+		initSlick(slideTwo, {
 			infinite: true,
 			slidesToShow: 5,
 			slidesToScroll: 1,
@@ -328,7 +352,7 @@
 	function testimonialSlider() {
 		var slideOne = $('#testimonialSliderOne');
 		var arrowsHtml = $('.testimonial-arrows');
-		slideOne.slick({
+		initSlick(slideOne, {
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
@@ -346,7 +370,7 @@
 
 		var slideTwo = $('#testimonialSliderTwo');
 		var slideDots = $('.testimonial-dots');
-		slideTwo.slick({
+		initSlick(slideTwo, {
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
@@ -380,7 +404,7 @@
 		});
 
 		var slideThree = $('#testimonialSliderThree');
-		slideThree.slick({
+		initSlick(slideThree, {
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
@@ -405,8 +429,11 @@
 
 	// ===== 09. Client Logo Slider
 	function clientSlider() {
+		// Owned by the ClientSlider vanilla island when present
+		// (scroll-snap strip, no slick dependency).
+		if (document.querySelector('[data-island="client-slider"]')) return;
 		var slide = $('#clientSlider');
-		slide.slick({
+		initSlick(slide, {
 			infinite: true,
 			slidesToShow: 5,
 			slidesToScroll: 1,
@@ -447,7 +474,7 @@
 
 	// ===== 10. Easy PieChart
 	function easypieChart() {
-		$('.chart-box').bind('inview', function (
+		$('.chart-box').not('[data-inview-init]').attr('data-inview-init', '1').bind('inview', function (
 			event,
 			visible,
 			visiblePartX,
@@ -472,7 +499,7 @@
 	// ===== 11. LaestPost Slider
 	function latestPostSlider() {
 		var slide = $('#latestPostSlider');
-		slide.slick({
+		initSlick(slide, {
 			infinite: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
@@ -518,12 +545,16 @@
 
 	// ===== 12. fact isotope activation
 	function factIsotope() {
-		$('#factIsotpe').isotope();
+		var facts = $('#factIsotpe');
+		if (facts.length && !facts.attr('data-iso-init')) {
+			facts.attr('data-iso-init', '1');
+			facts.isotope();
+		}
 	}
 
 	// ===== 13. Active Progress Bar
 	function progressBar() {
-		$('.skill-progress-bars').bind('inview', function (
+		$('.skill-progress-bars').not('[data-inview-init]').attr('data-inview-init', '1').bind('inview', function (
 			event,
 			visible,
 			visiblePartX,
@@ -540,7 +571,10 @@
 
 	// ===== 14. Project Isotope
 	function projectIsotope() {
-		var items = $('.project-isotope').isotope({
+		var grid = $('.project-isotope');
+		if (!grid.length || grid.attr('data-iso-init')) return;
+		grid.attr('data-iso-init', '1');
+		var items = grid.isotope({
 			itemSelector: '.isotope-item',
 			percentPosition: true,
 			masonry: {
@@ -564,7 +598,9 @@
 
 	// ===== 15. Price Range
 	function priceRange() {
-		$('#slider-range').slider({
+		var range = $('#slider-range');
+		if (!range.length || range.hasClass('ui-slider')) return;
+		range.slider({
 			range: true,
 			min: 40,
 			max: 600,
@@ -584,7 +620,7 @@
 	// ===== 16. Product Gallery Slider
 	function gallerySlider() {
 		var galleryDots = $('.product-gallery-arrow');
-		$('.product-gallery-slider').slick({
+		initSlick($('.product-gallery-slider'), {
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			infinite: true,
@@ -605,7 +641,7 @@
 	// ===== 17. Related Product Slider
 	function realatedProSLider() {
 		var slider = $('.related-product-slider');
-		slider.slick({
+		initSlick(slider, {
 			slidesToShow: 4,
 			slidesToScroll: 1,
 			infinite: true,
@@ -631,12 +667,12 @@
 
 	// ===== 18. Quantity Increment
 	function quantityIncrement() {
-		$('.quantity-down').on('click', function(){
+		$('.quantity-down').not('[data-qty-init]').attr('data-qty-init', '1').on('click', function(){
 			var numProduct = Number($(this).next().val());
 			if(numProduct > 0) $(this).next().val(numProduct - 1);
 		});
 
-		$('.quantity-up').on('click', function(){
+		$('.quantity-up').not('[data-qty-init]').attr('data-qty-init', '1').on('click', function(){
 			var numProduct = Number($(this).prev().val());
 			$(this).prev().val(numProduct + 1);
 		});
@@ -644,6 +680,8 @@
 
 	// ===== 19. Back to top
 	function gtToTop() {
+		// Owned by the MobileNav vanilla island when present.
+		if (document.querySelector('[data-island="mobile-nav"]')) return;
 		$('.back-to-top').on('click', function (e) {
 			$('html, body').animate({
 					scrollTop: '0',
@@ -657,6 +695,8 @@
 
 	// ===== 20. Sticky Header
 	function stickyHeader() {
+		// Owned by the MobileNav vanilla island when present.
+		if (document.querySelector('[data-island="mobile-nav"]')) return;
 		var sticky = $('header.sticky-header');
 		var scrollFromtop = $(window).scrollTop();
 		var scrollLimit = $('header').height() + 10;
@@ -675,10 +715,11 @@
 		}
 	}
 
-	/*---------------------
-	=== DOCUMENT READY  ===
-	----------------------*/
-	$(document).ready(function () {
+	/* Re-runnable widget pass. Safe to call on every View Transition
+	   (all initializers above are idempotent); invoked on first paint via
+	   document.ready and on later swaps via astro:page-load from the
+	   MobileNav vanilla island. */
+	function initWidgets() {
 		mianMenu()
 		offcanvasMenu()
 		bannerSlider()
@@ -699,6 +740,28 @@
 		quantityIncrement()
 		gtToTop()
 		popupImg()
+		initWow()
+	}
+	window.RevelWidgets = { init: initWidgets };
+
+	// ===== 22. Wow Js (restartable: stops the previous page's instance so
+	// swapped-in .wow elements animate instead of staying hidden)
+	function initWow() {
+		try {
+			if (typeof WOW === 'undefined') return;
+			if (window.__revelWow && window.__revelWow.stop) window.__revelWow.stop();
+			window.__revelWow = new WOW();
+			window.__revelWow.init();
+		} catch (err) {
+			if (window.console) window.console.warn('[reveltek] WOW init failed', err);
+		}
+	}
+
+	/*---------------------
+	=== DOCUMENT READY  ===
+	----------------------*/
+	$(document).ready(function () {
+		initWidgets()
 	});
 
 	/*--------------------
@@ -713,8 +776,7 @@
 	--------------------*/
 	$(window).on('load', function () {
 		preloader();
-		// ===== 22. Wow Js 
-		new WOW().init();
+		initWow();
 	});
 
 })(jQuery);

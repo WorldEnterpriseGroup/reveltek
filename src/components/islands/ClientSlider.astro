@@ -1,0 +1,120 @@
+---
+// ClientSlider — zero-dependency vanilla island replacing the slick-based
+// `#clientSlider` logo carousel (main.js `clientSlider`, 35 pages). Autoplay
+// starts only while the strip is visible (IntersectionObserver ≈
+// client:visible) and adapts to viewport width (matchMedia ≈ client:media).
+//
+// Static fallback: the `client-island` class is added by JS only, so no-JS
+// renders the original Bootstrap wrapped logo grid — every logo visible.
+// Honors prefers-reduced-motion (no autoplay). Idempotent across View
+// Transitions via `astro:page-load` + per-element `data-wired`. Legacy
+// main.js skips its slick pass on #clientSlider when this marker is present.
+---
+<span data-island="client-slider" hidden aria-hidden="true"></span>
+
+<script>
+  const AUTOPLAY_MS = 5000;
+
+  // Item widths per breakpoint live in the <style> below (CSS media queries
+  // ≈ client:media); this script only advances the strip.
+
+  function initClientSlider(): void {
+    const slider = document.getElementById('clientSlider');
+    if (!(slider instanceof HTMLElement) || slider.dataset.wired === '1') return;
+    slider.dataset.wired = '1';
+    slider.classList.add('client-island');
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timer: number | undefined;
+    let userPaused = false;
+
+    const step = () => {
+      const items = slider.querySelectorAll(':scope > *');
+      if (items.length === 0) return;
+      const first = items[0];
+      if (!(first instanceof HTMLElement)) return;
+      // One "page" ≈ one item width; wrap to start at the end (no clones).
+      const itemWidth = first.offsetWidth;
+      const maxScroll = slider.scrollWidth - slider.clientWidth - 4;
+      if (slider.scrollLeft >= maxScroll) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: itemWidth, behavior: 'smooth' });
+      }
+    };
+
+    const start = () => {
+      if (reduceMotion || timer !== undefined || userPaused) return;
+      timer = window.setInterval(step, AUTOPLAY_MS);
+    };
+    const stop = () => {
+      if (timer !== undefined) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+    };
+
+    // Pause while hovered, touched, or keyboard-focused inside.
+    slider.addEventListener('pointerenter', () => { userPaused = true; stop(); });
+    slider.addEventListener('pointerleave', () => { userPaused = false; start(); });
+    slider.addEventListener('focusin', () => { userPaused = true; stop(); });
+    slider.addEventListener('focusout', () => { userPaused = false; start(); });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) start();
+            else stop();
+          });
+        },
+        { threshold: 0.15 },
+      );
+      observer.observe(slider);
+    } else {
+      start();
+    }
+  }
+
+  document.addEventListener('astro:page-load', initClientSlider);
+  initClientSlider();
+</script>
+
+<style is:global>
+  /* Scroll-snap strip. Applied only when JS adds .client-island, so no-JS
+     keeps the plain wrapped Bootstrap grid fallback. Item widths mirror the
+     legacy slick slidesToShow breakpoints (5 / 4 / 3 / 2). */
+  #clientSlider.client-island {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #clientSlider.client-island::-webkit-scrollbar {
+    display: none;
+  }
+  #clientSlider.client-island > * {
+    flex: 0 0 20%;
+    max-width: 20%;
+    scroll-snap-align: start;
+  }
+  @media (max-width: 991px) {
+    #clientSlider.client-island > * {
+      flex-basis: 25%;
+      max-width: 25%;
+    }
+  }
+  @media (max-width: 767px) {
+    #clientSlider.client-island > * {
+      flex-basis: 33.3333%;
+      max-width: 33.3333%;
+    }
+  }
+  @media (max-width: 576px) {
+    #clientSlider.client-island > * {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+</style>

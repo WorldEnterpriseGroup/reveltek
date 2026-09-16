@@ -1547,33 +1547,39 @@ header.header-three .header-nav::before {
   opacity: 0.65;
   z-index: -2;
 }
-.banner-section .single-banner .banner-content h1 {
+.banner-section .single-banner .banner-content h1,
+.banner-section .single-banner .banner-content h2 {
   color: #fff;
   font-size: 95px;
   line-height: 1.1;
 }
 @media (max-width: 1199px) {
-  .banner-section .single-banner .banner-content h1 {
+  .banner-section .single-banner .banner-content h1,
+  .banner-section .single-banner .banner-content h2 {
     font-size: 60px;
   }
 }
 @media (max-width: 991px) {
-  .banner-section .single-banner .banner-content h1 {
+  .banner-section .single-banner .banner-content h1,
+  .banner-section .single-banner .banner-content h2 {
     font-size: 50px;
   }
 }
 @media (max-width: 767px) {
-  .banner-section .single-banner .banner-content h1 {
+  .banner-section .single-banner .banner-content h1,
+  .banner-section .single-banner .banner-content h2 {
     font-size: 42px;
   }
 }
 @media (max-width: 575px) {
-  .banner-section .single-banner .banner-content h1 {
+  .banner-section .single-banner .banner-content h1,
+  .banner-section .single-banner .banner-content h2 {
     font-size: 32px;
   }
 }
 @media (max-width: 399px) {
-  .banner-section .single-banner .banner-content h1 {
+  .banner-section .single-banner .banner-content h1,
+  .banner-section .single-banner .banner-content h2 {
     font-size: 28px;
   }
 }
@@ -1862,21 +1868,25 @@ header.header-three .header-nav::before {
 .banner-section.banner-section-three .single-banner::before {
   display: none;
 }
-.banner-section.banner-section-three .single-banner .banner-content h1 {
+.banner-section.banner-section-three .single-banner .banner-content h1,
+.banner-section.banner-section-three .single-banner .banner-content h2 {
   color: #14212b;
 }
 @media (max-width: 1599px) {
-  .banner-section.banner-section-three .single-banner .banner-content h1 {
+  .banner-section.banner-section-three .single-banner .banner-content h1,
+  .banner-section.banner-section-three .single-banner .banner-content h2 {
     font-size: 66px;
   }
 }
 @media (max-width: 1199px) {
-  .banner-section.banner-section-three .single-banner .banner-content h1 {
+  .banner-section.banner-section-three .single-banner .banner-content h1,
+  .banner-section.banner-section-three .single-banner .banner-content h2 {
     font-size: 55px;
   }
 }
 @media (max-width: 991px) {
-  .banner-section.banner-section-three .single-banner .banner-content h1 {
+  .banner-section.banner-section-three .single-banner .banner-content h1,
+  .banner-section.banner-section-three .single-banner .banner-content h2 {
     font-size: 42px;
   }
 }

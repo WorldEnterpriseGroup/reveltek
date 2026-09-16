@@ -6,6 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="RevelTek | Industries We Serve"
   description="RevelTek provides tailored technology solutions across key industries including Health, Fintech, Retail, and Education."
   canonicalPath="/industries.html"
+  ogImage="https://reveltek.com/assets/img/banner/02.avif"
   footer="company"
   heroPreload="/assets/img/banner/01.avif"
 >
@@ -49,9 +50,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 							<span class="promo-text" data-animation="fadeInDown" data-delay="0.8s">
 								Deep Sector Knowledge
 							</span>
-							<h1 data-animation="fadeInUp" data-delay="1s">
+							<h2 data-animation="fadeInUp" data-delay="1s">
 								Applying Proven <br> Expertise To Solve <br> Your Unique Problems
-							</h1>
+							</h2>
 							<ul class="btn-wrap">
 								<li data-animation="fadeInLeft" data-delay="1.2s">
 									<a href="why-us.html" class="main-btn main-btn-4">Why Choose RevelTek</a>
@@ -76,7 +77,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <section class="about-section about-illustration-img section-gap">
 	<div class="container">
 		<div class="illustration-img">
-			<img fetchpriority="high" decoding="async" width="654" height="556" src="assets/img/illustration/01.avif" alt="Industry Solutions Illustration"> <!-- Alt text updated -->
+			<img loading="eager" fetchpriority="high" decoding="async" width="654" height="556" src="assets/img/illustration/01.avif" srcset="assets/img/illustration/01.avif 654w" sizes="(max-width: 768px) 100vw, 654px" alt="Industry Solutions Illustration"> <!-- Alt text updated -->
 		</div>
 		<div class="row no-gutters justify-content-lg-end justify-content-center">
 			<div class="col-lg-6 col-md-10">
@@ -118,7 +119,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="400ms">
 				<div class="service-box text-center">
 					<div class="icon">
-						<img loading="lazy" decoding="async" width="103" height="100" src="assets/img/icons/01.avif" alt="Health Icon"> <!-- Use relevant icon -->
+						<img loading="lazy" decoding="async" width="103" height="100" src="assets/img/icons/01.avif" srcset="assets/img/icons/01.avif 103w" sizes="(max-width: 768px) 100vw, 103px" alt="Health Icon"> <!-- Use relevant icon -->
 					</div>
 					<!-- Updated Content & Link -->
 					<h3><a href="health.html">Health</a></h3>
@@ -132,7 +133,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
 				<div class="service-box text-center">
 					<div class="icon">
-						<img loading="lazy" decoding="async" width="101" height="101" src="assets/img/icons/02.avif" alt="Fintech Icon"> <!-- Use relevant icon -->
+						<img loading="lazy" decoding="async" width="101" height="101" src="assets/img/icons/02.avif" srcset="assets/img/icons/02.avif 101w" sizes="(max-width: 768px) 100vw, 101px" alt="Fintech Icon"> <!-- Use relevant icon -->
 					</div>
 					<!-- Updated Content & Link -->
 					<h3><a href="fintech.html">Fintech</a></h3>
@@ -146,7 +147,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="800ms">
 				<div class="service-box text-center">
 					<div class="icon">
-						<img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/03.avif" alt="Retail Icon"> <!-- Use relevant icon -->
+						<img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/03.avif" srcset="assets/img/icons/03.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Retail Icon"> <!-- Use relevant icon -->
 					</div>
 					<!-- Updated Content & Link -->
 					<h3><a href="retail.html">Retail</a></h3>
@@ -160,7 +161,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="400ms"> <!-- Adjust delay as needed -->
 				<div class="service-box text-center">
 					<div class="icon">
-						<img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/04.avif" alt="Education Icon"> <!-- Use relevant icon -->
+						<img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/04.avif" srcset="assets/img/icons/04.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Education Icon"> <!-- Use relevant icon -->
 					</div>
 					<!-- Updated Content & Link -->
 					<h3><a href="education.html">Education</a></h3>
@@ -174,7 +175,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</div>
 	</div>
 	<div class="dots-line">
-		<img loading="lazy" decoding="async" width="494" height="756" src="assets/img/lines/07.avif" alt="Decorative Dots Line">
+		<img loading="lazy" decoding="async" width="494" height="756" src="assets/img/lines/07.avif" srcset="assets/img/lines/07.avif 494w" sizes="(max-width: 768px) 100vw, 494px" alt="Decorative Dots Line">
 	</div>
 </section>
 <!--====== Industries Served Section End ======-->
@@ -202,7 +203,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<div class="video-btn text-md-center wow fadeInUp" data-wow-duration="1500ms"
 					data-wow-delay="400ms">
 					<a href="https://www.youtube.com/watch?v=fEErySYqItI" class="play-btn popup-video" title="Watch RevelTek Solutions Overview">
-						<img src="assets/img/icons/play.svg" alt="Play Video Icon">
+						<img src="assets/img/icons/play.svg" alt="Play Video Icon" width="169" height="158" loading="lazy" decoding="async">
 						<i class="fas fa-play"></i>
 					</a>
 				</div>
@@ -210,7 +211,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</div>
 	</div>
 	<div class="line-shape">
-		<img loading="lazy" decoding="async" width="1263" height="597" src="assets/img/lines/08.avif" alt="Decorative Line Shape">
+		<img loading="lazy" decoding="async" width="1263" height="597" src="assets/img/lines/08.avif" srcset="assets/img/lines/08.avif 1263w" sizes="(max-width: 768px) 100vw, 1263px" alt="Decorative Line Shape">
 	</div>
 </section>
 <!--====== Video end ======-->
@@ -315,7 +316,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<div class="col-lg-6">
 					<div class="wcu-image text-center text-lg-left wow fadeInUp" data-wow-duration="1500ms"
 						data-wow-delay="400ms">
-						<img loading="lazy" decoding="async" width="395" height="430" src="assets/img/illustration/02.avif" alt="Why Choose RevelTek Industry Expertise">
+						<img loading="lazy" decoding="async" width="395" height="430" src="assets/img/illustration/02.avif" srcset="assets/img/illustration/02.avif 395w" sizes="(max-width: 768px) 100vw, 395px" alt="Why Choose RevelTek Industry Expertise">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-10">
@@ -344,8 +345,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					</div>
 				</div>
 			</div>
-			<img loading="lazy" decoding="async" width="843" height="747" src="assets/img/lines/03.avif" alt="Decorative Line Shape" class="line-shape-one">
-			<img loading="lazy" decoding="async" width="163" height="204" src="assets/img/lines/04.avif" alt="Decorative Line Shape" class="line-shape-two">
+			<img loading="lazy" decoding="async" width="843" height="747" src="assets/img/lines/03.avif" srcset="assets/img/lines/03.avif 843w" sizes="(max-width: 768px) 100vw, 843px" alt="Decorative Line Shape" class="line-shape-one">
+			<img loading="lazy" decoding="async" width="163" height="204" src="assets/img/lines/04.avif" srcset="assets/img/lines/04.avif 163w" sizes="(max-width: 768px) 100vw, 163px" alt="Decorative Line Shape" class="line-shape-two">
 		</div>
 	</div>
 </section>
@@ -412,22 +413,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<!-- Keep generic or diverse testimonials -->
 					<div class="testimonial-item">
 						<div class="content"><p><span class="quote-top"><i class="fas fa-quote-left"></i></span>Working with RevelTek transformed our approach to technology. Their strategic insights and expert execution were game changers for our growth.<span class="quote-bottom"><i class="fas fa-quote-right"></i></span></p></div>
-						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author.avif" alt="Client Avatar"></div><div class="desc"><h4>Jane D. Client</h4><span>CEO, Example Company</span></div></div>
+						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author-3.avif" srcset="assets/img/testimonial/author-3.avif 60w" sizes="(max-width: 768px) 100vw, 60px" alt="Portrait of Jane D. Client"></div><div class="desc"><h4>Jane D. Client</h4><span>CEO, Example Company</span></div></div>
 					</div>
 					<div class="testimonial-item">
 						<div class="content"><p><span class="quote-top"><i class="fas fa-quote-left"></i></span>The AI solution RevelTek developed significantly improved our efficiency. Their team understood our complex needs and delivered a robust system.<span class="quote-bottom"><i class="fas fa-quote-right"></i></span></p></div>
-						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author.avif" alt="Client Avatar"></div><div class="desc"><h4>Mark S. Partner</h4><span>CTO, Another Corp</span></div></div>
+						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author-4.avif" srcset="assets/img/testimonial/author-4.avif 60w" sizes="(max-width: 768px) 100vw, 60px" alt="Portrait of Mark S. Partner"></div><div class="desc"><h4>Mark S. Partner</h4><span>CTO, Another Corp</span></div></div>
 					</div>
 					<div class="testimonial-item">
 						<div class="content"><p><span class="quote-top"><i class="fas fa-quote-left"></i></span>RevelTek's cloud migration expertise was invaluable. They planned and executed flawlessly, ensuring our infrastructure is now scalable and secure.<span class="quote-bottom"><i class="fas fa-quote-right"></i></span></p></div>
-						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author.avif" alt="Client Avatar"></div><div class="desc"><h4>Sarah B. Executive</h4><span>VP Tech, Sample Biz</span></div></div>
+						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author-7.avif" srcset="assets/img/testimonial/author-7.avif 60w" sizes="(max-width: 768px) 100vw, 60px" alt="Portrait of Sarah B. Executive"></div><div class="desc"><h4>Sarah B. Executive</h4><span>VP Tech, Sample Biz</span></div></div>
 					</div>
 				</div>
 				<div class="testimonial-arrows row"></div>
 			</div>
 		</div>
 	</div>
-	<div class="testimonial-img"> <img loading="lazy" decoding="async" width="738" height="781" src="assets/img/testimonial/testimonial.avif" alt="Testimonial background"> </div>
+	<div class="testimonial-img"> <img loading="lazy" decoding="async" width="738" height="781" src="assets/img/testimonial/testimonial.avif" srcset="assets/img/testimonial/testimonial.avif 738w" sizes="(max-width: 768px) 100vw, 738px" alt="Testimonial background"> </div>
 </section>
 <!--====== Testimonials part end ======-->
 
@@ -437,16 +438,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		<div class="client-slider section-gap line-bottom">
 			<div class="row align-items-center justify-content-between" id="clientSlider">
 				<!-- Client logos - keep placeholders -->
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9"></a></div>
-				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client Logo 1"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client Logo 2"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client Logo 3"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client Logo 4"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client Logo 5"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client Logo 6"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client Logo 7"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client Logo 8"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client Logo 9"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client Logo 10"></a></div>
 			</div>
 		</div>
 	</div>

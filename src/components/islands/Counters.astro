@@ -1,0 +1,66 @@
+---
+// Counters — zero-dependency vanilla island replacing main.js `counterToUp`
+// (jQuery + jquery.inview + per-frame .animate). Starts only when a fact box
+// scrolls into view (IntersectionObserver ≈ client:visible), so below-fold
+// counters cost nothing until seen.
+//
+// Static fallback: final numbers are already in the markup
+// (e.g. `<h2 class="counter">500</h2>`), so no-JS renders the true values.
+// Honors prefers-reduced-motion. Idempotent across View Transitions via
+// `astro:page-load` + per-box `data-counted`. Legacy main.js skips its
+// counter pass when this marker is present.
+---
+<span data-island="counters" hidden aria-hidden="true"></span>
+
+<script>
+  const DURATION_MS = 2000;
+
+  function animateCounter(el: HTMLElement, target: number): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = String(Math.ceil(target));
+      return;
+    }
+    const start = performance.now();
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / DURATION_MS, 1);
+      // Ease-out (legacy used jQuery 'swing', also ease-out).
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = String(Math.ceil(target * eased));
+      if (progress < 1) {
+        window.requestAnimationFrame(tick);
+      } else {
+        el.textContent = String(Math.ceil(target));
+      }
+    };
+    window.requestAnimationFrame(tick);
+  }
+
+  function initCounters(): void {
+    const boxes = document.querySelectorAll('.fact-box:not([data-counted])');
+    if (boxes.length === 0) return;
+    if (!('IntersectionObserver' in window)) {
+      boxes.forEach((box) => box.setAttribute('data-counted', '1'));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const box = entry.target;
+          observer.unobserve(box);
+          box.setAttribute('data-counted', '1');
+          box.querySelectorAll('.counter').forEach((node) => {
+            if (!(node instanceof HTMLElement)) return;
+            const target = parseFloat((node.textContent ?? '').trim());
+            if (Number.isFinite(target)) animateCounter(node, target);
+          });
+        });
+      },
+      { threshold: 0.3 },
+    );
+    boxes.forEach((box) => observer.observe(box));
+  }
+
+  document.addEventListener('astro:page-load', initCounters);
+  initCounters();
+</script>

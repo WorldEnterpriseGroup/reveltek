@@ -1,0 +1,26 @@
+# RevelTek HTTP response headers — FUTURE CDN CONFIGURATION, NOT ENFORCED TODAY.
+#
+# GitHub Pages (current host) cannot send custom response headers, so this
+# file is INERT in production right now. It is written in Netlify `_headers`
+# syntax so that a future move to Netlify / Cloudflare Pages / Cloudflare
+# Workers in front of the origin enforces the documented policy with zero
+# re-authoring. See .astro-magazine/adoption/security-headers.md for the full
+# story, including why NO <meta> Content-Security-Policy is shipped (it would
+# break the site's inline deferred CSS handlers and inline style attributes).
+#
+# Recommended policy (mirrors the doc; keep both in sync):
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; frame-src https://www.google.com https://www.youtube.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+# Long-lived immutable caching for versioned static assets (fingerprinted or
+# content-stable theme files). HTML stays fresh — navigations must never be
+# served stale, matching the service worker's network-first page strategy.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

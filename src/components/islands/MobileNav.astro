@@ -1,0 +1,207 @@
+---
+// MobileNav — zero-dependency vanilla island replacing main.js `mianMenu`,
+// `offcanvasMenu`, `stickyHeader` and `gtToTop` (mobile hamburger, mega-panel
+// dropdown triggers, off-canvas panel, sticky header, back-to-top).
+//
+// Static fallback: full nav markup is server-rendered; desktop submenus are
+// pure CSS :hover (style.css ~l.843), so no-JS keeps desktop nav + footer links.
+// The island only adds small-viewport behaviour. Re-runs on every View
+// Transition via `astro:page-load`; per-element `data-wired` flags keep it
+// idempotent. Legacy main.js skips these widgets when this marker is present.
+---
+<span data-island="mobile-nav" hidden aria-hidden="true"></span>
+
+<script>
+  function slideToggle(el: HTMLElement, duration = 350): void {
+    const computed = window.getComputedStyle(el);
+    const isHidden = computed.display === 'none';
+    el.style.overflow = 'hidden';
+    if (isHidden) {
+      el.style.display = 'block';
+      const height = el.scrollHeight;
+      el.style.height = '0px';
+      // Force reflow so the transition runs.
+      void el.offsetHeight;
+      el.style.transition = `height ${duration}ms ease`;
+      el.style.height = `${height}px`;
+      window.setTimeout(() => {
+        el.style.removeProperty('height');
+        el.style.removeProperty('overflow');
+        el.style.removeProperty('transition');
+      }, duration);
+    } else {
+      const height = el.scrollHeight;
+      el.style.height = `${height}px`;
+      void el.offsetHeight;
+      el.style.transition = `height ${duration}ms ease`;
+      el.style.height = '0px';
+      window.setTimeout(() => {
+        el.style.display = 'none';
+        el.style.removeProperty('height');
+        el.style.removeProperty('overflow');
+        el.style.removeProperty('transition');
+      }, duration);
+    }
+  }
+
+  function wireNav(root: ParentNode): void {
+    const containers = root.querySelectorAll('.nav-container');
+    containers.forEach((container) => {
+      if (!(container instanceof HTMLElement) || container.dataset.wired === '1') return;
+      container.dataset.wired = '1';
+
+      const navMenu = container.querySelector('.nav-menu');
+      const toggler = container.querySelector('.navbar-toggler');
+      const closeIcon = container.querySelector('.navbar-close');
+      const pushedWrap = container.querySelector<HTMLElement>('.nav-pushed-item');
+      const pushItem = container.querySelector<HTMLElement>('.nav-push-item');
+      const pushedHtml = pushItem ? pushItem.innerHTML : '';
+
+      toggler?.addEventListener('click', () => {
+        toggler.classList.toggle('active');
+        navMenu?.classList.toggle('menu-on');
+      });
+      closeIcon?.addEventListener('click', () => {
+        navMenu?.classList.remove('menu-on');
+        toggler?.classList.remove('active');
+      });
+      // Escape closes the mobile menu (a11y; no visual change otherwise).
+      // Registered once per window: astro:page-load re-runs this module's
+      // init after every View Transition, but document persists across swaps.
+      const w = window as unknown as { __revelNavKeys?: boolean };
+      if (!w.__revelNavKeys) {
+        w.__revelNavKeys = true;
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            document.querySelectorAll('.nav-menu.menu-on').forEach((m) => m.classList.remove('menu-on'));
+            document.querySelectorAll('.navbar-toggler.active').forEach((t) => t.classList.remove('active'));
+          }
+        });
+      }
+
+      // Add dropdown triggers to items with children (parity with legacy,
+      // which appends to every `li a` that has a next sibling).
+      if (navMenu instanceof HTMLElement && !navMenu.dataset.triggersAdded) {
+        navMenu.dataset.triggersAdded = '1';
+        navMenu.querySelectorAll('li a').forEach((link) => {
+          if (link.nextElementSibling) {
+            const li = link.parentElement;
+            if (li && !li.querySelector(':scope > .dd-trigger')) {
+              const trigger = document.createElement('span');
+              trigger.className = 'dd-trigger';
+              trigger.innerHTML = '<i class="fal fa-angle-down"></i>';
+              li.appendChild(trigger);
+            }
+          }
+        });
+      }
+
+      navMenu?.querySelectorAll('.dd-trigger').forEach((trigger) => {
+        if (!(trigger instanceof HTMLElement) || trigger.dataset.wired === '1') return;
+        trigger.dataset.wired = '1';
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          const li = trigger.parentElement;
+          const submenu = li?.querySelector(':scope > ul');
+          if (submenu instanceof HTMLElement) slideToggle(submenu, 350);
+          li?.classList.toggle('active');
+        });
+      });
+
+      const breakpointCheck = () => {
+        const width = window.innerWidth;
+        container.classList.toggle('breakpoint-on', width <= 991);
+        if (pushedWrap && pushItem) {
+          if (width <= 767) {
+            if (!pushedWrap.dataset.filled) {
+              pushedWrap.innerHTML = pushedHtml;
+              pushedWrap.dataset.filled = '1';
+            }
+            pushItem.style.display = 'none';
+          } else {
+            pushedWrap.innerHTML = '';
+            delete pushedWrap.dataset.filled;
+            pushItem.style.removeProperty('display');
+          }
+        }
+      };
+      breakpointCheck();
+      window.addEventListener('resize', breakpointCheck, { passive: true });
+    });
+  }
+
+  function wireOffcanvas(root: ParentNode): void {
+    root.querySelectorAll('.offcanvas-toggler').forEach((open) => {
+      if (!(open instanceof HTMLElement) || open.dataset.wired === '1') return;
+      open.dataset.wired = '1';
+      open.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('.offcanvas-wrapper')?.classList.add('show-offcanvas');
+        document.querySelector('.offcanvas-overly')?.classList.add('show-overly');
+      });
+    });
+    root.querySelectorAll('.offcanvas-close, .offcanvas-overly').forEach((close) => {
+      if (!(close instanceof HTMLElement) || close.dataset.wired === '1') return;
+      close.dataset.wired = '1';
+      close.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('.offcanvas-overly')?.classList.remove('show-overly');
+        document.querySelector('.offcanvas-wrapper')?.classList.remove('show-offcanvas');
+      });
+    });
+  }
+
+  function wireStickyAndTop(root: ParentNode): void {
+    const sticky = document.querySelector('header.sticky-header');
+    if (sticky && !sticky.hasAttribute('data-wired')) {
+      sticky.setAttribute('data-wired', '1');
+      const onScroll = () => {
+        const header = document.querySelector('header');
+        const limit = (header?.offsetHeight ?? 0) + 10;
+        sticky.classList.toggle('sticky-on', window.scrollY >= limit);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+    root.querySelectorAll('.back-to-top').forEach((btn) => {
+      if (!(btn instanceof HTMLElement) || btn.dataset.wired === '1') return;
+      btn.dataset.wired = '1';
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  function initMobileNav(): void {
+    wireNav(document);
+    wireOffcanvas(document);
+    wireStickyAndTop(document);
+  }
+
+  // After a View Transition swap, legacy deferred bundles do NOT re-execute
+  // (the router dedupes them by src), so re-run their idempotent widget pass
+  // against the fresh DOM. Skipped on the very first page-load, where legacy
+  // document.ready already ran.
+  let navFirstLoad = true;
+  function reinitLegacyWidgets(): void {
+    const w = window as unknown as { RevelWidgets?: { init?: () => void } };
+    if (w.RevelWidgets && typeof w.RevelWidgets.init === 'function') {
+      try {
+        w.RevelWidgets.init();
+      } catch (err) {
+        console.warn('[islands] legacy widget re-init failed', err);
+      }
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    initMobileNav();
+    if (navFirstLoad) {
+      navFirstLoad = false;
+      return;
+    }
+    reinitLegacyWidgets();
+  });
+  initMobileNav();
+</script>

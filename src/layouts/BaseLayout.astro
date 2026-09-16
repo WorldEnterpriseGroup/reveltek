@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Preloader from '../components/chrome/Preloader.astro';
 import Header from '../components/chrome/Header.astro';
 import HeaderAlt from '../components/chrome/HeaderAlt.astro';
@@ -17,6 +18,9 @@ import FooterConsulting from '../components/chrome/FooterConsulting.astro';
 import FooterSoftware from '../components/chrome/FooterSoftware.astro';
 import FooterTwo from '../components/chrome/FooterTwo.astro';
 import FooterGrey from '../components/chrome/FooterGrey.astro';
+import MobileNav from '../components/islands/MobileNav.astro';
+import Counters from '../components/islands/Counters.astro';
+import ClientSlider from '../components/islands/ClientSlider.astro';
 
 type HeaderKind = 'main' | 'alt' | 'overview' | 'contact' | 'inner' | 'two' | 'three';
 type FooterKind =
@@ -66,6 +70,12 @@ interface Props {
   footer?: FooterKind;
   /** Absolute OG image URL. */
   ogImage?: string;
+  /** Set true to emit a noindex/nofollow robots meta (e.g. 404 page). */
+  noindex?: boolean;
+  /** Short name for the auto BreadcrumbList trail (defaults to the page title). */
+  breadcrumbName?: string;
+  /** Extra JSON-LD entity graphs for this page (org + breadcrumbs always emit). */
+  jsonLd?: Record<string, unknown>[];
   /** AVIF hero/LCP image to preload (relative to site root). */
   heroPreload?: string;
   /** Extra raw head markup captured from the legacy page (first-party only). */
@@ -78,7 +88,10 @@ const {
   canonicalPath,
   header = 'main',
   footer = 'main',
-  ogImage = 'https://reveltek.com/assets/img/banner/01.avif',
+  ogImage = 'https://reveltek.com/assets/img/svg/reveltek.svg',
+  noindex = false,
+  breadcrumbName,
+  jsonLd = [],
   heroPreload,
   extraHead = '',
 } = Astro.props;
@@ -91,7 +104,7 @@ const orgSchema = {
   '@type': 'ProfessionalService',
   name: 'RevelTek Inc.',
   url: 'https://reveltek.com',
-  logo: 'https://reveltek.com/assets/img/svg/revel.svg',
+  logo: 'https://reveltek.com/assets/img/svg/reveltek.svg',
   description:
     'RevelTek Inc. is a US-based technical consulting firm delivering SaaS solutions, strategic IT consulting, AI, cloud, and product development management.',
   address: {
@@ -102,6 +115,37 @@ const orgSchema = {
 };
 
 const canonical = `https://reveltek.com${canonicalPath}`;
+
+// Breadcrumb trail: Home + this page (names come from the page's own props,
+// so no claims are invented). The front page itself is Home — no trail needed.
+const isHome = canonicalPath === '/index.html';
+const brandStripped = title
+  .replace(/\s*[—–-]\s*RevelTek.*$/, '')
+  .replace(/^RevelTek\s*\|\s*/, '')
+  .trim();
+const trailName = (breadcrumbName ?? brandStripped) || title;
+const breadcrumbSchema =
+  isHome
+    ? null
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://reveltek.com/index.html',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: trailName,
+            item: canonical,
+          },
+        ],
+      };
+const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd];
 ---
 
 <!DOCTYPE html>
@@ -112,6 +156,7 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>{title}</title>
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
@@ -119,9 +164,26 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#14212b" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {extraSchemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+  <!--====== Feeds: site-wide + per-collection RSS (see src/data/feed-items.ts) ======-->
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Insights (Blog, Events & Guides)" href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Blog & Insights" href="/blog-feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Events & Webinars" href="/events-feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Guides & Reports" href="/guides-feed.xml" />
+  <!--====== PWA: installable shell, no visual change ======-->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <!--====== Favicon Icon ======-->
   <link rel="icon" href="/assets/img/svg/swirl_white.svg" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32.png" />
   <!--====== Fonts: preconnect + swap (same families as theme CSS @import) ======-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -151,6 +213,13 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <script type="speculationrules">
     {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
   </script>
+  <!-- View Transitions: SPA-feel client navigation for the 47-page content
+       site. Fallback-safe (fallback="animate"; same-origin GET only, forms
+       degrade to full loads, reduced-motion respected). The router ships one
+       inline module script (deferred by definition — never render-blocking)
+       and dedupes external scripts by src across swaps, so legacy deferred
+       bundles never double-initialize. -->
+  <ClientRouter fallback="animate" />
   <Fragment set:html={extraHead} />
 </head>
 
@@ -158,11 +227,41 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <a href="#main" class="skip-link">Skip to content</a>
   <Preloader />
   <HeaderTag />
-  <main id="main">
+  <main id="main" transition:animate="fade">
     <slot />
   </main>
   <FooterTag />
+  <!-- Zero-dependency vanilla islands: run without jQuery/slick, start work
+       only when needed (IntersectionObserver-gated), re-wire on every View
+       Transition via astro:page-load. Static fallbacks are plain markup:
+       server-rendered nav (desktop submenus are CSS :hover), final counter
+       numbers, and the unwrapped logo grid. -->
+  <MobileNav />
+  <Counters />
+  <ClientSlider />
   <!--====== Deferred scripts: execution order preserved, parser never blocked ======-->
+  <!-- Legacy inventory (all defer; zero render-blocking):
+       REPLACED by islands above (kept loaded, but their passes early-return
+       via [data-island] markers in main.js): mobile nav/offcanvas/sticky/
+       back-to-top (MobileNav island), fact counters (Counters island),
+       #clientSlider logo carousel (ClientSlider island).
+       DROPPED: jquery.countTo.js — loaded but never invoked anywhere
+       (counterToUp uses jQuery .animate directly).
+       KEPT deferred — no regression-free vanilla replacement yet:
+       - modernizr / jquery-3.6.0: required by every plugin below
+       - bootstrap + popper: accordion/collapse + dropdown positioning
+       - slick: banner/team/testimonial/latest-post/product sliders
+         (cloned infinite slides, dots/arrows, data-thumb paging)
+       - isotope: portfolio + fact masonry filtering (2 pages)
+       - magnific-popup: video + image lightboxes (19 pages)
+       - inview/easypiechart: scroll pie charts + skill progress bars
+       - jquery-ui: shop price-range slider (1 page)
+       - wow: scroll-reveal animations (17 pages)
+       - main.js: remaining widget initializations (idempotent; re-invoked
+         on every View Transition via window.RevelWidgets.init from the
+         MobileNav island; preloader uses transition:persist instead)
+       NOTE: rtl-main.js ships in assets/js but is not referenced (RTL pages
+       are excluded from this build); kept for the standalone RTL copies. -->
   <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
   <script defer src="assets/js/vendor/jquery-3.6.0.min.js"></script>
   <script defer src="assets/js/bootstrap.min.js"></script>
@@ -171,11 +270,12 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <script defer src="assets/js/isotope.pkgd.min.js"></script>
   <script defer src="assets/js/jquery.magnific-popup.min.js"></script>
   <script defer src="assets/js/jquery.inview.min.js"></script>
-  <script defer src="assets/js/jquery.countTo.js"></script>
   <script defer src="assets/js/jquery.easypiechart.min.js"></script>
   <script defer src="assets/js/jquery-ui.min.js"></script>
   <script defer src="assets/js/wow.min.js"></script>
   <script defer src="assets/js/main.js"></script>
+  <!--====== PWA: offline support registration (progressive enhancement) ======-->
+  <script defer src="assets/js/sw-register.js"></script>
 </body>
 </html>
 
