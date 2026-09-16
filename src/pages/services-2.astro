@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   canonicalPath="/services-2.html"
   header="inner"
   footer="inner"
->
+  heroPreload="/assets/img/breadcrumb.avif">
 <!--====== Breadcrumb part Start ======-->
     <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">
@@ -41,7 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="col-lg-3 col-sm-6 col-10 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
                     <div class="service-box-three">
                         <div class="icon">
-                            <img fetchpriority="high" decoding="async" width="103" height="100" src="assets/img/icons/01.avif" alt="Icon">
+                            <img loading="eager" fetchpriority="high" decoding="async" width="103" height="100" src="assets/img/icons/01.avif" srcset="assets/img/icons/01.avif 103w" sizes="(max-width: 768px) 100vw, 103px" alt="Icon">
                         </div>
                         <h3>Creative Idea</h3>
                         <p>Sed perspicia unde omnis</p>
@@ -53,7 +53,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="col-lg-3 col-sm-6 col-10 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
                     <div class="service-box-three">
                         <div class="icon">
-                            <img loading="lazy" decoding="async" width="101" height="101" src="assets/img/icons/02.avif" alt="Icon">
+                            <img loading="lazy" decoding="async" width="101" height="101" src="assets/img/icons/02.avif" srcset="assets/img/icons/02.avif 101w" sizes="(max-width: 768px) 100vw, 101px" alt="Icon">
                         </div>
                         <h3>Business Strategy</h3>
                         <p>Provide future visibility</p>
@@ -65,7 +65,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="col-lg-3 col-sm-6 col-10 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
                     <div class="service-box-three">
                         <div class="icon">
-                            <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/03.avif" alt="Icon">
+                            <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/03.avif" srcset="assets/img/icons/03.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Icon">
                         </div>
                         <h3>Relationship</h3>
                         <p>Sed perspicia unde omnis</p>
@@ -77,7 +77,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="col-lg-3 col-sm-6 col-10 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="700ms">
                     <div class="service-box-three">
                         <div class="icon">
-                            <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/04.avif" alt="Icon">
+                            <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/04.avif" srcset="assets/img/icons/04.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Icon">
                         </div>
                         <h3>Productivity</h3>
                         <p>Quis autem velrepres hend</p>
@@ -265,52 +265,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="row align-items-center justify-content-between" id="clientSlider">
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="">
                         </a>
                     </div>
                 </div>

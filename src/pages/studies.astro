@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   canonicalPath="/studies.html"
   header="alt"
   footer="insights"
->
+  heroPreload="/assets/img/breadcrumb.avif">
 <!--====== Breadcrumb part Start ======-->
     <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">
@@ -41,7 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-12">
                             <div class="single-post-box">
                                 <div class="post-thumb">
-                                    <img fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" alt="Fintech Security Study"> <!-- Update Image & Alt -->
+                                    <img loading="eager" fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" srcset="assets/img/blog/01.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Fintech Security Study"> <!-- Update Image & Alt -->
                                 </div>
                                 <div class="post-meta">
                                     <ul>
@@ -69,7 +69,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-12">
                             <div class="single-post-box">
                                 <div class="post-thumb">
-                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" alt="Healthcare Cloud Migration"> <!-- Update Image & Alt -->
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" srcset="assets/img/blog/02.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Healthcare Cloud Migration"> <!-- Update Image & Alt -->
                                 </div>
                                 <div class="post-meta">
                                     <ul>
@@ -97,7 +97,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="col-12">
                             <div class="single-post-box">
                                 <div class="post-thumb">
-                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" alt="Retail eCommerce Platform"> <!-- Update Image & Alt -->
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" srcset="assets/img/blog/03.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Retail eCommerce Platform"> <!-- Update Image & Alt -->
                                 </div>
                                 <div class="post-meta">
                                     <ul>
@@ -171,21 +171,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <h4 class="widget-title">Featured Studies</h4>
                             <div class="post-loops">
                                 <div class="single-post">
-                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" alt="Featured Study 1"></div>
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" srcset="assets/img/sidebar/recent-01.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Featured Study 1"></div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-building"></i>{' '}Fintech</span>
                                         <a href="study-details-1.html">AI Powered Fraud Detection</a> <!-- Shortened Title -->
                                     </div>
                                 </div>
                                 <div class="single-post">
-                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-02.avif" alt="Featured Study 2"></div>
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-02.avif" srcset="assets/img/sidebar/recent-02.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Featured Study 2"></div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-building"></i>{' '}Health</span>
                                         <a href="study-details-2.html">Secure Cloud Migration</a>
                                     </div>
                                 </div>
                                 <div class="single-post">
-                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" alt="Featured Study 3"></div>
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" srcset="assets/img/sidebar/recent-03.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Featured Study 3"></div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-building"></i>{' '}Retail</span>
                                         <a href="study-details-3.html">eCommerce Platform Build</a>
@@ -226,16 +226,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="client-slider section-gap"> <!-- Removed line-top -->
                 <div class="row align-items-center justify-content-between" id="clientSlider">
                     <!-- Client logos - Keep placeholders -->
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9"></a></div>
-                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client Logo 1"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client Logo 2"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client Logo 3"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client Logo 4"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client Logo 5"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client Logo 6"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client Logo 7"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client Logo 8"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client Logo 9"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client Logo 10"></a></div>
                 </div>
             </div>
         </div>
