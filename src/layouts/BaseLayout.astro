@@ -123,9 +123,20 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#14212b" />
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  <!--====== Feeds: site-wide + per-collection RSS (see src/data/feed-items.ts) ======-->
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Insights (Blog, Events & Guides)" href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Blog & Insights" href="/blog-feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Events & Webinars" href="/events-feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RevelTek — Guides & Reports" href="/guides-feed.xml" />
+  <!--====== PWA: installable shell, no visual change ======-->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <!--====== Favicon Icon ======-->
   <link rel="icon" href="/assets/img/svg/swirl_white.svg" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32.png" />
   <!--====== Fonts: preconnect + swap (same families as theme CSS @import) ======-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -180,6 +191,8 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <script defer src="assets/js/jquery-ui.min.js"></script>
   <script defer src="assets/js/wow.min.js"></script>
   <script defer src="assets/js/main.js"></script>
+  <!--====== PWA: offline support registration (progressive enhancement) ======-->
+  <script defer src="assets/js/sw-register.js"></script>
 </body>
 </html>
 
