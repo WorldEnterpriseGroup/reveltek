@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Preloader from '../components/chrome/Preloader.astro';
 import Header from '../components/chrome/Header.astro';
 import HeaderAlt from '../components/chrome/HeaderAlt.astro';
@@ -17,6 +18,9 @@ import FooterConsulting from '../components/chrome/FooterConsulting.astro';
 import FooterSoftware from '../components/chrome/FooterSoftware.astro';
 import FooterTwo from '../components/chrome/FooterTwo.astro';
 import FooterGrey from '../components/chrome/FooterGrey.astro';
+import MobileNav from '../components/islands/MobileNav.astro';
+import Counters from '../components/islands/Counters.astro';
+import ClientSlider from '../components/islands/ClientSlider.astro';
 
 type HeaderKind = 'main' | 'alt' | 'overview' | 'contact' | 'inner' | 'two' | 'three';
 type FooterKind =
@@ -151,6 +155,13 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <script type="speculationrules">
     {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
   </script>
+  <!-- View Transitions: SPA-feel client navigation for the 47-page content
+       site. Fallback-safe (fallback="animate"; same-origin GET only, forms
+       degrade to full loads, reduced-motion respected). The router ships one
+       inline module script (deferred by definition — never render-blocking)
+       and dedupes external scripts by src across swaps, so legacy deferred
+       bundles never double-initialize. -->
+  <ClientRouter fallback="animate" />
   <Fragment set:html={extraHead} />
 </head>
 
@@ -158,11 +169,41 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <a href="#main" class="skip-link">Skip to content</a>
   <Preloader />
   <HeaderTag />
-  <main id="main">
+  <main id="main" transition:animate="fade">
     <slot />
   </main>
   <FooterTag />
+  <!-- Zero-dependency vanilla islands: run without jQuery/slick, start work
+       only when needed (IntersectionObserver-gated), re-wire on every View
+       Transition via astro:page-load. Static fallbacks are plain markup:
+       server-rendered nav (desktop submenus are CSS :hover), final counter
+       numbers, and the unwrapped logo grid. -->
+  <MobileNav />
+  <Counters />
+  <ClientSlider />
   <!--====== Deferred scripts: execution order preserved, parser never blocked ======-->
+  <!-- Legacy inventory (all defer; zero render-blocking):
+       REPLACED by islands above (kept loaded, but their passes early-return
+       via [data-island] markers in main.js): mobile nav/offcanvas/sticky/
+       back-to-top (MobileNav island), fact counters (Counters island),
+       #clientSlider logo carousel (ClientSlider island).
+       DROPPED: jquery.countTo.js — loaded but never invoked anywhere
+       (counterToUp uses jQuery .animate directly).
+       KEPT deferred — no regression-free vanilla replacement yet:
+       - modernizr / jquery-3.6.0: required by every plugin below
+       - bootstrap + popper: accordion/collapse + dropdown positioning
+       - slick: banner/team/testimonial/latest-post/product sliders
+         (cloned infinite slides, dots/arrows, data-thumb paging)
+       - isotope: portfolio + fact masonry filtering (2 pages)
+       - magnific-popup: video + image lightboxes (19 pages)
+       - inview/easypiechart: scroll pie charts + skill progress bars
+       - jquery-ui: shop price-range slider (1 page)
+       - wow: scroll-reveal animations (17 pages)
+       - main.js: remaining widget initializations (idempotent; re-invoked
+         on every View Transition via window.RevelWidgets.init from the
+         MobileNav island; preloader uses transition:persist instead)
+       NOTE: rtl-main.js ships in assets/js but is not referenced (RTL pages
+       are excluded from this build); kept for the standalone RTL copies. -->
   <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
   <script defer src="assets/js/vendor/jquery-3.6.0.min.js"></script>
   <script defer src="assets/js/bootstrap.min.js"></script>
@@ -171,7 +212,6 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <script defer src="assets/js/isotope.pkgd.min.js"></script>
   <script defer src="assets/js/jquery.magnific-popup.min.js"></script>
   <script defer src="assets/js/jquery.inview.min.js"></script>
-  <script defer src="assets/js/jquery.countTo.js"></script>
   <script defer src="assets/js/jquery.easypiechart.min.js"></script>
   <script defer src="assets/js/jquery-ui.min.js"></script>
   <script defer src="assets/js/wow.min.js"></script>
