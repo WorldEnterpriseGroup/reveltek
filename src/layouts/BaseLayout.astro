@@ -66,6 +66,10 @@ interface Props {
   footer?: FooterKind;
   /** Absolute OG image URL. */
   ogImage?: string;
+  /** Short name for the auto BreadcrumbList trail (defaults to the page title). */
+  breadcrumbName?: string;
+  /** Extra JSON-LD entity graphs for this page (org + breadcrumbs always emit). */
+  jsonLd?: Record<string, unknown>[];
   /** AVIF hero/LCP image to preload (relative to site root). */
   heroPreload?: string;
   /** Extra raw head markup captured from the legacy page (first-party only). */
@@ -79,6 +83,8 @@ const {
   header = 'main',
   footer = 'main',
   ogImage = 'https://reveltek.com/assets/img/banner/01.avif',
+  breadcrumbName,
+  jsonLd = [],
   heroPreload,
   extraHead = '',
 } = Astro.props;
@@ -102,6 +108,37 @@ const orgSchema = {
 };
 
 const canonical = `https://reveltek.com${canonicalPath}`;
+
+// Breadcrumb trail: Home + this page (names come from the page's own props,
+// so no claims are invented). The front page itself is Home — no trail needed.
+const isHome = canonicalPath === '/index.html';
+const brandStripped = title
+  .replace(/\s*[—–-]\s*RevelTek.*$/, '')
+  .replace(/^RevelTek\s*\|\s*/, '')
+  .trim();
+const trailName = (breadcrumbName ?? brandStripped) || title;
+const breadcrumbSchema =
+  isHome
+    ? null
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://reveltek.com/index.html',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: trailName,
+            item: canonical,
+          },
+        ],
+      };
+const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd];
 ---
 
 <!DOCTYPE html>
@@ -119,7 +156,13 @@ const canonical = `https://reveltek.com${canonicalPath}`;
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {extraSchemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
   <!--====== Favicon Icon ======-->
   <link rel="icon" href="/assets/img/svg/swirl_white.svg" sizes="any" />
   <!--====== Fonts: preconnect + swap (same families as theme CSS @import) ======-->
