@@ -1,14 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { blogListingSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="RevelTek | Blog & Insights"
   description="Read the latest insights from RevelTek on SaaS, AI, Cloud, IT Strategy, and technology trends."
   canonicalPath="/blog.html"
+  ogImage="https://reveltek.com/assets/img/blog/01.avif"
   header="alt"
   footer="insights"
-  heroPreload="/assets/img/breadcrumb.avif">
+heroPreload="/assets/img/breadcrumb.avif"
+jsonLd={[blogListingSchema()]}
+>
 <!--====== Breadcrumb part Start ======-->
     <div class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">

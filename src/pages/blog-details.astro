@@ -1,14 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { blogDetailsSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="RevelTek | Blog Details"
   description="RevelTek | Blog Details"
   canonicalPath="/blog-details.html"
+  ogImage="https://reveltek.com/assets/img/blog/12.avif"
   header="inner"
   footer="blog"
-  heroPreload="/assets/img/breadcrumb.avif">
+heroPreload="/assets/img/breadcrumb.avif"
+jsonLd={[blogDetailsSchema()]}
+>
 <!--====== Breadcrumb part Start ======-->
     <div class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">
@@ -36,7 +40,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <!-- Blog Details -->
                     <div class="post-details-wrap">
                         <div class="post-thumb">
-                            <img loading="eager" fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/12.avif" srcset="assets/img/blog/12.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Image">
+                            <img loading="eager" fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/12.avif" srcset="assets/img/blog/12.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Blog post cover image">
                         </div>
                         <div class="post-meta">
                             <ul>
@@ -103,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <!-- Post Author -->
                     <div class="post-author-info">
                         <div class="author-img">
-                            <img loading="lazy" decoding="async" width="230" height="213" src="assets/img/details/post-author.avif" srcset="assets/img/details/post-author.avif 230w" sizes="(max-width: 768px) 100vw, 230px" alt="Image">
+                            <img loading="lazy" decoding="async" width="230" height="213" src="assets/img/details/post-author.avif" srcset="assets/img/details/post-author.avif 230w" sizes="(max-width: 768px) 100vw, 230px" alt="Author Nathan George">
                         </div>
                         <div class="author-desc">
                             <h4>Nathan George</h4>
@@ -125,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="post-nav row">
                         <div class="prev-post col-md-6">
                             <div class="img">
-                                <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" srcset="assets/img/sidebar/recent-01.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Image">
+                                <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" srcset="assets/img/sidebar/recent-01.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Thumbnail for Smashing Podcast Episode With Rach Andrewe">
                             </div>
                             <div class="content">
                                 <span class="date"><i class="far fa-calendar-alt"></i>{' '}25 Aug 2020</span>
@@ -138,7 +142,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <h5><a href="#">Implementing Infinite <br> Loading In React</a></h5>
                             </div>
                             <div class="img">
-                                <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" srcset="assets/img/sidebar/recent-03.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Image">
+                                <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" srcset="assets/img/sidebar/recent-03.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Thumbnail for Django Highlights Models Admin">
                             </div>
                         </div>
                     </div>
@@ -197,7 +201,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <ul class="comment-list">
                             <li>
                                 <div class="author-img">
-                                    <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/details/comment-1.avif" srcset="assets/img/details/comment-1.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Image">
+                                    <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/details/comment-1.avif" srcset="assets/img/details/comment-1.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Comment by John F. Medina">
                                 </div>
                                 <div class="comment-content">
                                     <h5 class="author-name">John F. Medina<span class="date">25 July 2020</span></h5>
@@ -210,7 +214,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <ul class="children">
                                     <li>
                                         <div class="author-img">
-                                            <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/details/comment-2.avif" srcset="assets/img/details/comment-2.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Image">
+                                            <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/details/comment-2.avif" srcset="assets/img/details/comment-2.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Comment by Jeffrey T. Kelly">
                                         </div>
                                         <div class="comment-content">
                                             <h5 class="author-name">Jeffrey T. Kelly<span class="date">25 July
@@ -228,7 +232,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             </li>
                             <li>
                                 <div class="author-img">
-                                    <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/details/comment-3.avif" srcset="assets/img/details/comment-3.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Image">
+                                    <img loading="lazy" decoding="async" width="100" height="100" src="assets/img/details/comment-3.avif" srcset="assets/img/details/comment-3.avif 100w" sizes="(max-width: 768px) 100vw, 100px" alt="Comment by Richard B. Zellmer">
                                 </div>
                                 <div class="comment-content">
                                     <h5 class="author-name">Richard B. Zellmer<span class="date">25 July 2020</span>
@@ -311,7 +315,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <div class="post-loops">
                                 <div class="single-post">
                                     <div class="post-thumb">
-                                        <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" srcset="assets/img/sidebar/recent-01.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Image">
+                                        <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" srcset="assets/img/sidebar/recent-01.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Thumbnail for Smashing Podcast Episode With Rach Andrewe">
                                     </div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
@@ -322,7 +326,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                                 <div class="single-post">
                                     <div class="post-thumb">
-                                        <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-02.avif" srcset="assets/img/sidebar/recent-02.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Image">
+                                        <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-02.avif" srcset="assets/img/sidebar/recent-02.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Thumbnail for Responsive Web And Desktop Development">
                                     </div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
@@ -333,7 +337,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                                 <div class="single-post">
                                     <div class="post-thumb">
-                                        <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" srcset="assets/img/sidebar/recent-03.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Image">
+                                        <img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" srcset="assets/img/sidebar/recent-03.avif 75w" sizes="(max-width: 768px) 100vw, 75px" alt="Thumbnail for Django Highlights Models Admin">
                                     </div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
@@ -360,7 +364,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         </div>
                         <!-- Author Infor Widget -->
                         <div class="widget author-widget">
-                            <img loading="lazy" decoding="async" width="150" height="150" src="assets/img/sidebar/author.avif" srcset="assets/img/sidebar/author.avif 150w" sizes="(max-width: 768px) 100vw, 150px" alt="Image" class="author-img">
+                            <img loading="lazy" decoding="async" width="150" height="150" src="assets/img/sidebar/author.avif" srcset="assets/img/sidebar/author.avif 150w" sizes="(max-width: 768px) 100vw, 150px" alt="Author Brandon Johnston" class="author-img">
                             <h4 class="name">Brandon Johnston</h4>
                             <span class="role">Author</span>
                             <p>
@@ -394,52 +398,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="row align-items-center justify-content-between" id="clientSlider">
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client logo 1">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client logo 2">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client logo 3">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client logo 4">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client logo 5">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client logo 1">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client logo 2">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client logo 3">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client logo 4">
                         </a>
                     </div>
                     <div class="col">
                         <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client logo 5">
                         </a>
                     </div>
                 </div>
