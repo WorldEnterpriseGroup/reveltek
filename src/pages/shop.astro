@@ -1,0 +1,410 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Shop Page"
+  description="RevelTek | Shop Page"
+  canonicalPath="/shop.html"
+  header="inner"
+  footer="inner"
+>
+<!--====== Breadcrumb part Start ======-->
+    <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <h1 class="page-title">Our Shop</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Shop</li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </section>
+    <!--====== Breadcrumb part End ======-->
+
+    <!--====== Shop Section Start ======-->
+    <section class="shop-page-wrap section-gap">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 order-1">
+                    <div class="row shop-top-bar justify-content-between">
+                        <div class="col-lg-3 col-6 col-tiny-12">
+                            <div class="product-search">
+                                <form action="#">
+                                    <input type="search" placeholder="Search Keywords">
+                                    <button type="submit"><i class="far fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-6 col-tiny-12">
+                            <div class="product-shorting">
+                                <select>
+                                    <option value="0" selected>Short by</option>
+                                    <option value="1">Deafult</option>
+                                    <option value="2">By Name</option>
+                                    <option value="3">By Price</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-10 order-3 order-lg-2">
+                    <div class="shop-sidebar">
+                        <div class="widget product-cat-widget">
+                            <h4 class="widget-title">Category</h4>
+                            <ul>
+                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Clothing</a></li>
+                                <li><a href="#">Decor</a></li>
+                                <li><a href="#">Hoodies</a></li>
+                                <li><a href="#">Music</a></li>
+                                <li><a href="#">Tshirts</a></li>
+                                <li><a href="#">Uncategorized</a></li>
+                            </ul>
+                        </div>
+                        <div class="widget product-tag-widget">
+                            <h4 class="widget-title">Populer Tag</h4>
+                            <div class="tags-loop">
+                                <a href="#">Cleaning</a>
+                                <a href="#">Business</a>
+                                <a href="#">Car</a>
+                                <a href="#">House</a>
+                                <a href="#">Wasing</a>
+                                <a href="#">Agency</a>
+                            </div>
+                        </div>
+                        <div class="widget product-filter-widget">
+                            <h4 class="widget-title">Filer By Price</h4>
+                            <div class="price-range-wrap">
+                                <div class="slider-range">
+                                    <div id="slider-range"></div>
+                                </div>
+                                <div class="price-ammount">
+                                    <span>Price :</span>
+                                    <input type="text" id="amount" name="price" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 order-2 order-lg-2">
+                    <div class="product-loop row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img fetchpriority="high" decoding="async" width="270" height="285" src="assets/img/shop/01.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/02.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/03.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/04.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/05.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/06.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/07.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/08.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img loading="lazy" decoding="async" width="270" height="285" src="assets/img/shop/09.avif" alt="image">
+                                    <div class="product-action">
+                                        <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                        <a href="#"><i class="far fa-heart"></i></a>
+                                        <a href="#"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star-half"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="title"><a href="product-details.html">Smart Man Jacket</a></h5>
+                                    <span class="price">$25.59</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination-wrap text-center">
+                        <ul>
+                            <li><a href="#"><i class="far fa-angle-left"></i></a></li>
+                            <li class="active"><a href="#">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                            <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Shop Section End ======-->
+</BaseLayout>

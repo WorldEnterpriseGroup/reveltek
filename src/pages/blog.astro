@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Blog & Insights"
+  description="Read the latest insights from RevelTek on SaaS, AI, Cloud, IT Strategy, and technology trends."
+  canonicalPath="/blog.html"
+  header="alt"
+  footer="insights"
+>
+<!--====== Breadcrumb part Start ======-->
+    <div class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <!-- Updated Title -->
+                <h1 class="page-title">Blog</h1>
+                <ul>
+                    <!-- Updated Path -->
+                    <li>Insights</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </div>
+    <!--====== Breadcrumb part End ======-->
+
+    <!--====== Blog Section Start ======-->
+    <section class="blog-section section-gap-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Blog loop(Standard) -->
+                    <div class="blog-loop standard-blog row">
+                        <!-- Single Post 1 - Example -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" alt="AI Strategy Concept">
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><i class="far fa-user"></i><a href="#">Jane Doe</a></li>
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">05 Dec 2024</a></li>
+                                        <li><i class="far fa-folder-open"></i><a href="#">AI</a></li> <!-- Example Category -->
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="blog-details.html"> <!-- Link to a potential detail page -->
+                                            Implementing AI: From Strategy to Practical Use Cases Today
+                                        </a>
+                                    </h3>
+                                     <!-- Updated Post Excerpt -->
+                                    <p>
+                                        Adopting artificial intelligence requires more than just technology. It demands a clear strategy, relevant use cases, and careful planning. Discover key steps for successful AI integration in your business.
+                                    </p>
+                                    <a href="blog-details.html" class="main-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Post 2 - Example -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" alt="Cloud Security Graphic">
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><i class="far fa-user"></i><a href="#">John Smith</a></li>
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">28 Nov 2024</a></li>
+                                        <li><i class="far fa-folder-open"></i><a href="#">Cloud</a></li> <!-- Example Category -->
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="blog-details.html">
+                                            Key Cloud Security Measures Every SaaS Platform Needs Now
+                                        </a>
+                                    </h3>
+                                    <!-- Updated Post Excerpt -->
+                                    <p>
+                                        Security is paramount for SaaS success. We explore essential cloud security best practices, from identity management to data encryption, vital for protecting users and meeting compliance.
+                                    </p>
+                                    <a href="blog-details.html" class="main-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Post 3 - Example (Quote style if kept) -->
+                        <div class="col-12">
+                            <div class="single-post-box quote-post"> <!-- Kept style for variety -->
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><i class="far fa-user"></i><a href="#">Admin</a></li>
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">20 Nov 2024</a></li>
+                                        <li><i class="far fa-folder-open"></i><a href="#">Consulting</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="blog-details.html">
+                                            Digital Transformation is Not Just Tech; It Is About People And Strategy First.
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Post 4 - Example (Video style if kept) -->
+                        <div class="col-12">
+                            <div class="single-post-box video-post"> <!-- Kept style for variety -->
+                                <div class="post-video">
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" alt="Data Analytics Visualization">
+                                    <a href="https://www.youtube.com/watch?v=fEErySYqItI" class="popup-video" title="Data Analytics Tips Video">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><i class="far fa-user"></i><a href="#">Sarah Lee</a></li>
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">12 Nov 2024</a></li>
+                                        <li><i class="far fa-folder-open"></i><a href="#">Analytics</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="blog-details.html">
+                                            Turning Big Data Into Actionable Insights: Tips and Tools Available
+                                        </a>
+                                    </h3>
+                                     <!-- Updated Post Excerpt -->
+                                    <p>
+                                       Collecting data is easy, but extracting real value requires the right approach. Learn how modern analytics tools and techniques help businesses make smarter, data informed choices daily.
+                                    </p>
+                                    <a href="blog-details.html" class="main-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Single Post 5 - Example (No thumb) -->
+                        <div class="col-12">
+                            <div class="single-post-box no-thumb">
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><i class="far fa-user"></i><a href="#">Mike Brown</a></li>
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">05 Nov 2024</a></li>
+                                        <li><i class="far fa-folder-open"></i><a href="#">Software</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="blog-details.html">
+                                           Choosing Between Custom Software vs Off The Shelf Solutions Today
+                                        </a>
+                                    </h3>
+                                     <!-- Updated Post Excerpt -->
+                                    <p>
+                                        When should you invest in building custom software versus using existing tools? We break down the pros, cons, and key factors to consider for your next project decision making.
+                                    </p>
+                                    <a href="blog-details.html" class="main-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more blog posts as needed -->
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li><a href="#"><i class="far fa-angle-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <!-- sidebar -->
+                    <div class="sidebar">
+                        <!-- Search Widget -->
+                        <div class="widget search-widget">
+                            <form action="#">
+                                <input type="text" placeholder="Search blog..."> <!-- Updated placeholder -->
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!-- Cat Widget - Updated -->
+                        <div class="widget cat-widget">
+                            <h4 class="widget-title">Categories</h4>
+                            <ul>
+                                <li><a href="#">AI & Machine Learning <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Software Development <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Cloud Computing <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">IT Strategy <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Data Analytics <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Industry Trends <span><i class="far fa-angle-right"></i></span></a></li> <!-- Added -->
+                            </ul>
+                        </div>
+                        <!-- Recent Post Widget - Updated -->
+                        <div class="widget recent-post-widget">
+                            <h4 class="widget-title">Recent Posts</h4>
+                            <div class="post-loops">
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" alt="Recent Post 1"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-calendar-alt"></i>05 Dec 2024</span>
+                                        <a href="blog-details.html">Implementing AI: From Strategy to Use</a>
+                                    </div>
+                                </div>
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-02.avif" alt="Recent Post 2"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-calendar-alt"></i>28 Nov 2024</span>
+                                        <a href="blog-details.html">Key Cloud Security Measures Needed</a>
+                                    </div>
+                                </div>
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" alt="Recent Post 3"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-calendar-alt"></i>20 Nov 2024</span>
+                                        <a href="blog-details.html">Digital Transformation Strategy</a> <!-- Simplified -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popular Tag Widget - Updated -->
+                        <div class="widget popular-tag-widget">
+                            <h4 class="widget-title">Popular Tags</h4>
+                            <div class="tags-loop">
+                                <a href="#">SaaS</a>
+                                <a href="#">AI</a>
+                                <a href="#">Cloud</a>
+                                <a href="#">DevOps</a>
+                                <a href="#">Strategy</a>
+                                <a href="#">Fintech</a>
+                                <a href="#">Security</a>
+                                <a href="#">Analytics</a>
+                                <a href="#">Health</a> <!-- Added -->
+                                <a href="#">Retail</a> <!-- Added -->
+                            </div>
+                        </div>
+                        <!-- Author Widget - Keep placeholder or update -->
+                        <div class="widget author-widget">
+                            <img loading="lazy" decoding="async" width="150" height="150" src="assets/img/sidebar/author.avif" alt="Author Image" class="author-img">
+                            <h4 class="name">Brandon Johnston</h4>
+                            <span class="role">Chief Insights Officer</span> <!-- Updated Role -->
+                            <p>Sharing insights on technology trends and business strategy from the RevelTek perspective weekly.</p> <!-- Updated Desc -->
+                            <ul class="social-icons">
+                                <li><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- CTA Widget -->
+                        <div class="widget cta-widget" style="background-image: url(assets/img/sidebar/cta.avif);">
+                            <h4 class="title">Need Tech Advice?</h4> <!-- Updated -->
+                            <a href="contact.html" class="main-btn">Contact Us</a> <!-- Updated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Blog Section End ======-->
+
+    <!--====== Client Area Start ======-->
+    <section class="client-section">
+        <div class="container">
+            <div class="client-slider section-gap">
+                <div class="row align-items-center justify-content-between" id="clientSlider">
+                    <!-- Client logos - Keep placeholders -->
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Client Area End ======-->
+</BaseLayout>

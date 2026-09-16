@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import baseline from '../../.astro-magazine/adoption/route-baseline.json';
+
+interface RouteEntry {
+  url: string;
+  title: string;
+  family: string;
+}
+
+const families = [...new Set((baseline.routes as RouteEntry[]).map((r) => r.family))];
+const byFamily = (f: string) => (baseline.routes as RouteEntry[]).filter((r) => r.family === f);
+---
+
+<BaseLayout
+  title="Sitemap — RevelTek | Business & Technology Consulting"
+  description="Every RevelTek page in one place: services, industries, insights, company, work, shop, careers, and contact."
+  canonicalPath="/sitemap.html"
+>
+  <section class="breadcrumb-area" style="padding: 90px 0 30px;">
+    <div class="container">
+      <h1>Visual Sitemap</h1>
+      <p>Every page on reveltek.com, grouped by section. One hop to anything.</p>
+    </div>
+  </section>
+  <section style="padding: 20px 0 90px;">
+    <div class="container">
+      <div class="row">
+        {
+          families.map((family) => (
+            <div class="col-lg-4 col-md-6" style="margin-bottom: 32px;">
+              <h2 style="text-transform: capitalize; font-size: 1.4rem;">{family}</h2>
+              <ul>
+                {byFamily(family).map((r) => (
+                  <li>
+                    <a href={r.url.replace(/^\//, '')}>{r.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

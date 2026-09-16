@@ -1,0 +1,511 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Industries We Serve"
+  description="RevelTek provides tailored technology solutions across key industries including Health, Fintech, Retail, and Education."
+  canonicalPath="/industries.html"
+  footer="company"
+  heroPreload="/assets/img/banner/01.avif"
+>
+<!--====== Banner part start ======-->
+<section class="banner-section">
+	<div class="banner-slider" id="bannerSlider">
+		<!-- Slide 1: General Industry Focus -->
+		<div class="single-banner" style="background-image: url(assets/img/banner/01.avif);"> <!-- Use a suitable general or collage image -->
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10">
+						<div class="banner-content">
+							<!-- Updated Promo Text -->
+							<span class="promo-text" data-animation="fadeInDown" data-delay="0.8s">
+								Industry Focused Solutions
+							</span>
+							<!-- Updated Headline -->
+							<h1 data-animation="fadeInUp" data-delay="1s">
+								Tailored Technology <br> For Your Specific <br> Industry Challenges
+							</h1>
+							<ul class="btn-wrap">
+								<li data-animation="fadeInLeft" data-delay="1.2s">
+									<a href="#industries-served" class="main-btn main-btn-4">Explore Industries</a> <!-- Link to section below -->
+								</li>
+								<li data-animation="fadeInRight" data-delay="1.4s">
+									<a href="contact.html" class="main-btn main-btn-2">Request Consultation</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="banner-shapes"> <div class="one"></div><div class="two"></div><div class="three"></div><div class="four"></div> </div>
+		</div>
+		<!-- Slide 2: Expertise Focus -->
+		<div class="single-banner" style="background-image: url(assets/img/banner/02.avif);"> <!-- Use a suitable general or collage image -->
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10">
+						<div class="banner-content">
+							<span class="promo-text" data-animation="fadeInDown" data-delay="0.8s">
+								Deep Sector Knowledge
+							</span>
+							<h1 data-animation="fadeInUp" data-delay="1s">
+								Applying Proven <br> Expertise To Solve <br> Your Unique Problems
+							</h1>
+							<ul class="btn-wrap">
+								<li data-animation="fadeInLeft" data-delay="1.2s">
+									<a href="why-us.html" class="main-btn main-btn-4">Why Choose RevelTek</a>
+								</li>
+								<li data-animation="fadeInRight" data-delay="1.4s">
+									<a href="studies.html" class="main-btn main-btn-2">See Client Results</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="banner-shapes"> <div class="one"></div><div class="two"></div><div class="three"></div><div class="four"></div> </div>
+		</div>
+		<!-- Add more slides if needed -->
+	</div>
+	<!-- Search wrap removed -->
+</section>
+<!--====== Banner part end ======-->
+
+<!--====== About Section start ======-->
+<section class="about-section about-illustration-img section-gap">
+	<div class="container">
+		<div class="illustration-img">
+			<img fetchpriority="high" decoding="async" width="654" height="556" src="assets/img/illustration/01.avif" alt="Industry Solutions Illustration"> <!-- Alt text updated -->
+		</div>
+		<div class="row no-gutters justify-content-lg-end justify-content-center">
+			<div class="col-lg-6 col-md-10">
+				<div class="about-text">
+					<div class="section-title left-border mb-40">
+						<span class="title-tag">Our Industry Approach</span> <!-- Updated -->
+						<h2 class="title">Understanding Your World <br> To Deliver Better Tech</h2> <!-- Updated -->
+					</div>
+					<!-- Updated Text -->
+					<p class="mb-25">
+						At RevelTek, we believe generic solutions fall short. We invest time to understand the specific challenges, regulations, and opportunities within the industries we serve. This focus allows us to build truly effective technology.
+					</p>
+					<p>
+						Our deep sector knowledge ensures our software, AI, cloud, and consulting services are not just technically sound, but also practically relevant and compliant for your environment.
+					</p>
+					<ul class="about-list">
+						<li> <i class="far fa-check"></i>{' '}Industry Specific Expertise</li> <!-- Simplified -->
+						<li> <i class="far fa-check"></i>{' '}Compliance & Regulation Aware</li> <!-- Simplified -->
+					</ul>
+					<a href="about.html" class="main-btn">More About RevelTek</a> <!-- Link to About -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====== About Section end ======-->
+
+<!--====== Industries Served Section Start (Replaces Service Part) ======-->
+<section id="industries-served" class="service-section shape-style-one section-gap grey-bg"> <!-- Added ID for banner link -->
+	<div class="container">
+		<!-- Section Title -->
+		<div class="section-title text-center both-border mb-30">
+			<span class="title-tag">Industries Served</span> <!-- Updated -->
+			<h2 class="title">Tailored Technology For <br> Diverse Sector Needs</h2> <!-- Updated -->
+		</div>
+		<!-- Industry Boxes -->
+		<div class="row service-boxes justify-content-center">
+			<!-- Box 1: Health -->
+			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="400ms">
+				<div class="service-box text-center">
+					<div class="icon">
+						<img loading="lazy" decoding="async" width="103" height="100" src="assets/img/icons/01.avif" alt="Health Icon"> <!-- Use relevant icon -->
+					</div>
+					<!-- Updated Content & Link -->
+					<h3><a href="health.html">Health</a></h3>
+					<p>Secure patient data, EHR integration, AI diagnostics</p>
+					<a href="health.html" class="service-link">
+						<i class="fal fa-long-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Box 2: Fintech -->
+			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
+				<div class="service-box text-center">
+					<div class="icon">
+						<img loading="lazy" decoding="async" width="101" height="101" src="assets/img/icons/02.avif" alt="Fintech Icon"> <!-- Use relevant icon -->
+					</div>
+					<!-- Updated Content & Link -->
+					<h3><a href="fintech.html">Fintech</a></h3>
+					<p>Compliance tools, secure platforms, fraud detection</p>
+					<a href="fintech.html" class="service-link">
+						<i class="fal fa-long-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Box 3: Retail -->
+			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="800ms">
+				<div class="service-box text-center">
+					<div class="icon">
+						<img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/03.avif" alt="Retail Icon"> <!-- Use relevant icon -->
+					</div>
+					<!-- Updated Content & Link -->
+					<h3><a href="retail.html">Retail</a></h3>
+					<p>eCommerce platforms, personalization, POS links</p>
+					<a href="retail.html" class="service-link">
+						<i class="fal fa-long-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Box 4: Education -->
+			<div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="400ms"> <!-- Adjust delay as needed -->
+				<div class="service-box text-center">
+					<div class="icon">
+						<img loading="lazy" decoding="async" width="100" height="100" src="assets/img/icons/04.avif" alt="Education Icon"> <!-- Use relevant icon -->
+					</div>
+					<!-- Updated Content & Link -->
+					<h3><a href="education.html">Education</a></h3>
+					<p>LMS platforms, AI learning tools, digital classrooms</p>
+					<a href="education.html" class="service-link">
+						<i class="fal fa-long-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Add more industries if applicable -->
+		</div>
+	</div>
+	<div class="dots-line">
+		<img loading="lazy" decoding="async" width="494" height="756" src="assets/img/lines/07.avif" alt="Decorative Dots Line">
+	</div>
+</section>
+<!--====== Industries Served Section End ======-->
+
+<!--====== Video Start (Optional - Could be industry showcase) ======-->
+<section class="video-section bg-img-c section-gap" style="background-image: url(assets/img/video-bg/video-1.avif);">
+	<div class="container">
+		<div class="row align-items-center justify-content-between">
+			<div class="col-xl-7 col-lg-8 col-md-10 order-2 order-md-1">
+				<div class="video-text">
+					<div class="section-title left-border mb-30">
+						<span class="title-tag">Cross Industry Impact</span> <!-- Updated -->
+						<h2 class="title">
+							See How Our Solutions <br> Drive Success Across Sectors <!-- Updated -->
+						</h2>
+					</div>
+					<!-- Updated Text -->
+					<p>
+						While we specialize, our core technologies like AI, Cloud, and Custom Software deliver value across many fields. See examples of our transformative work.
+					</p>
+					<a href="studies.html" class="main-btn">View All Case Studies</a> <!-- Updated Link -->
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-4 col-md-2 order-1 order-md-2">
+				<div class="video-btn text-md-center wow fadeInUp" data-wow-duration="1500ms"
+					data-wow-delay="400ms">
+					<a href="https://www.youtube.com/watch?v=fEErySYqItI" class="play-btn popup-video" title="Watch RevelTek Solutions Overview">
+						<img src="assets/img/icons/play.svg" alt="Play Video Icon">
+						<i class="fas fa-play"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="line-shape">
+		<img loading="lazy" decoding="async" width="1263" height="597" src="assets/img/lines/08.avif" alt="Decorative Line Shape">
+	</div>
+</section>
+<!--====== Video end ======-->
+
+<!--====== Feature Part start (Cross-Industry Capabilities) ======-->
+<section class="feature-section section-gap">
+	<div class="container">
+		<div class="section-title text-center both-border mb-50">
+			<span class="title-tag"> Key Capabilities </span> <!-- Updated -->
+			<h2 class="title">Our Expertise Applied <br> Across Your Industry</h2> <!-- Updated -->
+		</div>
+		<!-- Feature boxes -->
+		<div class="feature-boxes row justify-content-center">
+			<!-- Box 1: Tailored Solutions -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12">
+				<div class="feature-box">
+					<div class="feature-bg bg-img-c" style="background-image: url(assets/img/feature/01.avif);">
+					</div>
+					<div class="feature-desc">
+						<a href="consulting.html" class="feature-link"><i class="fal fa-long-arrow-right"></i></a>
+						<!-- Updated -->
+						<h4>Tailored Solutions</h4>
+						<p>Custom tech for specific needs</p>
+					</div>
+				</div>
+			</div>
+			<!-- Box 2: AI Integration -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12">
+				<div class="feature-box">
+					<div class="feature-bg bg-img-c" style="background-image: url(assets/img/feature/02.avif);">
+					</div>
+					<div class="feature-desc">
+						<a href="ai.html" class="feature-link"><i class="fal fa-long-arrow-right"></i></a>
+						<!-- Updated -->
+						<h4>AI Integration</h4>
+						<p>Adding intelligence to systems</p>
+					</div>
+				</div>
+			</div>
+			<!-- Box 3: Cloud Architecture -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12">
+				<div class="feature-box">
+					<div class="feature-bg bg-img-c" style="background-image: url(assets/img/feature/03.avif);">
+					</div>
+					<div class="feature-desc">
+						<a href="cloud.html" class="feature-link"><i class="fal fa-long-arrow-right"></i></a>
+						<!-- Updated -->
+						<h4>Cloud Architecture</h4>
+						<p>Scalable and secure foundations</p>
+					</div>
+				</div>
+			</div>
+			<!-- Box 4: Data Analytics -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12">
+				<div class="feature-box">
+					<div class="feature-bg bg-img-c" style="background-image: url(assets/img/feature/04.avif);">
+					</div>
+					<div class="feature-desc">
+						<a href="analytics.html" class="feature-link"><i class="fal fa-long-arrow-right"></i></a>
+						<!-- Updated -->
+						<h4>Data Analytics</h4>
+						<p>Turning data into useful insights</p>
+					</div>
+				</div>
+			</div>
+			<!-- Box 5: Secure Development -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12">
+				<div class="feature-box">
+					<div class="feature-bg bg-img-c" style="background-image: url(assets/img/feature/06.avif);"> <!-- Reusing image -->
+					</div>
+					<div class="feature-desc">
+						<a href="software.html" class="feature-link"><i class="fal fa-long-arrow-right"></i></a>
+						<!-- Updated -->
+						<h4>Secure Development</h4>
+						<p>Building trustworthy applications</p>
+					</div>
+				</div>
+			</div>
+			<!-- Box 6: Agile Delivery -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12">
+				<div class="feature-box">
+					<div class="feature-bg bg-img-c" style="background-image: url(assets/img/feature/05.avif);">
+					</div>
+					<div class="feature-desc">
+						<a href="products.html" class="feature-link"><i class="fal fa-long-arrow-right"></i></a>
+						<!-- Updated -->
+						<h4>Agile Delivery</h4>
+						<p>Flexible and fast project work</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====== Feature Part end ======-->
+
+<!--====== Why Choose Us Part Start ======-->
+<section class="wcu-section box-style">
+	<div class="container">
+		<div class="wcu-inner">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-lg-6">
+					<div class="wcu-image text-center text-lg-left wow fadeInUp" data-wow-duration="1500ms"
+						data-wow-delay="400ms">
+						<img loading="lazy" decoding="async" width="395" height="430" src="assets/img/illustration/02.avif" alt="Why Choose RevelTek Industry Expertise">
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-10">
+					<div class="wcu-text">
+						<div class="section-title left-border mb-40">
+							<span class="title-tag">The RevelTek Advantage</span> <!-- Updated -->
+							<h2 class="title">Benefit From Our Deep<br> Industry Knowledge</h2> <!-- Updated -->
+						</div>
+						<!-- Updated Text -->
+						<p>
+							Choosing RevelTek means gaining a partner who speaks your industry language. We understand the specific pressures, rules, and goals unique to your sector, leading to faster results and more relevant solutions.
+						</p>
+						<ul class="wcu-list">
+							<!-- Updated List Items -->
+							<li>
+								<i class="far fa-check-circle"></i>{' '}Faster Time to Value Now
+							</li>
+							<li>
+								<i class="far fa-check-circle"></i>{' '}Reduced Implementation Risk
+							</li>
+							<li>
+								<i class="far fa-check-circle"></i>{' '}Solutions Fit for Purpose
+							</li>
+						</ul>
+						<a href="why-us.html" class="main-btn main-btn-4">Learn Why RevelTek</a>
+					</div>
+				</div>
+			</div>
+			<img loading="lazy" decoding="async" width="843" height="747" src="assets/img/lines/03.avif" alt="Decorative Line Shape" class="line-shape-one">
+			<img loading="lazy" decoding="async" width="163" height="204" src="assets/img/lines/04.avif" alt="Decorative Line Shape" class="line-shape-two">
+		</div>
+	</div>
+</section>
+<!--====== Why Choose Us Part End ======-->
+
+<!--====== Fact Part Start ======-->
+<section class="fact-section grey-bg">
+	<div class="container">
+		<div class="fact-boxes row justify-content-between align-items-center">
+			<!-- Keep structure, numbers are examples -->
+			<div class="col-lg-3 col-6">
+				<div class="fact-box text-center mb-40">
+					<div class="icon"><i class="flaticon-graphic"></i></div>
+					<h2 class="counter">500</h2>
+					<p class="title">Projects Done</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-6">
+				<div class="fact-box text-center mb-40">
+					<div class="icon"><i class="flaticon-plan"></i></div>
+					<h2 class="counter">150</h2>
+					<p class="title">Happy Clients</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-6">
+				<div class="fact-box text-center mb-40">
+					<div class="icon"><i class="flaticon-target-1"></i></div>
+					<h2 class="counter">4</h2> <!-- Number of listed industries -->
+					<p class="title">Key Industries</p> <!-- Updated -->
+				</div>
+			</div>
+			<div class="col-lg-3 col-6">
+				<div class="fact-box text-center mb-40">
+					<div class="icon"><i class="flaticon-teamwork"></i></div>
+					<h2 class="counter">50</h2>
+					<p class="title">Expert Team Staff</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====== Fact Part End ======-->
+
+<!--====== Team Section Start (Optional for Industries Page) ======-->
+<!-- Consider removing or simplifying this section for the Industries overview page -->
+<!-- <section class="team-section section-gap"> ... </section> -->
+<!--====== Team Section End ======-->
+
+<!--====== Skill Section Start (Optional for Industries Page) ======-->
+<!-- Consider removing or simplifying this section for the Industries overview page -->
+<!-- <section class="skill-section"> ... </section> -->
+<!--====== Skill Section End ======-->
+
+<!--====== Testimonials part start ======-->
+<section class="testimonial-section grey-bg">
+	<div class="container">
+		<div class="row justify-content-center justify-content-lg-start">
+			<div class="col-lg-6 col-md-10 offset-lg-5">
+				<div class="section-title left-border">
+					<span class="title-tag">Client Feedback</span>
+					<h2 class="title">Hear From Partners<br> Across Industries</h2> <!-- Updated -->
+				</div>
+				<div class="testimonial-items" id="testimonialSliderOne">
+					<!-- Keep generic or diverse testimonials -->
+					<div class="testimonial-item">
+						<div class="content"><p><span class="quote-top"><i class="fas fa-quote-left"></i></span>Working with RevelTek transformed our approach to technology. Their strategic insights and expert execution were game changers for our growth.<span class="quote-bottom"><i class="fas fa-quote-right"></i></span></p></div>
+						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author.avif" alt="Client Avatar"></div><div class="desc"><h4>Jane D. Client</h4><span>CEO, Example Company</span></div></div>
+					</div>
+					<div class="testimonial-item">
+						<div class="content"><p><span class="quote-top"><i class="fas fa-quote-left"></i></span>The AI solution RevelTek developed significantly improved our efficiency. Their team understood our complex needs and delivered a robust system.<span class="quote-bottom"><i class="fas fa-quote-right"></i></span></p></div>
+						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author.avif" alt="Client Avatar"></div><div class="desc"><h4>Mark S. Partner</h4><span>CTO, Another Corp</span></div></div>
+					</div>
+					<div class="testimonial-item">
+						<div class="content"><p><span class="quote-top"><i class="fas fa-quote-left"></i></span>RevelTek's cloud migration expertise was invaluable. They planned and executed flawlessly, ensuring our infrastructure is now scalable and secure.<span class="quote-bottom"><i class="fas fa-quote-right"></i></span></p></div>
+						<div class="author"><div class="thumb"><img loading="lazy" decoding="async" width="60" height="60" src="assets/img/testimonial/author.avif" alt="Client Avatar"></div><div class="desc"><h4>Sarah B. Executive</h4><span>VP Tech, Sample Biz</span></div></div>
+					</div>
+				</div>
+				<div class="testimonial-arrows row"></div>
+			</div>
+		</div>
+	</div>
+	<div class="testimonial-img"> <img loading="lazy" decoding="async" width="738" height="781" src="assets/img/testimonial/testimonial.avif" alt="Testimonial background"> </div>
+</section>
+<!--====== Testimonials part end ======-->
+
+<!--====== Client Area Start ======-->
+<section class="client-section">
+	<div class="container">
+		<div class="client-slider section-gap line-bottom">
+			<div class="row align-items-center justify-content-between" id="clientSlider">
+				<!-- Client logos - keep placeholders -->
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9"></a></div>
+				<div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10"></a></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====== Client Area End ======-->
+
+<!--====== Latest Post Start ======-->
+<section class="latest-post-section section-gap">
+	<div class="container">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-lg-6 col-md-8 col-10 col-tiny-12">
+				<div class="section-title left-border">
+					<span class="title-tag">Industry Insights</span> <!-- Updated -->
+					<h2 class="title">Read Our Latest Analysis <br> On Sector Trends</h2> <!-- Updated -->
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-4 col-10 col-tiny-12">
+				<div class="text-md-right mt-30 mt-md-0">
+					<a href="blog.html" class="main-btn">View All Insights</a> <!-- Updated Link -->
+				</div>
+			</div>
+		</div>
+		<div class="latest-post-loop row mt-50 justify-content-center">
+			<!-- Keep placeholders, update links and content if specific industry posts exist -->
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="400ms">
+				<div class="latest-post-box">
+					<div class="post-thumb-wrap"><div class="post-thumb bg-img-c" style="background-image: url(assets/img/blog/04.avif);"></div></div>
+					<div class="post-desc">
+						<span class="post-date"><i class="far fa-calendar-alt"></i>01 Dec 2024</span>
+						<h3 class="title"><a href="blog-details.html">Tech Trends Shaping Your Industry</a></h3>
+						<p>Exploring key technology shifts impacting various business sectors and how to adapt effectively.</p>
+						<a href="blog-details.html" class="post-link">Learn More <i class="far fa-long-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
+				<div class="latest-post-box">
+					<div class="post-thumb-wrap"><div class="post-thumb bg-img-c" style="background-image: url(assets/img/blog/05.avif);"></div></div>
+					<div class="post-desc">
+						<span class="post-date"><i class="far fa-calendar-alt"></i>24 Nov 2024</span>
+						<h3 class="title"><a href="blog-details.html">The Impact of AI Across Verticals</a></h3>
+						<p>How artificial intelligence is being applied differently in fields like health, finance, and retail today.</p>
+						<a href="blog-details.html" class="post-link">Learn More <i class="far fa-long-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-10 col-tiny-12 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="800ms">
+				<div class="latest-post-box">
+					<div class="post-thumb-wrap"><div class="post-thumb bg-img-c" style="background-image: url(assets/img/latest-post/03.avif);"></div></div>
+					<div class="post-desc">
+						<span class="post-date"><i class="far fa-calendar-alt"></i>17 Nov 2024</span>
+						<h3 class="title"><a href="blog-details.html">Cloud Strategies for Regulated Fields</a></h3>
+						<p>Specific considerations for cloud adoption in industries with strict compliance and security rules.</p>
+						<a href="blog-details.html" class="post-link">Learn More <i class="far fa-long-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====== Latest Post End ======-->
+</BaseLayout>

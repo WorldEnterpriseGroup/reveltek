@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Products"
+  description="RevelTek offers expert product development management, from MVP design and UI/UX to agile project execution."
+  canonicalPath="/products.html"
+  header="alt"
+  footer="services"
+>
+<!--====== Breadcrumb part Start ======-->
+    <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <!-- Updated Title -->
+                <h1 class="page-title">Products</h1>
+                <ul>
+                    <!-- Updated Breadcrumb Path (No Home) -->
+                    <li>Services</li>
+                    <li>Products</li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </section>
+    <!--====== Breadcrumb part End ======-->
+
+    <!--====== Service Details Start ======-->
+    <section class="service-details section-gap">
+        <div class="container">
+            <div class="row">
+                <!-- Dettails Content -->
+                <div class="col-lg-8">
+                    <div class="service-details-content">
+                        <div class="main-thumb mb-40">
+                            <!-- Updated Alt Text -->
+                            <img fetchpriority="high" decoding="async" width="770" height="515" src="assets/img/details/service-01.avif" alt="Product Development Lifecycle">
+                        </div>
+                        <!-- Updated Title -->
+                        <h2 class="title">Product Development Management</h2>
+                        <!-- Updated Content -->
+                        <p>
+                            Bring your digital product vision to life with RevelTek's expert guidance. We manage the complete development lifecycle, from initial concept and MVP design to agile execution and market launch. Our focus is on creating user centric products with intuitive UI/UX, ensuring they meet market needs and drive business value. We act as your trusted partner throughout the journey.
+                        </p>
+                        <ul class="circle-check-list mt-50 mb-50">
+                            <!-- Updated List Items -->
+                            <li>
+                                <i class="fas fa-check"></i>{' '}Turn innovative ideas into market ready digital products effectively.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>{' '}Utilize agile project management for flexibility and faster time to market.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>{' '}Prioritize user experience (UI/UX) design for engaging and easy to use products.
+                            </li>
+                        </ul>
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="image text-center mb-40">
+                                    <!-- Updated Alt Text -->
+                                    <img loading="lazy" decoding="async" width="370" height="350" src="assets/img/details/service-02.avif" alt="Agile Product Management Board">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                 <!-- Updated Sub-Title -->
+                                <h3 class="sub-title">Our Product Process</h3>
+                                <!-- Updated Content -->
+                                <p>
+                                    We follow iterative development cycles, focusing on building Minimum Viable Products (MVPs) quickly to gather feedback and refine the product strategy based on real user data.
+                                </p>
+                                <ul class="check-list mt-30 mb-40">
+                                    <!-- Updated List Items -->
+                                    <li><i class="fas fa-check"></i>Agile & Scrum Methods</li>
+                                    <li><i class="fas fa-check"></i>MVP Definition & Design</li>
+                                    <li><i class="fas fa-check"></i>User Centric UI/UX Focus</li>
+                                    <li><i class="fas fa-check"></i>Full Lifecycle Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-section mt-40">
+                        <!-- FAQ LOOP - Updated Questions/Answers for Products -->
+                        <div class="accordion faq-loop border-style" id="faqAccordion">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="collapsed" data-toggle="collapse" data-target="#collapseOne">
+                                        How do you handle changing requirements?
+                                        <span class="icons">
+                                            <i class="far fa-plus"></i>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div id="collapseOne" class="collapse" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Our agile approach is designed for flexibility. We welcome changing needs and adapt development plans through regular sprints and feedback loops.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header active-header">
+                                    <h6 class="collapsed" data-toggle="collapse" data-target="#collapseTwo">
+                                        What is an MVP and why build one?
+                                        <span class="icons">
+                                            <i class="far fa-minus"></i>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div id="collapseTwo" class="collapse show" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        A Minimum Viable Product has just enough features to attract early users and validate the core idea quickly, reducing risk and initial investment needs.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="collapsed" data-toggle="collapse" data-target="#collapseThree">
+                                        How involved do we need to be as clients?
+                                        <span class="icons">
+                                            <i class="far fa-plus"></i>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div id="collapseThree" class="collapse" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        We value collaboration. Your input as the product owner is key during planning, reviews, and feedback sessions to ensure alignment with your vision.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="collapsed" data-toggle="collapse" data-target="#collapseFour">
+                                        Do you handle both design and development?
+                                        <span class="icons">
+                                            <i class="far fa-plus"></i>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div id="collapseFour" class="collapse" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Yes, we offer end-to-end product services, including UI/UX design, development, testing, deployment, and ongoing management support as needed.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Faq LOOP -->
+                    </div>
+                </div>
+                <!-- Sidebar -->
+                <div class="col-lg-4 col-md-8">
+                    <div class="sidebar">
+                        <!-- Services List Widget - UPDATED -->
+                        <div class="widget cat-widget">
+                            <h4 class="widget-title">Our Services</h4>
+                            <ul>
+                                <!-- Updated Links & Added 'active' class -->
+                                <li><a href="software.html">Software <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="consulting.html">Consulting <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="ai.html">AI <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li class="active"><a href="products.html">Products <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="cloud.html">Cloud <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="analytics.html">Analytics <span><i class="far fa-angle-right"></i></span></a></li>
+                            </ul>
+                        </div>
+                        <!-- Contact Widget (Kept as is, typo corrected) -->
+                        <div class="widget contact-widget">
+                            <h4 class="widget-title">Contact Us</h4>
+                            <form action="#">
+                                <input type="text" placeholder="Your Email">
+                                <textarea placeholder="Message"></textarea>
+                                <button type="submit" class="main-btn main-btn-3">Send Message</button>
+                            </form>
+                        </div>
+                        <!-- CTA Widget (Kept as is, link updated) -->
+                        <div class="widget cta-widget" style="background-image: url(assets/img/sidebar/cta.avif);">
+                            <h4 class="title">Need Product Help?</h4> <!-- Simple text -->
+                            <a href="contact.html" class="main-btn">Send Message</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Service Details End ======-->
+
+    <!--====== CTA Start ======-->
+    <section class="cta-aection">
+        <div class="container">
+            <div class="cta-wrap bg-img-c" style="background-image: url(assets/img/lines/16.avif);">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="cta-content text-center">
+                            <div class="section-title both-border mb-30">
+                                <!-- Updated Title Content -->
+                                <span class="title-tag">Build Your Idea</span>
+                                <h2 class="title">Have a Product Vision? Let RevelTek Help You Build It!</h2>
+                            </div>
+                             <!-- Updated Button Link -->
+                            <a href="contact.html" class="main-btn main-btn-3">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== CTA End ======-->
+
+    <!--====== Client Area Start ======-->
+    <section class="client-section">
+        <div class="container">
+            <div class="client-slider section-gap line-top">
+                <div class="row align-items-center justify-content-between" id="clientSlider">
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Client Area End ======-->
+</BaseLayout>

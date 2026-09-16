@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Case Studies"
+  description="Explore RevelTek case studies showcasing successful technology solutions in SaaS, AI, Cloud, and IT strategy across various industries."
+  canonicalPath="/studies.html"
+  header="alt"
+  footer="insights"
+>
+<!--====== Breadcrumb part Start ======-->
+    <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                 <!-- Updated Title -->
+                <h1 class="page-title">Case Studies</h1>
+                <ul>
+                     <!-- Updated Path -->
+                    <li>Insights</li>
+                    <li>Studies</li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </section>
+    <!--====== Breadcrumb part End ======-->
+
+    <!--====== Case Study Section Start (Using Blog Layout) ======-->
+    <section class="blog-section section-gap-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Study loop -->
+                    <div class="blog-loop standard-blog row">
+                        <!-- Single Study 1 - Example -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" alt="Fintech Security Study"> <!-- Update Image & Alt -->
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                        <!-- Updated Meta Info -->
+                                        <li><i class="far fa-industry"></i><a href="fintech.html">Fintech</a></li>
+                                        <li><i class="far fa-cogs"></i><a href="ai.html">AI</a>, <a href="software.html">Software</a></li>
+                                        <li><i class="far fa-check-circle"></i><a href="#">Result: 30% Fraud Reduction</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="study-details-1.html"> <!-- Link to specific study detail page -->
+                                            AI Powered Fraud Detection Reduces Losses for Fintech Client
+                                        </a>
+                                    </h3>
+                                     <!-- Updated Excerpt -->
+                                    <p>
+                                        A leading financial technology firm faced rising fraudulent transactions. RevelTek designed and deployed a custom machine learning model integrated into their platform, resulting in a significant decrease in fraud losses and improved customer trust.
+                                    </p>
+                                    <a href="study-details-1.html" class="main-btn">View Study</a> <!-- Updated Button Text -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Study 2 - Example -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" alt="Healthcare Cloud Migration"> <!-- Update Image & Alt -->
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                         <!-- Updated Meta Info -->
+                                        <li><i class="far fa-industry"></i><a href="health.html">Health</a></li>
+                                        <li><i class="far fa-cogs"></i><a href="cloud.html">Cloud</a>, <a href="consulting.html">Consulting</a></li>
+                                        <li><i class="far fa-check-circle"></i><a href="#">Result: 40% Cost Savings</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="study-details-2.html">
+                                           Secure Cloud Migration Strategy Enables Scalability for Provider
+                                        </a>
+                                    </h3>
+                                    <!-- Updated Excerpt -->
+                                    <p>
+                                        A regional hospital system needed to modernize its aging infrastructure while ensuring HIPAA compliance. RevelTek provided strategic consulting and executed a phased migration to a secure cloud environment, improving scalability and reducing IT costs.
+                                    </p>
+                                    <a href="study-details-2.html" class="main-btn">View Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Study 3 - Example -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" alt="Retail eCommerce Platform"> <!-- Update Image & Alt -->
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                         <!-- Updated Meta Info -->
+                                        <li><i class="far fa-industry"></i><a href="retail.html">Retail</a></li>
+                                        <li><i class="far fa-cogs"></i><a href="software.html">Software</a>, <a href="products.html">Products</a></li>
+                                        <li><i class="far fa-check-circle"></i><a href="#">Result: 25% Conversion Lift</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="study-details-3.html">
+                                           Custom eCommerce Platform Enhances User Experience & Sales
+                                        </a>
+                                    </h3>
+                                    <!-- Updated Excerpt -->
+                                    <p>
+                                        An online retailer struggled with an outdated website. RevelTek managed the development of a new, custom eCommerce platform focusing on user experience (UX) and mobile first design, leading to increased engagement and conversions.
+                                    </p>
+                                    <a href="study-details-3.html" class="main-btn">View Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more case studies here -->
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li><a href="#"><i class="far fa-angle-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <!-- sidebar -->
+                    <div class="sidebar">
+                        <!-- Search Widget -->
+                        <div class="widget search-widget">
+                            <form action="#">
+                                <input type="text" placeholder="Search studies..."> <!-- Updated placeholder -->
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!-- Filter by Industry Widget -->
+                        <div class="widget cat-widget">
+                            <h4 class="widget-title">Filter by Industry</h4>
+                            <ul>
+                                <li><a href="#">Health <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Fintech <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Retail <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Education <span><i class="far fa-angle-right"></i></span></a></li>
+                                <!-- Add other industries -->
+                            </ul>
+                        </div>
+                        <!-- Filter by Service Widget -->
+                        <div class="widget cat-widget">
+                            <h4 class="widget-title">Filter by Service</h4>
+                            <ul>
+                                <li><a href="#">Software <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Consulting <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">AI <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Products <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Cloud <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Analytics <span><i class="far fa-angle-right"></i></span></a></li>
+                            </ul>
+                        </div>
+                        <!-- Recent Studies Widget -->
+                        <div class="widget recent-post-widget">
+                            <h4 class="widget-title">Featured Studies</h4>
+                            <div class="post-loops">
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" alt="Featured Study 1"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-building"></i>{' '}Fintech</span>
+                                        <a href="study-details-1.html">AI Powered Fraud Detection</a> <!-- Shortened Title -->
+                                    </div>
+                                </div>
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-02.avif" alt="Featured Study 2"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-building"></i>{' '}Health</span>
+                                        <a href="study-details-2.html">Secure Cloud Migration</a>
+                                    </div>
+                                </div>
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-03.avif" alt="Featured Study 3"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-building"></i>{' '}Retail</span>
+                                        <a href="study-details-3.html">eCommerce Platform Build</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popular Tag Widget -->
+                        <div class="widget popular-tag-widget">
+                            <h4 class="widget-title">Study Tags</h4>
+                            <div class="tags-loop">
+                                <a href="#">ROI</a>
+                                <a href="#">Efficiency</a>
+                                <a href="#">Scalability</a>
+                                <a href="#">Compliance</a>
+                                <a href="#">User Experience</a>
+                                <a href="#">AI Results</a>
+                                <a href="#">Cloud Cost</a>
+                                <a href="#">SaaS Platform</a>
+                            </div>
+                        </div>
+                        <!-- Author Widget Removed -->
+                        <!-- CTA Widget -->
+                        <div class="widget cta-widget" style="background-image: url(assets/img/sidebar/cta.avif);">
+                            <h4 class="title">Want Similar Results?</h4> <!-- Updated -->
+                            <a href="contact.html" class="main-btn">Contact Us</a> <!-- Updated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Blog Section End ======-->
+
+    <!--====== Client Area Start ======-->
+    <section class="client-section">
+        <div class="container">
+            <div class="client-slider section-gap"> <!-- Removed line-top -->
+                <div class="row align-items-center justify-content-between" id="clientSlider">
+                    <!-- Client logos - Keep placeholders -->
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Client Area End ======-->
+</BaseLayout>

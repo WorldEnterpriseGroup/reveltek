@@ -1,0 +1,202 @@
+---
+import Preloader from '../components/chrome/Preloader.astro';
+import Header from '../components/chrome/Header.astro';
+import HeaderAlt from '../components/chrome/HeaderAlt.astro';
+import HeaderOverview from '../components/chrome/HeaderOverview.astro';
+import HeaderContact from '../components/chrome/HeaderContact.astro';
+import HeaderInner from '../components/chrome/HeaderInner.astro';
+import HeaderTwo from '../components/chrome/HeaderTwo.astro';
+import HeaderThree from '../components/chrome/HeaderThree.astro';
+import Footer from '../components/chrome/Footer.astro';
+import FooterInner from '../components/chrome/FooterInner.astro';
+import FooterServices from '../components/chrome/FooterServices.astro';
+import FooterBlog from '../components/chrome/FooterBlog.astro';
+import FooterInsights from '../components/chrome/FooterInsights.astro';
+import FooterCompany from '../components/chrome/FooterCompany.astro';
+import FooterConsulting from '../components/chrome/FooterConsulting.astro';
+import FooterSoftware from '../components/chrome/FooterSoftware.astro';
+import FooterTwo from '../components/chrome/FooterTwo.astro';
+import FooterGrey from '../components/chrome/FooterGrey.astro';
+
+type HeaderKind = 'main' | 'alt' | 'overview' | 'contact' | 'inner' | 'two' | 'three';
+type FooterKind =
+  | 'main'
+  | 'inner'
+  | 'services'
+  | 'blog'
+  | 'insights'
+  | 'company'
+  | 'consulting'
+  | 'software'
+  | 'two'
+  | 'grey';
+
+const HEADERS: Record<HeaderKind, unknown> = {
+  main: Header,
+  alt: HeaderAlt,
+  overview: HeaderOverview,
+  contact: HeaderContact,
+  inner: HeaderInner,
+  two: HeaderTwo,
+  three: HeaderThree,
+};
+const FOOTERS: Record<FooterKind, unknown> = {
+  main: Footer,
+  inner: FooterInner,
+  services: FooterServices,
+  blog: FooterBlog,
+  insights: FooterInsights,
+  company: FooterCompany,
+  consulting: FooterConsulting,
+  software: FooterSoftware,
+  two: FooterTwo,
+  grey: FooterGrey,
+};
+
+interface Props {
+  /** Verbatim page <title> (e.g. "RevelTek | Business & Technology Consulting"). */
+  title: string;
+  /** Meta description for the page. */
+  description: string;
+  /** Canonical path, e.g. "/index.html" or "/services.html". */
+  canonicalPath: string;
+  /** Chrome variant: default shell, or "three" for the index-3 alternate home. */
+  header?: HeaderKind;
+  /** Footer variant matching the page's approved legacy footer. */
+  footer?: FooterKind;
+  /** Absolute OG image URL. */
+  ogImage?: string;
+  /** AVIF hero/LCP image to preload (relative to site root). */
+  heroPreload?: string;
+  /** Extra raw head markup captured from the legacy page (first-party only). */
+  extraHead?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  header = 'main',
+  footer = 'main',
+  ogImage = 'https://reveltek.com/assets/img/banner/01.avif',
+  heroPreload,
+  extraHead = '',
+} = Astro.props;
+
+const HeaderTag = HEADERS[header] as typeof Header;
+const FooterTag = FOOTERS[footer] as typeof Footer;
+
+const canonical = `https://reveltek.com${canonicalPath}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>{title}</title>
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'RevelTek Inc.',
+      url: 'https://reveltek.com',
+      logo: 'https://reveltek.com/assets/img/svg/revel.svg',
+      description:
+        'RevelTek Inc. is a US-based technical consulting firm delivering SaaS solutions, strategic IT consulting, AI, cloud, and product development management.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Lewes, Delaware, USA',
+      },
+      naics: ['541511', '541611', '541512'],
+    })}
+  </script>
+  <!--====== Favicon Icon ======-->
+  <link rel="icon" href="/assets/img/svg/swirl_white.svg" sizes="any" />
+  <!--====== Fonts: preconnect + swap (same families as theme CSS @import) ======-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,600;0,700;0,900;1,400&display=swap"
+    rel="stylesheet"
+  />
+  {heroPreload && (
+    <link rel="preload" as="image" href={heroPreload} type="image/avif" fetchpriority="high" />
+  )}
+  <!--====== Critical CSS (above-fold theme) ======-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/flaticon.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!--====== Deferred CSS (below-fold widgets only) ======-->
+  <link rel="stylesheet" href="assets/css/animate.min.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="assets/css/slick.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  </noscript>
+  <script type="speculationrules">
+    {JSON.stringify({
+      prerender: [{ where: { href_matches: '/*' }, eagerness: 'moderate' }],
+    })}
+  </script>
+  <Fragment set:html={extraHead} />
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <Preloader />
+  <HeaderTag />
+  <main id="main">
+    <slot />
+  </main>
+  <FooterTag />
+  <!--====== Deferred scripts: execution order preserved, parser never blocked ======-->
+  <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script defer src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script defer src="assets/js/bootstrap.min.js"></script>
+  <script defer src="assets/js/popper.min.js"></script>
+  <script defer src="assets/js/slick.min.js"></script>
+  <script defer src="assets/js/isotope.pkgd.min.js"></script>
+  <script defer src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script defer src="assets/js/jquery.inview.min.js"></script>
+  <script defer src="assets/js/jquery.countTo.js"></script>
+  <script defer src="assets/js/jquery.easypiechart.min.js"></script>
+  <script defer src="assets/js/jquery-ui.min.js"></script>
+  <script defer src="assets/js/wow.min.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</body>
+</html>
+
+<style is:global>
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 9999;
+    background: #ff4a17;
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  :focus-visible {
+    outline: 3px solid #ff4a17;
+    outline-offset: 2px;
+  }
+</style>

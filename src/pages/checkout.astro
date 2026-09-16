@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Product Details"
+  description="RevelTek | Product Details"
+  canonicalPath="/checkout.html"
+  header="inner"
+  footer="inner"
+>
+<!--====== Breadcrumb part Start ======-->
+    <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <h1 class="page-title">Checkout</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Checkout</li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </section>
+    <!--====== Breadcrumb part End ======-->
+    <section class="checkout-area-section section-gap">
+        <form>                
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form billing-info">
+                            <div class="shop-title-box">
+                                <h3>Billing Address</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Country *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_country" value="Australia">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="field-label">First Name *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_fname" value="John">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="field-label">Last Name *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_lname" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Address *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_address" value="Melbourne, Australia">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Town / City *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_city" value="Melbourne">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Contact Email *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_email" value="geniustest11@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Phone *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="billing_number" value="262332">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form shipping-info">
+                            <div class="shop-title-box">
+                                <h3>Shipping Address</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Country *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_country" value="Australia">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="field-label">First Name *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_fname" value="John">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="field-label">Last Name *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_lname" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Address *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_address" value="Melbourne, Australia">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Town / City *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_city" value="Melbourne">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Contact Email *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_email" value="geniustest11@gmail.com" autocomplete="off">
+                                    </div>
+                                                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="field-label">Phone *</div>
+                                    <div class="field-input">
+                                        <input type="text" name="shpping_number" value="3636237">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-5">
+                            <div class="table table-one table-responsive">
+                                <div class="shop-title-box">
+                                    <h3>Shipping Methods</h3>
+                                </div>
+                                <table class="cart-table shipping-method">
+                                    <thead class="cart-header">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Method</th>
+                                            <th class="price">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" checked="" name="shipping_charge" data="10.00" class="shipping-charge" value="6">
+                                            </td>
+                                            <td>
+                                                <p class="mb-2"><strong>Same Day Shipping</strong></p>
+                                                <p><small>Lorem Ipsum is simply dummy text of the printing and typesetting industry</small></p>
+                                            </td>
+                                            <td>
+                                                $ <span>10.00</span> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                            <div class="table table-responsive">
+                                <div class="shop-title-box">
+                                    <h3>Order Summary</h3>
+                                </div>
+                                <table class="cart-table">
+                                    <thead class="cart-header">
+                                        <tr>
+                                            <th class="product-column">Product</th>
+                                            <th>&nbsp;</th>
+                                            <th>Quantity</th>
+                                            <th class="price">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" class="product-column">
+                                                <div class="column-box">
+                                                    <div class="product-title">
+                                                        <a target="_blank" href="product-details.html"><h3 class="prod-title">Brandix Driver's seat</h3></a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="qty">
+                                                <input class="quantity-spinner" type="text" value="1" name="quantity">
+                                            </td>
+                                            <td class="price">$60</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="product-column">
+                                                <div class="column-box">
+                                                    <div class="product-title">
+                                                        <a target="_blank" href="product-details.html"><h3 class="prod-title">Brandix Driver's seat</h3></a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="qty">
+                                                <input class="quantity-spinner" type="text" value="2" name="quantity">
+                                            </td>
+                                            <td class="price">$60</td>
+                                        </tr>                               
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                            <div class="cart-total">
+                                <div class="shop-title-box">
+                                    <h3>Order Total</h3>
+                                </div>
+                                <div>
+                                    <ul class="cart-total-table">
+                                        <li class="clearfix">
+                                            <span class="col col-title">Cart Total</span>
+                                            <span class="col">$<span data="60" class="subtotal">60</span></span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span class="col col-title">Discount
+                                                <span class="text-success">(<i class="fas fa-minus"></i>)</span></span>
+                                            <span class="col">
+                                                $<span data="0">0</span>
+                                            </span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span class="col col-title">Subtotal</span>
+                                            <span class="col">
+                                            $<span data="60" class="subtotal" id="subtotal">60</span>
+                                            </span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span class="col col-title">Shipping Charge
+                                                <span class="text-danger">(<i class="fas fa-plus"></i>)</span></span>
+                                            <span class="col">$<span data="10" class="shipping">10</span></span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span class="col col-title">Tax
+                                                (5.00%)
+                                                <span class="text-danger">(<i class="fas fa-plus"></i>)</span>
+                                            </span>
+                                            <span class="col">
+                                                $<span data-tax="3" id="tax">3</span>
+                                            </span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span class="col col-title">Order Total</span>
+                                            <span class="col">
+                                                $<span data="73" class="grandTotal">73</span></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="coupon mt-4">
+                                    <h4 class="mb-3">Coupon</h4>
+                                    <div class="form-group d-flex">
+                                        <input type="text" class="form-control" name="coupon" value="">
+                                        <button class="btn" type="button" onclick="applyCoupon();">Apply</button>
+                                    </div>
+                                </div>
+                                <div class="payment-options">
+                                    <h4>Pay Via</h4>
+                                    <div class="accordion" id="paymentAccordin">
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <input type="radio" checked id="backTransfer" name="radio" class="collapsed" data-toggle="collapse" data-target="#bank-transfer">
+                                                <label for="backTransfer">Create an account?</label>
+                                            </div>
+                                            <div id="bank-transfer" class="accordion-collapse collapse show" data-parent="#paymentAccordin">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, conse ctetur adip elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <input type="radio" id="cashDeliver" name="radio" class="collapsed" data-toggle="collapse" data-target="#cash-on-deliver">
+                                                <label for="cashDeliver">Cheque Payment</label>
+                                            </div>
+                                            <div id="cash-on-deliver" class="accordion-collapse collapse" data-parent="#paymentAccordin">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, conse ctetur adip elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header">
+                                                <input type="radio" id="paypal"  name="radio" class="collapsed" data-toggle="collapse" data-target="#via-paypal">
+                                                <label for="paypal">Paypal</label>
+                                            </div>
+                                            <div id="via-paypal" class="accordion-collapse collapse" data-parent="#paymentAccordin">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, conse ctetur adip elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="placeorder-button">
+                                        <button class="main-btn">Place Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</BaseLayout>
