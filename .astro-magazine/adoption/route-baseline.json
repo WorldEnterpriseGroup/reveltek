@@ -1,0 +1,525 @@
+{
+  "generated": "2026-09-16T18:37:43.089Z",
+  "host": "https://reveltek.com",
+  "route_count": 41,
+  "routes": [
+    {
+      "url": "/about.html",
+      "id": "about",
+      "title": "RevelTek | About us",
+      "family": "about",
+      "bytes": 39931,
+      "lifecycle": "preserve",
+      "h1": "About Us"
+    },
+    {
+      "url": "/ai.html",
+      "id": "ai",
+      "title": "RevelTek | AI Solutions",
+      "family": "services",
+      "bytes": 31364,
+      "lifecycle": "preserve",
+      "h1": "AI"
+    },
+    {
+      "url": "/analytics.html",
+      "id": "analytics",
+      "title": "RevelTek | Analytics",
+      "family": "services",
+      "bytes": 30282,
+      "lifecycle": "preserve",
+      "h1": "Analytics"
+    },
+    {
+      "url": "/blog-details.html",
+      "id": "blog-details",
+      "title": "RevelTek | Blog Details",
+      "family": "insights",
+      "bytes": 40023,
+      "lifecycle": "preserve",
+      "h1": "Blog Details"
+    },
+    {
+      "url": "/blog-grid.html",
+      "id": "blog-grid",
+      "title": "RevelTek | Blog Grid",
+      "family": "insights",
+      "bytes": 36652,
+      "lifecycle": "preserve",
+      "h1": "Blog Grid"
+    },
+    {
+      "url": "/blog-standard.html",
+      "id": "blog-standard",
+      "title": "RevelTek | Blog Standard",
+      "family": "insights",
+      "bytes": 34720,
+      "lifecycle": "preserve",
+      "h1": "Blog Standard"
+    },
+    {
+      "url": "/blog.html",
+      "id": "blog",
+      "title": "RevelTek | Blog & Insights",
+      "family": "insights",
+      "bytes": 31694,
+      "lifecycle": "preserve",
+      "h1": "Blog"
+    },
+    {
+      "url": "/careers.html",
+      "id": "careers",
+      "title": "RevelTek | Careers",
+      "family": "about",
+      "bytes": 23692,
+      "lifecycle": "preserve",
+      "h1": "Careers at RevelTek"
+    },
+    {
+      "url": "/cart.html",
+      "id": "cart",
+      "title": "RevelTek | Product Details",
+      "family": "shop",
+      "bytes": 23969,
+      "lifecycle": "preserve",
+      "h1": "Cart"
+    },
+    {
+      "url": "/checkout.html",
+      "id": "checkout",
+      "title": "RevelTek | Product Details",
+      "family": "shop",
+      "bytes": 34069,
+      "lifecycle": "preserve",
+      "h1": "Checkout"
+    },
+    {
+      "url": "/cloud.html",
+      "id": "cloud",
+      "title": "RevelTek | Cloud",
+      "family": "services",
+      "bytes": 31414,
+      "lifecycle": "preserve",
+      "h1": "Cloud"
+    },
+    {
+      "url": "/consulting.html",
+      "id": "consulting",
+      "title": "RevelTek | Consulting",
+      "family": "services",
+      "bytes": 30255,
+      "lifecycle": "preserve",
+      "h1": "Consulting"
+    },
+    {
+      "url": "/contact.html",
+      "id": "contact",
+      "title": "RevelTek | Contact Us",
+      "family": "contact",
+      "bytes": 21494,
+      "lifecycle": "preserve",
+      "h1": "Contact Us"
+    },
+    {
+      "url": "/education.html",
+      "id": "education",
+      "title": "RevelTek | Education & eLearning Solutions",
+      "family": "industries",
+      "bytes": 39934,
+      "lifecycle": "preserve",
+      "h1": "Enhancing Learning  With Innovative  Digital Solutions"
+    },
+    {
+      "url": "/events.html",
+      "id": "events",
+      "title": "RevelTek | Events & Webinars",
+      "family": "insights",
+      "bytes": 27254,
+      "lifecycle": "preserve",
+      "h1": "Events"
+    },
+    {
+      "url": "/faq.html",
+      "id": "faq",
+      "title": "RevelTek | Team Members",
+      "family": "about",
+      "bytes": 35958,
+      "lifecycle": "preserve",
+      "h1": "FAQ"
+    },
+    {
+      "url": "/fintech.html",
+      "id": "fintech",
+      "title": "RevelTek | Fintech Solutions",
+      "family": "industries",
+      "bytes": 39686,
+      "lifecycle": "preserve",
+      "h1": "Building Secure  Compliant Technology  For Modern Finance"
+    },
+    {
+      "url": "/guides.html",
+      "id": "guides",
+      "title": "RevelTek | Guides & Reports",
+      "family": "insights",
+      "bytes": 18999,
+      "lifecycle": "preserve",
+      "h1": "Guides & Reports"
+    },
+    {
+      "url": "/health.html",
+      "id": "health",
+      "title": "RevelTek | Health Industry Solutions",
+      "family": "industries",
+      "bytes": 39770,
+      "lifecycle": "preserve",
+      "h1": "Innovating Patient Care  Through Secure  Technology Solutions"
+    },
+    {
+      "url": "/index-2.html",
+      "id": "index-2",
+      "title": "RevelTek | Home Two",
+      "family": "home",
+      "bytes": 66293,
+      "lifecycle": "preserve",
+      "h1": "Take Great Idea To  Growth Your\n                                    Business"
+    },
+    {
+      "url": "/index-3.html",
+      "id": "index-3",
+      "title": "RevelTek | Home Three",
+      "family": "home",
+      "bytes": 65553,
+      "lifecycle": "preserve",
+      "h1": "Perfect Agency  For Innovative  Business"
+    },
+    {
+      "url": "/index.html",
+      "id": "index",
+      "title": "RevelTek | Business & Technology Consulting",
+      "family": "home",
+      "bytes": 41852,
+      "lifecycle": "preserve",
+      "h1": "Empowering Growth  With Innovative  Technology Solutions"
+    },
+    {
+      "url": "/industries.html",
+      "id": "industries",
+      "title": "RevelTek | Industries We Serve",
+      "family": "industries",
+      "bytes": 34382,
+      "lifecycle": "preserve",
+      "h1": "Tailored Technology  For Your Specific  Industry Challenges"
+    },
+    {
+      "url": "/job-details.html",
+      "id": "job-details",
+      "title": "RevelTek | Product Details",
+      "family": "jobs",
+      "bytes": 30595,
+      "lifecycle": "preserve",
+      "h1": "job Details"
+    },
+    {
+      "url": "/job.html",
+      "id": "job",
+      "title": "RevelTek | Product Details",
+      "family": "jobs",
+      "bytes": 20770,
+      "lifecycle": "preserve",
+      "h1": "Job Listing"
+    },
+    {
+      "url": "/portfolio-2.html",
+      "id": "portfolio-2",
+      "title": "RevelTek | Our Portfolio Two",
+      "family": "work",
+      "bytes": 26398,
+      "lifecycle": "preserve",
+      "h1": "Our Project"
+    },
+    {
+      "url": "/portfolio-details.html",
+      "id": "portfolio-details",
+      "title": "RevelTek | Portfolio Details",
+      "family": "work",
+      "bytes": 24792,
+      "lifecycle": "preserve",
+      "h1": "Project Details"
+    },
+    {
+      "url": "/portfolio.html",
+      "id": "portfolio",
+      "title": "RevelTek | Our Portfolio",
+      "family": "work",
+      "bytes": 27157,
+      "lifecycle": "preserve",
+      "h1": "Our Project"
+    },
+    {
+      "url": "/product-details.html",
+      "id": "product-details",
+      "title": "RevelTek | Product Details",
+      "family": "shop",
+      "bytes": 44980,
+      "lifecycle": "preserve",
+      "h1": "Shop Details"
+    },
+    {
+      "url": "/products.html",
+      "id": "products",
+      "title": "RevelTek | Products",
+      "family": "services",
+      "bytes": 30151,
+      "lifecycle": "preserve",
+      "h1": "Products"
+    },
+    {
+      "url": "/retail.html",
+      "id": "retail",
+      "title": "RevelTek | Retail & eCommerce Solutions",
+      "family": "industries",
+      "bytes": 39815,
+      "lifecycle": "preserve",
+      "h1": "Enhancing Customer  Experiences With  Seamless Technology"
+    },
+    {
+      "url": "/service-details.html",
+      "id": "service-details",
+      "title": "RevelTek | Services Details",
+      "family": "services",
+      "bytes": 30682,
+      "lifecycle": "preserve",
+      "h1": "Services Details"
+    },
+    {
+      "url": "/services-2.html",
+      "id": "services-2",
+      "title": "RevelTek | Services Two",
+      "family": "services",
+      "bytes": 29729,
+      "lifecycle": "preserve",
+      "h1": "Our Services"
+    },
+    {
+      "url": "/services.html",
+      "id": "services",
+      "title": "RevelTek | Our Services",
+      "family": "services",
+      "bytes": 64751,
+      "lifecycle": "preserve",
+      "h1": "Our Services"
+    },
+    {
+      "url": "/shop.html",
+      "id": "shop",
+      "title": "RevelTek | Shop Page",
+      "family": "shop",
+      "bytes": 36800,
+      "lifecycle": "preserve",
+      "h1": "Our Shop"
+    },
+    {
+      "url": "/software.html",
+      "id": "software",
+      "title": "RevelTek | Software & SaaS Development",
+      "family": "services",
+      "bytes": 31396,
+      "lifecycle": "preserve",
+      "h1": "Software"
+    },
+    {
+      "url": "/story.html",
+      "id": "story",
+      "title": "RevelTek | Our Story",
+      "family": "about",
+      "bytes": 21549,
+      "lifecycle": "preserve",
+      "h1": "Our Story"
+    },
+    {
+      "url": "/studies.html",
+      "id": "studies",
+      "title": "RevelTek | Case Studies",
+      "family": "insights",
+      "bytes": 28959,
+      "lifecycle": "preserve",
+      "h1": "Case Studies"
+    },
+    {
+      "url": "/team-details.html",
+      "id": "team-details",
+      "title": "RevelTek | Team Details",
+      "family": "about",
+      "bytes": 26682,
+      "lifecycle": "preserve",
+      "h1": "Team Details"
+    },
+    {
+      "url": "/team.html",
+      "id": "team",
+      "title": "RevelTek | Team Members",
+      "family": "about",
+      "bytes": 34676,
+      "lifecycle": "preserve",
+      "h1": "Team Members"
+    },
+    {
+      "url": "/why-us.html",
+      "id": "why-us",
+      "title": "RevelTek | Why Choose Us",
+      "family": "about",
+      "bytes": 22744,
+      "lifecycle": "preserve",
+      "h1": "Why Choose Us"
+    }
+  ],
+  "retired_redirects": [
+    {
+      "url": "/awards.html",
+      "decision": "redirect",
+      "to": "/about.html",
+      "reason": "referenced by footer+10 pages but file missing (404 today); closest truthful survivor"
+    },
+    {
+      "url": "/jobs.html",
+      "decision": "redirect",
+      "to": "/careers.html",
+      "reason": "referenced but missing; careers is the jobs hub"
+    },
+    {
+      "url": "/government.html",
+      "decision": "redirect",
+      "to": "/industries.html",
+      "reason": "referenced but missing; industries hub is closest survivor"
+    },
+    {
+      "url": "/culture.html",
+      "decision": "redirect",
+      "to": "/story.html",
+      "reason": "referenced but missing; story page carries company narrative"
+    }
+  ],
+  "rtl_duplicates": [
+    {
+      "url": "/RTL Version/about.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/blog-details.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/blog-grid.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/blog-standard.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/careers.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/cart.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/checkout.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/contact.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/faq.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/index-2.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/index-3.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/index.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/job-details.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/job.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/portfolio-2.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/portfolio-details.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/portfolio.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/product-details.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/service-details.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/services-2.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/services.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/shop.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/team-details.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    },
+    {
+      "url": "/RTL Version/team.html",
+      "decision": "retire",
+      "reason": "duplicate set; do not ship duplicates; canonical root URLs win; excluded from sitemap"
+    }
+  ],
+  "homepage_sha256": "23709e462806bfae"
+}

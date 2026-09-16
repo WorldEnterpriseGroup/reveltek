@@ -1,0 +1,248 @@
+[
+ {
+  "url": "/about.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/about.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/ai.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/ai.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/analytics.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/analytics.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/blog-details.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/blog-details.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/blog-grid.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/blog-grid.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/blog-standard.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/blog-standard.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/blog.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/blog.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/careers.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/careers.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/cart.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/cart.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/checkout.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/checkout.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/cloud.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/cloud.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/consulting.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/consulting.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/contact.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/contact.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/education.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/education.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/events.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/events.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/faq.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/faq.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/fintech.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/fintech.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/guides.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/guides.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/health.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/health.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/index-2.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/index-2.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/index-3.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/index-3.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/index.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/index.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/industries.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/industries.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/job-details.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/job-details.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/job.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/job.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/portfolio-2.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/portfolio-2.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/portfolio-details.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/portfolio-details.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/portfolio.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/portfolio.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/product-details.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/product-details.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/products.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/products.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/retail.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/retail.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/service-details.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/service-details.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/services-2.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/services-2.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/services.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/services.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/shop.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/shop.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/software.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/software.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/story.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/story.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/studies.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/studies.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/team-details.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/team-details.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/team.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/team.html",
+  "index_policy": "index"
+ },
+ {
+  "url": "/why-us.html",
+  "lifecycle": "preserve",
+  "canonical": "https://reveltek.com/why-us.html",
+  "index_policy": "index"
+ }
+]

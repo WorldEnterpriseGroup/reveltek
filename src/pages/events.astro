@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="RevelTek | Events & Webinars"
+  description="Join RevelTek for upcoming events, webinars, and workshops covering topics like AI, SaaS, Cloud, IT Strategy, and more."
+  canonicalPath="/events.html"
+  header="alt"
+  footer="insights"
+>
+<!--====== Breadcrumb part Start ======-->
+    <div class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                 <!-- Updated Title -->
+                <h1 class="page-title">Events</h1>
+                <ul>
+                     <!-- Updated Path -->
+                    <li>Insights</li>
+                    <li>Events</li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </div>
+    <!--====== Breadcrumb part End ======-->
+
+    <!--====== Events Section Start (Using Blog Layout) ======-->
+    <section class="blog-section section-gap-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Events loop -->
+                    <div class="blog-loop standard-blog row">
+                        <!-- Single Event 1 - Example Upcoming Webinar -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" alt="Webinar on AI Trends"> <!-- Update Image & Alt -->
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                        <!-- Updated Meta Info -->
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">Dec 15, 2024 - 2 PM EST</a></li>
+                                        <li><i class="far fa-clock"></i><a href="#">Online Webinar</a></li> <!-- Type -->
+                                        <li><i class="far fa-tag"></i><a href="#">AI</a>, <a href="#">Strategy</a></li> <!-- Tags/Topics -->
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="event-details-1.html"> <!-- Link to specific event detail/registration page -->
+                                            Upcoming Webinar: Leveraging AI for Strategic Business Advantage
+                                        </a>
+                                    </h3>
+                                     <!-- Updated Excerpt -->
+                                    <p>
+                                        Join our experts as they discuss practical approaches to implementing AI, identifying high value use cases, and building a roadmap for intelligent automation within your organization. Register now to secure your spot.
+                                    </p>
+                                    <a href="event-details-1.html" class="main-btn">Register Now</a> <!-- Updated Button Text -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Event 2 - Example Past Conference -->
+                        <div class="col-12">
+                            <div class="single-post-box">
+                                <div class="post-thumb">
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" alt="Cloud Conference Booth"> <!-- Update Image & Alt -->
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                        <!-- Updated Meta Info -->
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">Oct 10-12, 2024</a></li>
+                                        <li><i class="far fa-map-marker-alt"></i><a href="#">Conference</a></li> <!-- Type -->
+                                        <li><i class="far fa-tag"></i><a href="#">Cloud</a>, <a href="#">DevOps</a></li> <!-- Tags/Topics -->
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="event-details-2.html">
+                                            Past Event: RevelTek at Cloud Innovate Summit 2024
+                                        </a>
+                                    </h3>
+                                    <!-- Updated Excerpt -->
+                                    <p>
+                                        We enjoyed connecting with industry leaders at the Cloud Innovate Summit. Our team presented insights on secure cloud migration and modern DevOps practices. Access presentation slides and key takeaways here.
+                                    </p>
+                                    <a href="event-details-2.html" class="main-btn">View Resources</a> <!-- Updated Button Text -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Event 3 - Example Past Webinar Recording -->
+                        <div class="col-12">
+                            <div class="single-post-box video-post"> <!-- Using video style -->
+                                <div class="post-video">
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" alt="SaaS Development Webinar"> <!-- Update Image & Alt -->
+                                    <a href="https://www.youtube.com/watch?v=fEErySYqItI" class="popup-video" title="Watch SaaS Trends Webinar Recording">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="post-meta">
+                                    <ul>
+                                         <!-- Updated Meta Info -->
+                                        <li><i class="far fa-calendar-alt"></i><a href="#">Sep 20, 2024</a></li>
+                                        <li><i class="far fa-clock"></i><a href="#">Webinar Recording</a></li> <!-- Type -->
+                                        <li><i class="far fa-tag"></i><a href="#">SaaS</a>, <a href="#">Software</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title">
+                                        <a href="event-details-3.html">
+                                           Webinar Recording: Key Trends in Modern SaaS Development
+                                        </a>
+                                    </h3>
+                                    <!-- Updated Excerpt -->
+                                    <p>
+                                       Missed our live session? Watch the recording to learn about microservices, API first design, security considerations, and other crucial trends impacting successful SaaS application building today.
+                                    </p>
+                                    <a href="event-details-3.html" class="main-btn">Watch Recording</a> <!-- Updated Button Text -->
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Add more events here -->
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li><a href="#"><i class="far fa-angle-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <!-- Add more pages if needed -->
+                            <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <!-- sidebar -->
+                    <div class="sidebar">
+                        <!-- Search Widget -->
+                        <div class="widget search-widget">
+                            <form action="#">
+                                <input type="text" placeholder="Search events..."> <!-- Updated placeholder -->
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!-- Event Type Widget -->
+                        <div class="widget cat-widget">
+                            <h4 class="widget-title">Event Type</h4>
+                            <ul>
+                                <li><a href="#">Webinars <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Conferences <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Workshops <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Past Events <span><i class="far fa-angle-right"></i></span></a></li>
+                            </ul>
+                        </div>
+                        <!-- Upcoming Events Widget -->
+                        <div class="widget recent-post-widget">
+                            <h4 class="widget-title">Upcoming Events</h4>
+                            <div class="post-loops">
+                                <div class="single-post">
+                                    <div class="post-thumb"><img loading="lazy" decoding="async" width="75" height="70" src="assets/img/sidebar/recent-01.avif" alt="Upcoming Event 1"></div>
+                                    <div class="post-desc">
+                                        <span class="date"><i class="far fa-calendar-alt"></i>Dec 15, 2024</span>
+                                        <a href="event-details-1.html">Webinar: Leveraging AI for Strategy</a>
+                                    </div>
+                                </div>
+                                <!-- Add more upcoming events -->
+                            </div>
+                        </div>
+                        <!-- Popular Tag Widget -->
+                        <div class="widget popular-tag-widget">
+                            <h4 class="widget-title">Event Topics</h4>
+                            <div class="tags-loop">
+                                <a href="#">AI</a>
+                                <a href="#">Cloud</a>
+                                <a href="#">SaaS</a>
+                                <a href="#">Strategy</a>
+                                <a href="#">DevOps</a>
+                                <a href="#">Security</a>
+                                <a href="#">Analytics</a>
+                                <a href="#">Fintech</a>
+                                <a href="#">Health</a>
+                            </div>
+                        </div>
+                        <!-- Author Widget Removed/Simplified -->
+                        <!-- CTA Widget -->
+                        <div class="widget cta-widget" style="background-image: url(assets/img/sidebar/cta.avif);">
+                            <h4 class="title">Want Event Updates?</h4> <!-- Updated -->
+                            <a href="#" class="main-btn">Subscribe Now</a> <!-- Link to subscription -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Blog Section End ======-->
+
+    <!--====== Client Area Start ======-->
+    <section class="client-section">
+        <div class="container">
+            <div class="client-slider section-gap"> <!-- Removed line-top -->
+                <div class="row align-items-center justify-content-between" id="clientSlider">
+                    <!-- Client logos - Keep placeholders -->
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 1"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 2"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 3"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 4"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 5"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" alt="Client Logo 6"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" alt="Client Logo 7"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" alt="Client Logo 8"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" alt="Client Logo 9"></a></div>
+                    <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" alt="Client Logo 10"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Client Area End ======-->
+</BaseLayout>

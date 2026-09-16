@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reveltek.com/sitemap-index.xml
