@@ -1,13 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { eventsSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="RevelTek | Events & Webinars"
   description="Join RevelTek for upcoming events, webinars, and workshops covering topics like AI, SaaS, Cloud, IT Strategy, and more."
   canonicalPath="/events.html"
+  ogImage="https://reveltek.com/assets/img/blog/01.avif"
   header="alt"
   footer="insights"
+  jsonLd={eventsSchema()}
 >
 <!--====== Breadcrumb part Start ======-->
     <div class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">

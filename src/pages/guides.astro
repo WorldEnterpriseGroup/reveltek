@@ -1,13 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { guidesSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="RevelTek | Guides & Reports"
   description="Download free guides, whitepapers, and reports from RevelTek on IT strategy, AI implementation, cloud adoption, and more tech topics."
   canonicalPath="/guides.html"
+  ogImage="https://reveltek.com/assets/img/feature/04.avif"
   header="alt"
   footer="insights"
+  jsonLd={[guidesSchema()]}
 >
 <!--====== Breadcrumb part Start ======-->
     <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
