@@ -35,7 +35,7 @@
  *                   >= 0.05 and hidden mean ~= orange [255,74,23] within 40),
  *                   wedge-sticky (containment + paint re-run after 600px
  *                   scroll with .sticky-on asserted).
- *   footer          footer .footer-logo img[src*="revel.svg"] exists with
+ *   footer          footer .footer-logo img[src*="reveltek.svg"] exists with
  *                   naturalWidth > 0; body visible text contains zero "Finsa".
  *   console         no console.error and no 4xx for assets/img/svg/* or
  *                   assets/img/logo-*.
@@ -419,8 +419,25 @@ async function runCase(browser, base, outDir, pageDef, vp) {
 
     // Footer + Finsa + console (desktop page only; identical across viewports).
     if (vp.name === 'desktop') {
+      // Footer logos are loading="lazy": scroll into view and wait for
+      // decode before reading naturalWidth, else below-fold imgs race 0.
+      await pg
+        .locator('footer .footer-logo img')
+        .first()
+        .scrollIntoViewIfNeeded()
+        .catch(() => {});
+      await pg
+        .waitForFunction(
+          () => {
+            const i = document.querySelector('footer .footer-logo img');
+            return i && i.complete && i.naturalWidth > 0;
+          },
+          null,
+          { timeout: 8000 },
+        )
+        .catch(() => {});
       const foot = await pg.evaluate(() => {
-        const img = document.querySelector('footer .footer-logo img[src*="revel.svg"]');
+        const img = document.querySelector('footer .footer-logo img[src*="reveltek.svg"]');
         const anyLogo = document.querySelector('footer .footer-logo img');
         const text = document.body ? document.body.innerText || '' : '';
         return {
@@ -437,7 +454,7 @@ async function runCase(browser, base, outDir, pageDef, vp) {
           foot.found && foot.naturalWidth > 0,
           foot.found
             ? `src=${foot.src} naturalWidth=${foot.naturalWidth}`
-            : `no footer .footer-logo img[src*="revel.svg"] (footer uses ${foot.fallbackSrc})`,
+            : `no footer .footer-logo img[src*="reveltek.svg"] (footer uses ${foot.fallbackSrc})`,
         ),
       );
       records.push(check('footer-finsa', foot.finsa === 0, `visible-text "finsa" hits=${foot.finsa} (expect 0)`));
