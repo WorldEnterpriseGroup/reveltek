@@ -1,0 +1,400 @@
+---
+// ContactForm — static-first contact island (autonomous slice 1).
+//
+// Mirrors the Ravonics lead-capture frontend contract (read-only reference)
+// against the Reveltek runbook payload schema, without shipping any endpoint
+// or secret in source:
+//
+//   - Reads its target from window.REVELTEK_FORM_ENDPOINTS.contact, a global
+//     injected at publish time (never hand-edited, never committed with real
+//     URLs). When the entry is absent the island degrades to a prefilled
+//     mailto:info@reveltek.com draft — the permanent last-resort channel —
+//     and never hardcodes a proxy URL.
+//   - Posts application/json per the runbook schema: subject
+//     ("Website Contact Form"), firstname/lastname split from the full-name
+//     input (everything-but-last token / last token), emailaddress1
+//     (trimmed, lowercased), telephone1 (omitted when empty — optional),
+//     description, leadsourcecode ("Website Contact"), plus the anti-abuse
+//     plumbing fields cf_turnstile_token and company_website (consumed by the
+//     proxy, never forwarded to D365).
+//   - Turnstile is a placeholder <div> with NO sitekey in this slice (the
+//     sitekey + widget script land in a later slice). The island forwards a
+//     token when one exists (window.reveltekTurnstileToken, set by the future
+//     widget callback) but never blocks submission on a missing token —
+//     otherwise the form would be unsubmittable until that slice lands.
+//   - Honeypot input (company_website) is rendered off-screen; its value is
+//     sent through untouched so the proxy can silently drop bot fills.
+//   - Zero-dependency vanilla JS in the sota/islands style: no framework, no
+//     client:* directive (none is installed), activation gated by
+//     IntersectionObserver (≈ client:visible) with an immediate fallback,
+//     idempotent across View Transitions via astro:page-load + data-wired.
+//   - Accessible feedback: per-field aria-invalid, a validation summary and
+//     success/error regions with aria-live, and a <noscript> mailto path.
+//
+// Static fallback: the form markup (required attributes, mailto/tel links
+// elsewhere on the page) renders server-side, so no-JS still shows every
+// field plus the noscript mailto note.
+---
+<span data-island="contact-form" hidden aria-hidden="true"></span>
+
+<form id="contact-form" name="contactForm" method="post" action="#">
+  <noscript>
+    <div class="no-js-fallback" role="note">
+      JavaScript is disabled. Please email your inquiry directly to
+      <a href="mailto:info@reveltek.com?subject=RevelTek%20Website%20Inquiry">info@reveltek.com</a>.
+    </div>
+  </noscript>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="input-group mb-30">
+        <input
+          type="text"
+          id="contact-fullname"
+          name="fullname"
+          placeholder="Your Full Name"
+          aria-label="Your Full Name"
+          autocomplete="name"
+          required
+        />
+        <span class="icon"><i class="far fa-user-circle"></i></span>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group mb-30">
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          placeholder="Your Email Address"
+          aria-label="Your Email Address"
+          autocomplete="email"
+          required
+        />
+        <span class="icon"><i class="far fa-envelope-open"></i></span>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group mb-30">
+        <input
+          type="tel"
+          id="contact-phone"
+          name="phone"
+          placeholder="Your Phone (Optional)"
+          aria-label="Your Phone (Optional)"
+          autocomplete="tel"
+        />
+        <span class="icon"><i class="far fa-phone"></i></span>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="input-group textarea mb-30">
+        <textarea
+          id="contact-message"
+          name="message"
+          placeholder="Write Message"
+          aria-label="Write Message"
+          required></textarea>
+        <span class="icon"><i class="far fa-pencil"></i></span>
+      </div>
+    </div>
+    <!-- Honeypot: off-screen, left empty by real users. Bots that fill every
+         field are silently dropped by the proxy (which still returns 200). -->
+    <div style="position:absolute;left:-9999px;" aria-hidden="true">
+      <input type="text" name="company_website" tabindex="-1" autocomplete="off" />
+    </div>
+    <!-- Turnstile placeholder. NO sitekey in this slice: the sitekey and the
+         Cloudflare widget script arrive in a later slice, which also sets
+         window.reveltekTurnstileToken via its data-callback. -->
+    <div class="cf-turnstile" data-turnstile-placeholder aria-hidden="true"></div>
+    <div class="col-12 text-center">
+      <button type="submit" id="contact-submit" class="main-btn">Send Message</button>
+    </div>
+    <div class="col-12">
+      <div id="contact-success" role="status" aria-live="polite" hidden></div>
+      <div id="contact-error" role="alert" aria-live="assertive" hidden></div>
+      <div id="contact-validation" role="alert" aria-live="assertive" hidden></div>
+    </div>
+  </div>
+</form>
+
+<style>
+  /* Scoped invalid-field cue. No global stylesheet is touched. */
+  #contact-form [aria-invalid='true'] {
+    border-color: #dc3545;
+  }
+  #contact-success,
+  #contact-error,
+  #contact-validation {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #contact-error,
+  #contact-validation {
+    color: #b02a37;
+  }
+  #contact-success {
+    color: #146c43;
+  }
+  #contact-validation ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    display: inline-block;
+    text-align: left;
+  }
+</style>
+
+<script>
+  declare global {
+    interface Window {
+      REVELTEK_FORM_ENDPOINTS?: { contact?: string };
+      reveltekTurnstileToken?: string;
+    }
+  }
+
+  const MAILTO_FALLBACK = 'info@reveltek.com';
+  const SUBJECT = 'Website Contact Form';
+  const LEAD_SOURCE = 'Website Contact';
+
+  function getContactEndpoint(): string {
+    const cfg = window.REVELTEK_FORM_ENDPOINTS || {};
+    return cfg.contact || '';
+  }
+
+  function showStatus(kind: 'success' | 'error' | 'validation', html: string): void {
+    const ids = ['contact-success', 'contact-error', 'contact-validation'] as const;
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.hidden = true;
+        el.innerHTML = '';
+      }
+    });
+    const target =
+      kind === 'success'
+        ? document.getElementById('contact-success')
+        : kind === 'error'
+          ? document.getElementById('contact-error')
+          : document.getElementById('contact-validation');
+    if (target) {
+      if (html) target.innerHTML = html;
+      target.hidden = false;
+    }
+  }
+
+  function buildMailto(payload: {
+    firstname: string;
+    lastname: string;
+    emailaddress1: string;
+    telephone1?: string;
+    description: string;
+  }): string {
+    const body = [
+      `Name: ${`${payload.firstname} ${payload.lastname}`.trim()}`,
+      `Email: ${payload.emailaddress1}`,
+      `Phone: ${payload.telephone1 || ''}`,
+      '',
+      'Message:',
+      payload.description,
+    ].join('\n');
+    return (
+      `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(SUBJECT)}` +
+      `&body=${encodeURIComponent(body)}`
+    );
+  }
+
+  function initContactForm(): void {
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLFormElement) || form.dataset.wired === '1') return;
+    form.dataset.wired = '1';
+
+    const nameEl = document.getElementById('contact-fullname');
+    const emailEl = document.getElementById('contact-email');
+    const phoneEl = document.getElementById('contact-phone');
+    const messageEl = document.getElementById('contact-message');
+    const submitBtn = document.getElementById('contact-submit');
+    if (
+      !(nameEl instanceof HTMLInputElement) ||
+      !(emailEl instanceof HTMLInputElement) ||
+      !(phoneEl instanceof HTMLInputElement) ||
+      !(messageEl instanceof HTMLTextAreaElement)
+    ) {
+      return;
+    }
+    const originalLabel =
+      submitBtn instanceof HTMLElement ? submitBtn.textContent : 'Send Message';
+
+    // Clear per-field invalid flags + status regions on edit.
+    form.addEventListener('input', (event) => {
+      const target = event.target;
+      if (target instanceof HTMLElement && target.hasAttribute('aria-invalid')) {
+        target.removeAttribute('aria-invalid');
+      }
+      showStatus('success', '');
+      const success = document.getElementById('contact-success');
+      const error = document.getElementById('contact-error');
+      const validation = document.getElementById('contact-validation');
+      if (success) success.hidden = true;
+      if (error) error.hidden = true;
+      if (validation) validation.hidden = true;
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // ── Client-side validation (native required/type attributes are the
+      // first layer; checkValidity + this summary are the second) ──────────
+      const missing: string[] = [];
+      const fields: Array<{ el: HTMLInputElement | HTMLTextAreaElement; label: string; ok: boolean }> = [
+        { el: nameEl, label: 'Your Full Name', ok: nameEl.value.trim().length > 0 },
+        {
+          el: emailEl,
+          label: 'Your Email Address',
+          ok: emailEl.value.trim().length > 0 && emailEl.checkValidity(),
+        },
+        // Phone is optional: never a validation error.
+        {
+          el: messageEl,
+          label: 'Your Message',
+          ok: messageEl.value.trim().length > 0,
+        },
+      ];
+      fields.forEach(({ el, label, ok }) => {
+        if (!ok) {
+          missing.push(label);
+          el.setAttribute('aria-invalid', 'true');
+        } else {
+          el.removeAttribute('aria-invalid');
+        }
+      });
+      // NOTE: no Turnstile gate here — the widget (and its sitekey) lands in
+      // a later slice, so requiring a token would make the form permanently
+      // unsubmittable. The token is forwarded when present.
+
+      if (missing.length > 0) {
+        showStatus(
+          'validation',
+          '<strong>Please complete the following required fields:</strong><ul>' +
+            missing.map((m) => `<li>${m}</li>`).join('') +
+            '</ul>',
+        );
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if (firstInvalid instanceof HTMLElement) {
+          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstInvalid.focus({ preventScroll: true });
+        }
+        return;
+      }
+
+      // ── Split full name: everything-but-last token → firstname, last
+      // token → lastname (per runbook; keeps lastname populated for D365). ──
+      const tokens = nameEl.value.trim().split(/\s+/);
+      const lastname = tokens.pop() || '';
+      const firstname = tokens.join(' ');
+
+      const honeypot =
+        form.querySelector('[name="company_website"]') instanceof HTMLInputElement
+          ? (form.querySelector('[name="company_website"]') as HTMLInputElement).value.trim()
+          : '';
+
+      const payload: Record<string, string> = {
+        subject: SUBJECT,
+        firstname,
+        lastname,
+        emailaddress1: emailEl.value.trim().toLowerCase(),
+        description: messageEl.value.trim(),
+        leadsourcecode: LEAD_SOURCE,
+        cf_turnstile_token: window.reveltekTurnstileToken || '',
+        company_website: honeypot,
+      };
+      // Phone is optional: omit when empty.
+      if (phoneEl.value.trim().length > 0) {
+        payload.telephone1 = phoneEl.value.trim();
+      }
+
+      if (submitBtn instanceof HTMLButtonElement) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      const done = (restoresLabel = true) => {
+        if (submitBtn instanceof HTMLButtonElement) {
+          submitBtn.disabled = false;
+          if (restoresLabel && originalLabel) submitBtn.textContent = originalLabel;
+        }
+      };
+
+      const endpoint = getContactEndpoint();
+      if (!endpoint) {
+        // No publish-time endpoint configured: open a prefilled mailto draft.
+        window.location.href = buildMailto({
+          firstname,
+          lastname,
+          emailaddress1: payload.emailaddress1,
+          telephone1: payload.telephone1,
+          description: payload.description,
+        });
+        showStatus(
+          'success',
+          'Your email app has been opened with the message details. ' +
+            'Send that email to complete your request.',
+        );
+        form.reset();
+        done();
+        return;
+      }
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          showStatus(
+            'success',
+            'Thank you — your message has been received. We will get back to you shortly.',
+          );
+          form.reset();
+          done();
+          const ok = document.getElementById('contact-success');
+          if (ok) ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch((err) => {
+          // Never silently drop a lead: point at the permanent fallback.
+          console.error('Contact form submission error:', err);
+          showStatus(
+            'error',
+            `Something went wrong sending your message. Please email us directly at ` +
+              `<a href="mailto:${MAILTO_FALLBACK}">${MAILTO_FALLBACK}</a>.`,
+          );
+          done();
+          const bad = document.getElementById('contact-error');
+          if (bad) bad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+  }
+
+  function armContactForm(): void {
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLElement)) return;
+    // ≈ client:visible: below-fold form costs nothing until seen.
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            observer.disconnect();
+            initContactForm();
+          });
+        },
+        { threshold: 0.05 },
+      );
+      observer.observe(form);
+    } else {
+      initContactForm();
+    }
+  }
+
+  document.addEventListener('astro:page-load', armContactForm);
+  armContactForm();
+</script>

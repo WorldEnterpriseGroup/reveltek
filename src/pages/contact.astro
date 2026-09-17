@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
 ---
 
 <BaseLayout
@@ -74,37 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <h2 class="title">Don’t Hesitate To Contact Us</h2>
                         </div>
 
-                        <form action="#"> <!-- Ensure form action points to a processing script -->
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="input-group mb-30">
-                                        <input type="text" placeholder="Your Full Name" required> <!-- Added required -->
-                                        <span class="icon"><i class="far fa-user-circle"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="input-group mb-30">
-                                        <input type="email" placeholder="Your Email Address" required> <!-- Added required -->
-                                        <span class="icon"><i class="far fa-envelope-open"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="input-group mb-30">
-                                        <input type="text" placeholder="Your Phone (Optional)">
-                                        <span class="icon"><i class="far fa-phone"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="input-group textarea mb-30">
-                                        <textarea placeholder="Write Message" required></textarea> <!-- Added required -->
-                                        <span class="icon"><i class="far fa-pencil"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="main-btn">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+                        <ContactForm />
                     </div>
                 </div>
             </div>
