@@ -157,20 +157,47 @@ export function eventsSchema(): Record<string, unknown>[] {
  * FAQPage for /faq.html: the ten questions and answers, verbatim from the
  * page's accordion copy. Nothing is reworded or added.
  */
-const faqAnswer =
-  'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu';
-
-const faqQuestions: string[] = [
-  'How To Create A Mobile App In Expo And Firebase Meet SmashingConf Live: Our New Interactive Online Conference',
-  'Smashing Podcast Episode With Ben How Optimize How To Build A Vue Survey App Using Firebase ?',
-  'Learning Resources Challenging Online Workshops Setting TypeScript Modern React Projects Using Webpack ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And Database Blessing Krofegha wrote ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And Database Meet Sma Ove Online Conference ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And Database Join Our New Online ccessibility ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And Database Using components ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And Interactive Online Conference ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And Database Join Our New Online ?',
-  'How To Build A Vue Survey App Using Firebase Authentication And In React Apps Using components ?',
+const faqPairs: Array<[string, string]> = [
+  [
+    'How long does a typical engagement last?',
+    'It depends on scope. A strategy or discovery engagement usually runs a few weeks; a design-and-build engagement runs longer and is planned in stages with clear checkpoints. We agree the timeline with you before work starts.',
+  ],
+  [
+    'How do you price your work?',
+    'Fixed price for clearly defined builds, time-and-materials for ongoing or evolving work. Every proposal lists what is included so there are no surprises. Contact us with your requirements for a quote.',
+  ],
+  [
+    'Who owns the IP in what you build for us?',
+    'You do. Work product created for you under the engagement transfers to you on final payment, and we spell this out in the contract before work begins.',
+  ],
+  [
+    'What support do you offer after launch?',
+    'Every build includes a handover with documentation. After that, you can continue on a support plan covering fixes, updates, and small improvements, with response times agreed in writing.',
+  ],
+  [
+    'How do you handle security and compliance?',
+    'We follow secure development practices: least-privilege access, encrypted data in transit and at rest, and regular dependency updates. For regulated industries such as health and fintech, we work to your compliance requirements and document controls as part of delivery.',
+  ],
+  [
+    'What does a typical project involve?',
+    'Discovery talks, analysis, strategy and roadmap, then build and launch support. The exact mix depends on your goals, and we agree it with you before work starts.',
+  ],
+  [
+    'How do you track success?',
+    'We set measurable goals upfront — return on investment, efficiency gains, time to market, or reduced risk — and report against them through the engagement.',
+  ],
+  [
+    'Which industries do you work with?',
+    'We have strong experience in health, fintech, and retail, and our methods apply to any team modernizing its technology.',
+  ],
+  [
+    'How involved do we need to be?',
+    'Plan on regular check-ins: planning, sprint reviews, and feedback sessions. A named decision-maker on your side keeps things moving.',
+  ],
+  [
+    'How do we start?',
+    'Send a message through the contact page describing your goal. We reply with next steps and schedule a discovery call.',
+  ],
 ];
 
 export function faqSchema(): Record<string, unknown> {
@@ -178,10 +205,10 @@ export function faqSchema(): Record<string, unknown> {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     url: `${SITE}/faq.html`,
-    mainEntity: faqQuestions.map((q) => ({
+    mainEntity: faqPairs.map(([q, a]) => ({
       '@type': 'Question',
       name: q,
-      acceptedAnswer: { '@type': 'Answer', text: faqAnswer },
+      acceptedAnswer: { '@type': 'Answer', text: a },
     })),
   };
 }
