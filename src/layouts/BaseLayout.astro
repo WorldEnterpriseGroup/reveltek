@@ -188,7 +188,7 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,600;0,700;0,900;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@600;700&display=swap"
     rel="stylesheet"
   />
   {heroPreload && (
@@ -290,10 +290,20 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
     top: 1rem;
     z-index: 9999;
     background: #ff4a17;
-    color: #fff;
+    color: #14212b;
+    font-weight: 700;
     padding: 0.5rem 1rem;
   }
-  :focus-visible {
+  /* Theme reset uses `a:focus { outline: none }` (0,1,1), which beats a bare
+     `:focus-visible` (0,1,0). Scope to body so keyboard focus always wins
+     regardless of stylesheet order. Token unchanged (#ff4a17 >= 3:1 on both
+     light and dark surfaces for the 3px indicator). */
+  body a:focus-visible,
+  body button:focus-visible,
+  body input:focus-visible,
+  body textarea:focus-visible,
+  body select:focus-visible,
+  body [tabindex]:focus-visible {
     outline: 3px solid #ff4a17;
     outline-offset: 2px;
   }
