@@ -49,7 +49,7 @@ export const blogItems: FeedItem[] = [
     description:
       'Collecting data is easy, but extracting real value requires the right approach. Learn how modern analytics tools and techniques help businesses make smarter, data informed choices daily.',
     pubDate: utc(2024, 11, 12),
-    author: 'Sarah Lee',
+    author: 'RevelTek Team',
     categories: ['Analytics'],
   },
   {
@@ -59,7 +59,7 @@ export const blogItems: FeedItem[] = [
     description:
       'When should you invest in building custom software versus using existing tools? We break down the pros, cons, and key factors to consider for your next project decision making.',
     pubDate: utc(2024, 11, 5),
-    author: 'Mike Brown',
+    author: 'RevelTek Team',
     categories: ['Software'],
   },
 ];
