@@ -66,7 +66,7 @@ export const blogItems: FeedItem[] = [
 
 export const eventItems: FeedItem[] = [
   {
-    title: 'Upcoming Webinar: Leveraging AI for Strategic Business Advantage',
+    title: 'Webinar: Leveraging AI for Strategic Business Advantage',
     link: 'https://reveltek.com/events.html',
     guid: 'reveltek-event-2024-12-15-ai-webinar',
     description:
