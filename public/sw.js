@@ -13,7 +13,7 @@
  *
  * Bump CACHE_VERSION on any app-shell change to force a clean refresh.
  */
-const CACHE_VERSION = 'reveltek-v1';
+const CACHE_VERSION = 'reveltek-v2';
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = ['/index.html', '/404.html', '/manifest.webmanifest'];
 
