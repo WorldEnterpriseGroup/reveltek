@@ -1,6 +1,6 @@
 /**
  * Curated feed items mirroring the recurring public content on
- * blog.html, events.html, and guides.html (copy verified 2026-09-16).
+ * blog.html, events.html, and guides.html (copy verified 2026-09-18).
  *
  * Dates mirror the dates shown on each listing page. GUIDs are stable
  * synthetic IDs (not bare URLs) so items survive future URL changes.
@@ -19,7 +19,7 @@ export const blogItems: FeedItem[] = [
     description:
       'Adopting artificial intelligence requires more than just technology. It demands a clear strategy, relevant use cases, and careful planning. Discover key steps for successful AI integration in your business.',
     pubDate: utc(2024, 12, 5),
-    author: 'Jane Doe',
+    author: 'RevelTek Team',
     categories: ['AI'],
   },
   {
@@ -29,7 +29,7 @@ export const blogItems: FeedItem[] = [
     description:
       'Security is paramount for SaaS success. We explore essential cloud security best practices, from identity management to data encryption, vital for protecting users and meeting compliance.',
     pubDate: utc(2024, 11, 28),
-    author: 'John Smith',
+    author: 'RevelTek Team',
     categories: ['Cloud'],
   },
   {
