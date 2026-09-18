@@ -14,10 +14,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.avif);">
         <div class="container">
             <div class="breadcrumb-text">
-                 <!-- Updated Title -->
                 <h1 class="page-title">Case Studies</h1>
                 <ul>
-                     <!-- Updated Path -->
                     <li>Insights</li>
                     <li>Studies</li>
                 </ul>
@@ -38,15 +36,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="col-lg-8">
                     <!-- Study loop -->
                     <div class="blog-loop standard-blog row">
-                        <!-- Single Study 1 - Example -->
                         <div class="col-12">
                             <div class="single-post-box">
                                 <div class="post-thumb">
-                                    <img loading="eager" fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" srcset="assets/img/blog/01.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Fintech Security Study"> <!-- Update Image & Alt -->
+                                    <img loading="eager" fetchpriority="high" decoding="async" width="770" height="470" src="assets/img/blog/01.avif" srcset="assets/img/blog/01.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Fintech Security Study">
                                 </div>
                                 <div class="post-meta">
                                     <ul>
-                                        <!-- Updated Meta Info -->
                                         <li><i class="far fa-industry"></i><a href="fintech.html">Fintech</a></li>
                                         <li><i class="far fa-cogs"></i><a href="ai.html">AI</a>, <a href="software.html">Software</a></li>
                                         <li><i class="far fa-check-circle"></i><a href="#">Result: 30% Fraud Reduction</a></li>
@@ -54,27 +50,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                                 <div class="post-content">
                                     <h3 class="title">
-                                        <a href="study-details-1.html"> <!-- Link to specific study detail page -->
+                                        <a href="study-details-1.html">
                                             AI Powered Fraud Detection Reduces Losses for Fintech Client
                                         </a>
                                     </h3>
-                                     <!-- Updated Excerpt -->
                                     <p>
-                                        A leading financial technology firm faced rising fraudulent transactions. RevelTek designed and deployed a custom machine learning model integrated into their platform, resulting in a significant decrease in fraud losses and improved customer trust.
+                                        A fintech operator faced rising fraudulent transactions. We assessed the
+                                        detection gaps, agreed a sequenced roadmap, and shipped a machine learning
+                                        model integrated into their platform — cutting fraud losses and restoring
+                                        customer trust. Representative engagement pattern; outcomes vary by scope.
+                                        Facing the same problem? <a href="contact.html">Contact us</a> for an
+                                        honest scoping call.
                                     </p>
-                                    <a href="study-details-1.html" class="main-btn">View Study</a> <!-- Updated Button Text -->
+                                    <a href="study-details-1.html" class="main-btn">View Study</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Study 2 - Example -->
                         <div class="col-12">
                             <div class="single-post-box">
                                 <div class="post-thumb">
-                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" srcset="assets/img/blog/02.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Healthcare Cloud Migration"> <!-- Update Image & Alt -->
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/02.avif" srcset="assets/img/blog/02.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Healthcare Cloud Migration">
                                 </div>
                                 <div class="post-meta">
                                     <ul>
-                                         <!-- Updated Meta Info -->
                                         <li><i class="far fa-industry"></i><a href="health.html">Health</a></li>
                                         <li><i class="far fa-cogs"></i><a href="cloud.html">Cloud</a>, <a href="consulting.html">Consulting</a></li>
                                         <li><i class="far fa-check-circle"></i><a href="#">Result: 40% Cost Savings</a></li>
@@ -86,23 +84,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                            Secure Cloud Migration Strategy Enables Scalability for Provider
                                         </a>
                                     </h3>
-                                    <!-- Updated Excerpt -->
                                     <p>
-                                        A regional hospital system needed to modernize its aging infrastructure while ensuring HIPAA compliance. RevelTek provided strategic consulting and executed a phased migration to a secure cloud environment, improving scalability and reducing IT costs.
+                                        A regional hospital system needed to modernize aging infrastructure without
+                                        breaking HIPAA compliance. We assessed the estate, planned a phased
+                                        migration, and operated the landing zone through handover — improving
+                                        scalability while cutting IT cost. Representative engagement pattern;
+                                        outcomes vary by scope. Planning a migration? <a href="contact.html">Contact
+                                        us</a> for an honest scoping call.
                                     </p>
                                     <a href="study-details-2.html" class="main-btn">View Study</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Study 3 - Example -->
                         <div class="col-12">
                             <div class="single-post-box">
                                 <div class="post-thumb">
-                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" srcset="assets/img/blog/03.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Retail eCommerce Platform"> <!-- Update Image & Alt -->
+                                    <img loading="lazy" decoding="async" width="770" height="470" src="assets/img/blog/03.avif" srcset="assets/img/blog/03.avif 770w" sizes="(max-width: 768px) 100vw, 770px" alt="Retail eCommerce Platform">
                                 </div>
                                 <div class="post-meta">
                                     <ul>
-                                         <!-- Updated Meta Info -->
                                         <li><i class="far fa-industry"></i><a href="retail.html">Retail</a></li>
                                         <li><i class="far fa-cogs"></i><a href="software.html">Software</a>, <a href="products.html">Products</a></li>
                                         <li><i class="far fa-check-circle"></i><a href="#">Result: 25% Conversion Lift</a></li>
@@ -114,15 +114,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                            Custom eCommerce Platform Enhances User Experience & Sales
                                         </a>
                                     </h3>
-                                    <!-- Updated Excerpt -->
                                     <p>
-                                        An online retailer struggled with an outdated website. RevelTek managed the development of a new, custom eCommerce platform focusing on user experience (UX) and mobile first design, leading to increased engagement and conversions.
+                                        An online retailer was losing mobile buyers to an outdated site. We assessed
+                                        the funnel, rebuilt the commerce platform mobile-first, and handed over
+                                        operations with clear ownership — lifting engagement and conversions.
+                                        Representative engagement pattern; outcomes vary by scope. Replatforming?
+                                        <a href="contact.html">Contact us</a> for an honest scoping call.
                                     </p>
                                     <a href="study-details-3.html" class="main-btn">View Study</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Add more case studies here -->
                     </div>
                     <!-- Pagination -->
                     <div class="pagination-wrap">
@@ -140,7 +142,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <!-- Search Widget -->
                         <div class="widget search-widget">
                             <form action="#">
-                                <input type="text" placeholder="Search studies..."> <!-- Updated placeholder -->
+                                <input type="text" placeholder="Search studies...">
                                 <button type="submit"><i class="far fa-search"></i></button>
                             </form>
                         </div>
@@ -152,7 +154,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <li><a href="#">Fintech <span><i class="far fa-angle-right"></i></span></a></li>
                                 <li><a href="#">Retail <span><i class="far fa-angle-right"></i></span></a></li>
                                 <li><a href="#">Education <span><i class="far fa-angle-right"></i></span></a></li>
-                                <!-- Add other industries -->
                             </ul>
                         </div>
                         <!-- Filter by Service Widget -->
@@ -208,11 +209,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <a href="#">SaaS Platform</a>
                             </div>
                         </div>
-                        <!-- Author Widget Removed -->
-                        <!-- CTA Widget -->
                         <div class="widget cta-widget" style="background-image: url(assets/img/sidebar/cta.avif);">
-                            <h4 class="title">Want Similar Results?</h4> <!-- Updated -->
-                            <a href="contact.html" class="main-btn">Contact Us</a> <!-- Updated -->
+                            <h4 class="title">Want Similar Results?</h4>
+                            <a href="contact.html" class="main-btn">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -224,9 +223,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!--====== Client Area Start ======-->
     <section class="client-section">
         <div class="container">
-            <div class="client-slider section-gap"> <!-- Removed line-top -->
+            <div class="client-slider section-gap">
                 <div class="row align-items-center justify-content-between" id="clientSlider">
-                    <!-- Client logos - Keep placeholders -->
                     <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client Logo 1"></a></div>
                     <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client Logo 2"></a></div>
                     <div class="col"><a href="#" class="client-img d-block text-center"><img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client Logo 3"></a></div>
