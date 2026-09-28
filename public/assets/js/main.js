@@ -756,17 +756,12 @@
 	}
 	window.RevelWidgets = { init: initWidgets };
 
-	// ===== 22. Wow Js (restartable: stops the previous page's instance so
-	// swapped-in .wow elements animate instead of staying hidden)
+	// ===== 22. Scroll reveals (.wow) — owned by the ScrollReveals vanilla
+	// island (IntersectionObserver, no jQuery/WOW dependency). wow.min.js is
+	// no longer shipped, so this is an intentional no-op stub; it stays so
+	// initWidgets() and the window-load call below keep working.
 	function initWow() {
-		try {
-			if (typeof WOW === 'undefined') return;
-			if (window.__revelWow && window.__revelWow.stop) window.__revelWow.stop();
-			window.__revelWow = new WOW();
-			window.__revelWow.init();
-		} catch (err) {
-			if (window.console) window.console.warn('[reveltek] WOW init failed', err);
-		}
+		return;
 	}
 
 	/*---------------------

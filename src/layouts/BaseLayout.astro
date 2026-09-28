@@ -21,6 +21,7 @@ import FooterGrey from '../components/chrome/FooterGrey.astro';
 import MobileNav from '../components/islands/MobileNav.astro';
 import Counters from '../components/islands/Counters.astro';
 import ClientSlider from '../components/islands/ClientSlider.astro';
+import ScrollReveals from '../components/islands/ScrollReveals.astro';
 
 type HeaderKind = 'main' | 'alt' | 'overview' | 'contact' | 'inner' | 'two' | 'three';
 type FooterKind =
@@ -255,14 +256,17 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
   <MobileNav />
   <Counters />
   <ClientSlider />
+  <ScrollReveals />
   <!--====== Deferred scripts: execution order preserved, parser never blocked ======-->
   <!-- Legacy inventory (all defer; zero render-blocking):
        REPLACED by islands above (kept loaded, but their passes early-return
        via [data-island] markers in main.js): mobile nav/offcanvas/sticky/
        back-to-top (MobileNav island), fact counters (Counters island),
-       #clientSlider logo carousel (ClientSlider island).
-       DROPPED: jquery.countTo.js — loaded but never invoked anywhere
-       (counterToUp uses jQuery .animate directly).
+       #clientSlider logo carousel (ClientSlider island), .wow scroll
+       reveals (ScrollReveals island — wow.min.js no longer loaded;
+       animate.min.css stays: pure-CSS keyframes the island reuses).
+       DROPPED: jquery.countTo.js (dead — zero invocations; plugin files
+       removed) and wow.min.js (replaced by the ScrollReveals island).
        PER-PAGE via extraHead (in <head>, after jQuery — see above):
        - isotope.pkgd.min.js → portfolio, portfolio-2, index-3
        - jquery.magnific-popup.min.js → product-details
@@ -272,7 +276,6 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
        - slick: banner/team/testimonial/latest-post/product sliders
          (cloned infinite slides, dots/arrows, data-thumb paging)
        - inview/easypiechart: scroll pie charts + skill progress bars
-       - wow: scroll-reveal animations (17 pages)
        - main.js: remaining widget initializations (idempotent; re-invoked
          on every View Transition via window.RevelWidgets.init from the
          MobileNav island; preloader uses transition:persist instead.
@@ -284,7 +287,6 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
   <script defer src="assets/js/slick.min.js"></script>
   <script defer src="assets/js/jquery.inview.min.js"></script>
   <script defer src="assets/js/jquery.easypiechart.min.js"></script>
-  <script defer src="assets/js/wow.min.js"></script>
   <script defer src="assets/js/main.js"></script>
   <!--====== PWA: offline support registration (progressive enhancement) ======-->
   <script defer src="assets/js/sw-register.js"></script>
