@@ -233,15 +233,21 @@
 
 	// ===== 05. Popup video
 	function popupVideo() {
+		// No-op on pages that don't load jquery.magnific-popup (per-page
+		// diet: only lightbox users ship it). Calling an absent jQuery
+		// plugin would throw on every page.
+		if (typeof $.fn.magnificPopup !== 'function') return;
 		$('.popup-video').not('[data-mfp-init]').attr('data-mfp-init', '1').magnificPopup({
 			type: 'iframe',
 		});
 	}
 	function popupImg() {
+		// Same per-page guard as popupVideo (only product-details ships it).
+		if (typeof $.fn.magnificPopup !== 'function') return;
 		$('.img-popup').not('[data-mfp-init]').attr('data-mfp-init', '1').magnificPopup({
 			type: "image",
-			gallery: { 
-				enabled: true 
+			gallery: {
+				enabled: true
 			}
 		});
 	}
@@ -546,10 +552,11 @@
 	// ===== 12. fact isotope activation
 	function factIsotope() {
 		var facts = $('#factIsotpe');
-		if (facts.length && !facts.attr('data-iso-init')) {
-			facts.attr('data-iso-init', '1');
-			facts.isotope();
-		}
+		if (!facts.length || facts.attr('data-iso-init')) return;
+		// Per-page diet: isotope ships only on portfolio/portfolio-2/index-3.
+		if (typeof $.fn.isotope !== 'function') return;
+		facts.attr('data-iso-init', '1');
+		facts.isotope();
 	}
 
 	// ===== 13. Active Progress Bar
@@ -573,6 +580,8 @@
 	function projectIsotope() {
 		var grid = $('.project-isotope');
 		if (!grid.length || grid.attr('data-iso-init')) return;
+		// Per-page diet: isotope ships only on portfolio/portfolio-2/index-3.
+		if (typeof $.fn.isotope !== 'function') return;
 		grid.attr('data-iso-init', '1');
 		var items = grid.isotope({
 			itemSelector: '.isotope-item',
@@ -600,6 +609,9 @@
 	function priceRange() {
 		var range = $('#slider-range');
 		if (!range.length || range.hasClass('ui-slider')) return;
+		// Per-page diet: jquery-ui ships only on shop. Without it both the
+		// init and the values read below would throw.
+		if (typeof $.fn.slider !== 'function') return;
 		range.slider({
 			range: true,
 			min: 40,

@@ -220,6 +220,22 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
        and dedupes external scripts by src across swaps, so legacy deferred
        bundles never double-initialize. -->
   <ClientRouter fallback="animate" />
+  <!--====== Deferred core: jQuery must execute before any per-page plugin
+       below (defer preserves document order). modernizr sits in <head> per
+       its own recommendation (html classes before first paint). Everything
+       else deferred stays at body end. ======-->
+  <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script defer src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <!--====== Per-page diet (W-B): pages that need a heavy jQuery plugin pass
+       it via extraHead so it executes right here — after jQuery, before the
+       body-end bundles. Audit (grep .astro for the trigger selectors):
+       - isotope.pkgd.min.js → portfolio, portfolio-2 (.project-isotope),
+         index-3 (#factIsotpe)
+       - jquery.magnific-popup.min.js → product-details (.img-popup; no page
+         currently uses .popup-video)
+       - jquery-ui.min.js → shop (#slider-range; no .datepicker anywhere)
+       main.js guards every call site (typeof $.fn.* check), so pages that
+       don't ship a plugin skip it instead of throwing. ======-->
   <Fragment set:html={extraHead} />
 </head>
 
@@ -247,31 +263,27 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
        #clientSlider logo carousel (ClientSlider island).
        DROPPED: jquery.countTo.js — loaded but never invoked anywhere
        (counterToUp uses jQuery .animate directly).
-       KEPT deferred — no regression-free vanilla replacement yet:
-       - modernizr / jquery-3.6.0: required by every plugin below
+       PER-PAGE via extraHead (in <head>, after jQuery — see above):
+       - isotope.pkgd.min.js → portfolio, portfolio-2, index-3
+       - jquery.magnific-popup.min.js → product-details
+       - jquery-ui.min.js → shop
+       KEPT deferred globally — no regression-free vanilla replacement yet:
        - bootstrap + popper: accordion/collapse + dropdown positioning
        - slick: banner/team/testimonial/latest-post/product sliders
          (cloned infinite slides, dots/arrows, data-thumb paging)
-       - isotope: portfolio + fact masonry filtering (2 pages)
-       - magnific-popup: video + image lightboxes (19 pages)
        - inview/easypiechart: scroll pie charts + skill progress bars
-       - jquery-ui: shop price-range slider (1 page)
        - wow: scroll-reveal animations (17 pages)
        - main.js: remaining widget initializations (idempotent; re-invoked
          on every View Transition via window.RevelWidgets.init from the
-         MobileNav island; preloader uses transition:persist instead)
+         MobileNav island; preloader uses transition:persist instead.
+         Plugin call sites are guarded, so absent per-page plugins no-op.)
        NOTE: rtl-main.js ships in assets/js but is not referenced (RTL pages
        are excluded from this build); kept for the standalone RTL copies. -->
-  <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-  <script defer src="assets/js/vendor/jquery-3.6.0.min.js"></script>
   <script defer src="assets/js/bootstrap.min.js"></script>
   <script defer src="assets/js/popper.min.js"></script>
   <script defer src="assets/js/slick.min.js"></script>
-  <script defer src="assets/js/isotope.pkgd.min.js"></script>
-  <script defer src="assets/js/jquery.magnific-popup.min.js"></script>
   <script defer src="assets/js/jquery.inview.min.js"></script>
   <script defer src="assets/js/jquery.easypiechart.min.js"></script>
-  <script defer src="assets/js/jquery-ui.min.js"></script>
   <script defer src="assets/js/wow.min.js"></script>
   <script defer src="assets/js/main.js"></script>
   <!--====== PWA: offline support registration (progressive enhancement) ======-->
