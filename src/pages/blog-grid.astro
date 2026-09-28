@@ -45,17 +45,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <div class="post-content">
                                     <span class="post-date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
                                     <h3 class="title">
-                                        <a href="#">
-                                            How Performance Visiblety With GitLab CI And Hood
-                                        </a>
-                                    </h3>
+                                                                                    How Performance Visiblety With GitLab CI And Hood
+                                                                            </h3>
                                     <p>
                                         Sedut perspiciatis unde omnis nat erroroluptat accusantium laudantim totam
                                         raperiaeaqupsa quae
                                     </p>
-                                    <a href="#" class="post-link">
+                                    <span class="post-link">
                                         Learn More <i class="far fa-long-arrow-right"></i>
-                                    </a>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -68,17 +66,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <div class="post-content">
                                     <span class="post-date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
                                     <h3 class="title">
-                                        <a href="#">
-                                            Inspired Design Decisions With Max Huber Turne
-                                        </a>
-                                    </h3>
+                                                                                    Inspired Design Decisions With Max Huber Turne
+                                                                            </h3>
                                     <p>
                                         Sedut perspiciatis unde omnis nat erroroluptat accusantium laudantim totam
                                         raperiaeaqupsa quae
                                     </p>
-                                    <a href="#" class="post-link">
+                                    <span class="post-link">
                                         Learn More <i class="far fa-long-arrow-right"></i>
-                                    </a>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -225,11 +221,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <!-- Pagination -->
                     <div class="pagination-wrap">
                         <ul>
-                            <li><a href="#"><i class="far fa-angle-left"></i></a></li>
-                            <li class="active"><a href="#">01</a></li>
-                            <li><a href="#">02</a></li>
-                            <li><a href="#">03</a></li>
-                            <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                            <li><span aria-hidden="true"><i class="far fa-angle-left"></i></span></li>
+                            <li class="active"><span aria-current="page">01</span></li>
+                            <li><span>02</span></li>
+                            <li><span>03</span></li>
+                            <li><span aria-hidden="true"><i class="far fa-angle-right"></i></span></li>
                         </ul>
                     </div>
                 </div>
@@ -249,19 +245,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
                             <ul>
                                 <li>
-                                    <a href="#">Financial Planning <span><i class="far fa-angle-right"></i></span></a>
+                                    <span>Financial Planning <span><i class="far fa-angle-right"></i></span></span>
                                 </li>
                                 <li>
-                                    <a href="#">Relationship Buildup <span><i class="far fa-angle-right"></i></span></a>
+                                    <span>Relationship Buildup <span><i class="far fa-angle-right"></i></span></span>
                                 </li>
                                 <li>
-                                    <a href="#">Investement Planning <span><i class="far fa-angle-right"></i></span></a>
+                                    <span>Investement Planning <span><i class="far fa-angle-right"></i></span></span>
                                 </li>
                                 <li>
-                                    <a href="#">Marketing Strategy <span><i class="far fa-angle-right"></i></span></a>
+                                    <span>Marketing Strategy <span><i class="far fa-angle-right"></i></span></span>
                                 </li>
                                 <li>
-                                    <a href="#">Product Strategy <span><i class="far fa-angle-right"></i></span></a>
+                                    <span>Product Strategy <span><i class="far fa-angle-right"></i></span></span>
                                 </li>
                             </ul>
                         </div>
@@ -276,9 +272,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     </div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
-                                        <a href="#">
+                                        <span class="post-title">
                                             Smashing Podcast Epis With Rach Andrewe
-                                        </a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="single-post">
@@ -287,9 +283,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     </div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
-                                        <a href="#">
+                                        <span class="post-title">
                                             Responsive Web And Desktop Develop
-                                        </a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="single-post">
@@ -298,9 +294,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     </div>
                                     <div class="post-desc">
                                         <span class="date"><i class="far fa-calendar-alt"></i>25 Aug 2020</span>
-                                        <a href="#">
+                                        <span class="post-title">
                                             Django Highlig Models Admin Harnessing
-                                        </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -346,54 +342,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="client-slider section-gap">
                 <div class="row align-items-center justify-content-between" id="clientSlider">
                     <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client logo 1">
-                        </a>
+                        <span class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="">
+                        </span>
                     </div>
                     <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client logo 2">
-                        </a>
+                        <span class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="">
+                        </span>
                     </div>
                     <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client logo 3">
-                        </a>
+                        <span class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="">
+                        </span>
                     </div>
                     <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client logo 4">
-                        </a>
+                        <span class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="">
+                        </span>
                     </div>
                     <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client logo 5">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="162" height="90" src="assets/img/clients/01.avif" srcset="assets/img/clients/01.avif 162w" sizes="(max-width: 768px) 100vw, 162px" alt="Client logo 1">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="193" height="85" src="assets/img/clients/02.avif" srcset="assets/img/clients/02.avif 193w" sizes="(max-width: 768px) 100vw, 193px" alt="Client logo 2">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="117" height="95" src="assets/img/clients/03.avif" srcset="assets/img/clients/03.avif 117w" sizes="(max-width: 768px) 100vw, 117px" alt="Client logo 3">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="164" height="93" src="assets/img/clients/04.avif" srcset="assets/img/clients/04.avif 164w" sizes="(max-width: 768px) 100vw, 164px" alt="Client logo 4">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="client-img d-block text-center">
-                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="Client logo 5">
-                        </a>
+                        <span class="client-img d-block text-center">
+                            <img loading="lazy" decoding="async" width="104" height="96" src="assets/img/clients/05.avif" srcset="assets/img/clients/05.avif 104w" sizes="(max-width: 768px) 100vw, 104px" alt="">
+                        </span>
                     </div>
                 </div>
             </div>

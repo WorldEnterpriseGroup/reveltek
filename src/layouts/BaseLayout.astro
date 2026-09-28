@@ -242,7 +242,7 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
   <Preloader />
-  <HeaderTag />
+  <HeaderTag currentPath={canonicalPath} />
   <main id="main" transition:animate="fade">
     <slot />
   </main>

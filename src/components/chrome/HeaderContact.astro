@@ -1,3 +1,22 @@
+---
+import { navAriaCurrent as isCurrent, navSectionActive as sectionActive } from '../../data/navigation';
+
+interface Props {
+  /** Canonical path of the current page (e.g. "/services.html"), threaded
+      from BaseLayout for attribute-only aria-current marking. */
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+
+// Section link sets for submenu parent toggles (aria-current="true" when any
+// member matches). Detail/alias routes are included so company and insights
+// content pages still light up their logical section.
+const SERVICES_LINKS = ['software.html', 'consulting.html', 'ai.html', 'products.html', 'cloud.html', 'analytics.html', 'services.html', 'services-2.html', 'service-details.html', 'studies.html', 'sitemap.html'];
+const INDUSTRIES_LINKS = ['industries.html', 'health.html', 'fintech.html', 'retail.html', 'education.html'];
+const INSIGHTS_LINKS = ['blog.html', 'blog-grid.html', 'blog-standard.html', 'blog-details.html', 'studies.html', 'guides.html', 'events.html'];
+const ABOUT_LINKS = ['about.html', 'story.html', 'why-us.html', 'team.html', 'team-details.html', 'job.html', 'job-details.html', 'faq.html'];
+---
     <!--====== Header part start ======-->
     <header class="sticky-header">
         <!-- Header Menu  -->
@@ -19,55 +38,55 @@
 
                         <!-- Menu Items - UPDATED Navbar (5 Items, No Gov, Fintech) -->
                         <nav class="menu-items" aria-label="Primary">
-							<ul>
-								<li class="has-submemu">
-									<a href="index.html">Services</a>
-									<ul class="submenu">
-										<!-- Service Links -->
-										<li><a href="software.html">Software</a></li>
-										<li><a href="consulting.html">Consulting</a></li>
-										<li><a href="ai.html">AI</a></li>
-										<li><a href="products.html">Products</a></li>
-										<li><a href="cloud.html">Cloud</a></li>
-										<li><a href="analytics.html">Analytics</a></li>
-<li class="submenu-featured"><a href="services.html">All Services</a></li>
-<li class="submenu-featured"><a href="service-details.html">Service Details</a></li>
-<li class="submenu-featured"><a href="studies.html">Case Studies</a></li>
-<li class="submenu-featured"><a href="sitemap.html">Visual Sitemap</a></li>
-									</ul>
-								</li>
-								<li class="has-submemu">
-									<a href="industries.html">Industries</a>
-									<ul class="submenu">
-										<!-- Industry Links (Fintech added) -->
-										<li><a href="health.html">Health</a></li>
-										<li><a href="fintech.html">Fintech</a></li>
-										<li><a href="retail.html">Retail</a></li>
-										<li><a href="education.html">Education</a></li>
-									</ul>
-								</li>
-                                <li class="has-submemu">
-                                    <a href="#">Insights</a>
-                                    <ul class="submenu">
-                                        <!-- Insight Links -->
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="studies.html">Studies</a></li>
-                                        <li><a href="guides.html">Guides</a></li>
-                                        <li><a href="events.html">Events</a></li>
-                                    </ul>
-                                </li>
-								<li class="has-submemu">
-									<a href="#">About</a>
-									<ul class="submenu">
-										<!-- About Links -->
-										<li><a href="story.html">Story</a></li>
-										<li><a href="why-us.html">Why Us</a></li>
-										<li><a href="careers.html">Careers</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</nav>
+                        	<ul>
+                        		<li class="has-submemu">
+                        			<a href="#" aria-current={sectionActive(SERVICES_LINKS, currentPath)}>Services</a>
+                        			<ul class="submenu">
+                        				<!-- Service Links -->
+                        				<li><a href="software.html" aria-current={isCurrent('software.html', currentPath)}>Software</a></li>
+                        				<li><a href="consulting.html" aria-current={isCurrent('consulting.html', currentPath)}>Consulting</a></li>
+                        				<li><a href="ai.html" aria-current={isCurrent('ai.html', currentPath)}>AI</a></li>
+                        				<li><a href="products.html" aria-current={isCurrent('products.html', currentPath)}>Products</a></li>
+                        				<li><a href="cloud.html" aria-current={isCurrent('cloud.html', currentPath)}>Cloud</a></li>
+                        				<li><a href="analytics.html" aria-current={isCurrent('analytics.html', currentPath)}>Analytics</a></li>
+                        				<li class="submenu-featured"><a href="services.html" aria-current={isCurrent('services.html', currentPath)}>All Services</a></li>
+                        				<li class="submenu-featured"><a href="service-details.html" aria-current={isCurrent('service-details.html', currentPath)}>Service Details</a></li>
+                        				<li class="submenu-featured"><a href="studies.html" aria-current={isCurrent('studies.html', currentPath)}>Case Studies</a></li>
+                        				<li class="submenu-featured"><a href="sitemap.html" aria-current={isCurrent('sitemap.html', currentPath)}>Visual Sitemap</a></li>
+                        			</ul>
+                        		</li>
+                        		<li class="has-submemu">
+                        			<a href="#" aria-current={sectionActive(INDUSTRIES_LINKS, currentPath)}>Industries</a>
+                        			<ul class="submenu">
+                        				<!-- Industry Links -->
+                        				<li><a href="health.html" aria-current={isCurrent('health.html', currentPath)}>Health</a></li>
+                        				<li><a href="fintech.html" aria-current={isCurrent('fintech.html', currentPath)}>Fintech</a></li>
+                        				<li><a href="retail.html" aria-current={isCurrent('retail.html', currentPath)}>Retail</a></li>
+                        				<li><a href="education.html" aria-current={isCurrent('education.html', currentPath)}>Education</a></li>
+                        			</ul>
+                        		</li>
+                        		<li class="has-submemu">
+                        			<a href="#" aria-current={sectionActive(INSIGHTS_LINKS, currentPath)}>Insights</a>
+                        			<ul class="submenu">
+                        				<!-- Insight Links -->
+                        				<li><a href="blog.html" aria-current={isCurrent('blog.html', currentPath)}>Blog</a></li>
+                        				<li><a href="studies.html" aria-current={isCurrent('studies.html', currentPath)}>Studies</a></li>
+                        				<li><a href="guides.html" aria-current={isCurrent('guides.html', currentPath)}>Guides</a></li>
+                        				<li><a href="events.html" aria-current={isCurrent('events.html', currentPath)}>Events</a></li>
+                        			</ul>
+                        		</li>
+                        		<li><a href="careers.html" aria-current={isCurrent('careers.html', currentPath)}>Careers</a></li>
+                        		<li class="has-submemu">
+                        			<a href="#" aria-current={sectionActive(ABOUT_LINKS, currentPath)}>About</a>
+                        			<ul class="submenu">
+                        				<!-- About Links -->
+                        				<li><a href="story.html" aria-current={isCurrent('story.html', currentPath)}>Story</a></li>
+                        				<li><a href="why-us.html" aria-current={isCurrent('why-us.html', currentPath)}>Why Us</a></li>
+                        			</ul>
+                        		</li>
+                        		<li><a href="contact.html" aria-current={isCurrent('contact.html', currentPath)}>Contact</a></li>
+                        	</ul>
+                        </nav>
                         <!-- Pushed Item -->
                         <div class="nav-pushed-item"></div>
                     </div>
