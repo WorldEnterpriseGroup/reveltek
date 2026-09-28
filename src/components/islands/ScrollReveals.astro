@@ -1,0 +1,73 @@
+---
+ // ScrollReveals — zero-dependency vanilla island replacing wow.js
+ // (jQuery plugin, ~8KB) for `.wow` scroll-reveal animations.
+ //
+ // Behavior parity with the legacy engine (wow.min.js + animate.min.css):
+ // - One-shot reveal when any pixel enters the viewport (WOW offset: 0).
+ // - Same keyframes: the animation-name class is already on the markup
+ //   (e.g. `fadeInUp`) and animate.min.css stays loaded; the island only
+ //   adds the `animated` trigger class plus inline duration/delay copied
+ //   verbatim from `data-wow-duration` / `data-wow-delay` (all 1500ms +
+ //   300ms–1.1s delays in this site).
+ // - Hiding is JS-only (as with WOW), so no-JS renders final content.
+ // - Honors prefers-reduced-motion: content shown immediately, no motion.
+ // - Idempotent across View Transitions via `astro:page-load` +
+ //   per-element `data-reveal-init`. Legacy main.js skips its WOW pass
+ //   when this marker is present.
+ //
+ // Kept on jQuery deliberately: inview + easypiechart (scroll pie charts
+ // and skill progress bars) have no trivially safe vanilla replacement.
+---
+<span data-island="scroll-reveals" hidden aria-hidden="true"></span>
+
+<script>
+  function revealNow(el: HTMLElement): void {
+    if (el.dataset.revealed === '1') return;
+    el.dataset.revealed = '1';
+    const duration = el.getAttribute('data-wow-duration');
+    const delay = el.getAttribute('data-wow-delay');
+    const iteration = el.getAttribute('data-wow-iteration');
+    if (duration) el.style.animationDuration = duration;
+    if (delay) el.style.animationDelay = delay;
+    if (iteration) el.style.animationIterationCount = iteration;
+    el.style.visibility = 'visible';
+    el.classList.add('animated');
+  }
+
+  function initScrollReveals(): void {
+    const boxes = document.querySelectorAll('.wow:not([data-reveal-init])');
+    if (boxes.length === 0) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || !('IntersectionObserver' in window)) {
+      // Reduced motion or no observer: final state, no animation.
+      boxes.forEach((box) => {
+        if (!(box instanceof HTMLElement)) return;
+        box.setAttribute('data-reveal-init', '1');
+        box.style.visibility = 'visible';
+      });
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const box = entry.target;
+          observer.unobserve(box);
+          if (box instanceof HTMLElement) revealNow(box);
+        });
+      },
+      // WOW default offset: 0 — any intersecting pixel triggers.
+      { threshold: 0 },
+    );
+    boxes.forEach((box) => {
+      if (!(box instanceof HTMLElement)) return;
+      box.setAttribute('data-reveal-init', '1');
+      // JS-only hiding (WOW parity): no-JS still shows final content.
+      box.style.visibility = 'hidden';
+      observer.observe(box);
+    });
+  }
+
+  document.addEventListener('astro:page-load', initScrollReveals);
+  initScrollReveals();
+</script>
