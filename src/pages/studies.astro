@@ -45,7 +45,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     <ul>
                                         <li><i class="far fa-industry"></i><a href="fintech.html">Fintech</a></li>
                                         <li><i class="far fa-cogs"></i><a href="ai.html">AI</a>, <a href="software.html">Software</a></li>
-                                        <li><i class="far fa-check-circle"></i><a href="#">Result: 30% Fraud Reduction</a></li>
+                                        <li><i class="far fa-check-circle"></i><span>Result: 30% Fraud Reduction</span></li>
                                     </ul>
                                 </div>
                                 <div class="post-content">
@@ -75,7 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     <ul>
                                         <li><i class="far fa-industry"></i><a href="health.html">Health</a></li>
                                         <li><i class="far fa-cogs"></i><a href="cloud.html">Cloud</a>, <a href="consulting.html">Consulting</a></li>
-                                        <li><i class="far fa-check-circle"></i><a href="#">Result: 40% Cost Savings</a></li>
+                                        <li><i class="far fa-check-circle"></i><span>Result: 40% Cost Savings</span></li>
                                     </ul>
                                 </div>
                                 <div class="post-content">
@@ -105,7 +105,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     <ul>
                                         <li><i class="far fa-industry"></i><a href="retail.html">Retail</a></li>
                                         <li><i class="far fa-cogs"></i><a href="software.html">Software</a>, <a href="products.html">Products</a></li>
-                                        <li><i class="far fa-check-circle"></i><a href="#">Result: 25% Conversion Lift</a></li>
+                                        <li><i class="far fa-check-circle"></i><span>Result: 25% Conversion Lift</span></li>
                                     </ul>
                                 </div>
                                 <div class="post-content">
@@ -129,10 +129,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <!-- Pagination -->
                     <div class="pagination-wrap">
                         <ul>
-                            <li><a href="#"><i class="far fa-angle-left"></i></a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                            <li><span aria-hidden="true"><i class="far fa-angle-left"></i></span></li>
+                            <li class="active"><span aria-current="page">1</span></li>
+                            <li><span>2</span></li>
+                            <li><span aria-hidden="true"><i class="far fa-angle-right"></i></span></li>
                         </ul>
                     </div>
                 </div>
@@ -150,22 +150,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="widget cat-widget">
                             <h4 class="widget-title">Filter by Industry</h4>
                             <ul>
-                                <li><a href="#">Health <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Fintech <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Retail <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Education <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><span>Health <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Fintech <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Retail <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Education <span><i class="far fa-angle-right"></i></span></span></li>
                             </ul>
                         </div>
                         <!-- Filter by Service Widget -->
                         <div class="widget cat-widget">
                             <h4 class="widget-title">Filter by Service</h4>
                             <ul>
-                                <li><a href="#">Software <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Consulting <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">AI <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Products <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Cloud <span><i class="far fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Analytics <span><i class="far fa-angle-right"></i></span></a></li>
+                                <li><span>Software <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Consulting <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>AI <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Products <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Cloud <span><i class="far fa-angle-right"></i></span></span></li>
+                                <li><span>Analytics <span><i class="far fa-angle-right"></i></span></span></li>
                             </ul>
                         </div>
                         <!-- Recent Studies Widget -->
@@ -199,14 +199,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="widget popular-tag-widget">
                             <h4 class="widget-title">Study Tags</h4>
                             <div class="tags-loop">
-                                <a href="#">ROI</a>
-                                <a href="#">Efficiency</a>
-                                <a href="#">Scalability</a>
-                                <a href="#">Compliance</a>
-                                <a href="#">User Experience</a>
-                                <a href="#">AI Results</a>
-                                <a href="#">Cloud Cost</a>
-                                <a href="#">SaaS Platform</a>
+                                <span>ROI</span>
+                                <span>Efficiency</span>
+                                <span>Scalability</span>
+                                <span>Compliance</span>
+                                <span>User Experience</span>
+                                <span>AI Results</span>
+                                <span>Cloud Cost</span>
+                                <span>SaaS Platform</span>
                             </div>
                         </div>
                         <div class="widget cta-widget" style="background-image: url(assets/img/sidebar/cta.avif);">
