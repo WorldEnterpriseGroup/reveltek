@@ -10,7 +10,11 @@ export interface NavItem {
 }
 
 // Canonical top-level navigation. Labels, destinations, and order match the
-// approved rendered shell exactly. The Services entry keeps its 5 legacy
+// approved rendered shell exactly (ORBITAL nav: Services, Industries,
+// Insights, Careers, About, Contact). Careers is a TOP-LEVEL entry linking
+// to careers.html; it is intentionally NOT duplicated under About (no
+// template logic requires the duplication — all 7 header variants render
+// static markup from this order). The Services entry keeps its 5 legacy
 // children untouched; the mega panel EXTENDS it (see servicesPanel) and must
 // never replace or collapse these links.
 export const NAV_ITEMS: NavItem[] = [
@@ -46,13 +50,13 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Events', href: 'events.html' },
     ],
   },
+  { label: 'Careers', href: 'careers.html' },
   {
     label: 'About',
     href: '#',
     children: [
       { label: 'Story', href: 'story.html' },
       { label: 'Why Us', href: 'why-us.html' },
-      { label: 'Careers', href: 'careers.html' },
     ],
   },
   { label: 'Contact', href: 'contact.html' },
@@ -70,3 +74,22 @@ export const SERVICES_PANEL: NavChild[] = [
 ];
 
 export const BUSINESS_ACTION = { label: 'Get Started', href: 'contact.html' };
+
+// Active-link helpers for `aria-current` (attribute-only; no visual change).
+// BaseLayout threads each page's canonicalPath down as `currentPath`; header
+// variants compare their static hrefs against it. Returns 'page'/true so
+// Astro omits the attribute entirely when there is no match (`undefined`).
+function normalizeNavPath(p: string): string {
+  return p.replace(/^\/+/, '').toLowerCase();
+}
+
+/** Exact-match: use on leaf links → `aria-current="page"`. */
+export function navAriaCurrent(href: string, currentPath: string): 'page' | undefined {
+  if (!href || href === '#') return undefined;
+  return normalizeNavPath(href) === normalizeNavPath(currentPath) ? 'page' : undefined;
+}
+
+/** Section-match: use on submenu parent toggles → `aria-current="true"`. */
+export function navSectionActive(hrefs: string[], currentPath: string): true | undefined {
+  return hrefs.some((h) => navAriaCurrent(h, currentPath) === 'page') ? true : undefined;
+}
