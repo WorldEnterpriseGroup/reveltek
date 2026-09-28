@@ -1,8 +1,17 @@
 {
-  "generated": "2026-09-16T18:37:43.089Z",
+  "generated": "2026-09-28T18:44:04.000Z",
   "host": "https://reveltek.com",
-  "route_count": 41,
+  "route_count": 47,
   "routes": [
+    {
+      "url": "/404.html",
+      "id": "404",
+      "title": "Page Not Found — RevelTek | Business & Technology Consulting",
+      "family": "utility",
+      "bytes": 3055,
+      "lifecycle": "preserve",
+      "h1": "Page Not Found"
+    },
     {
       "url": "/about.html",
       "id": "about",
@@ -29,6 +38,15 @@
       "bytes": 30282,
       "lifecycle": "preserve",
       "h1": "Analytics"
+    },
+    {
+      "url": "/awards.html",
+      "id": "awards",
+      "title": "Awards — RevelTek | Business & Technology Consulting",
+      "family": "about",
+      "bytes": 620,
+      "lifecycle": "redirect",
+      "h1": "Awards"
     },
     {
       "url": "/blog-details.html",
@@ -121,6 +139,15 @@
       "h1": "Contact Us"
     },
     {
+      "url": "/culture.html",
+      "id": "culture",
+      "title": "Culture — RevelTek | Business & Technology Consulting",
+      "family": "about",
+      "bytes": 536,
+      "lifecycle": "redirect",
+      "h1": "Culture"
+    },
+    {
       "url": "/education.html",
       "id": "education",
       "title": "RevelTek | Education & eLearning Solutions",
@@ -155,6 +182,15 @@
       "bytes": 39686,
       "lifecycle": "preserve",
       "h1": "Building Secure  Compliant Technology  For Modern Finance"
+    },
+    {
+      "url": "/government.html",
+      "id": "government",
+      "title": "Government — RevelTek | Business & Technology Consulting",
+      "family": "industries",
+      "bytes": 572,
+      "lifecycle": "redirect",
+      "h1": "Government"
     },
     {
       "url": "/guides.html",
@@ -227,6 +263,15 @@
       "bytes": 20770,
       "lifecycle": "preserve",
       "h1": "Job Listing"
+    },
+    {
+      "url": "/jobs.html",
+      "id": "jobs",
+      "title": "Jobs — RevelTek | Business & Technology Consulting",
+      "family": "jobs",
+      "bytes": 548,
+      "lifecycle": "redirect",
+      "h1": "Jobs"
     },
     {
       "url": "/portfolio-2.html",
@@ -319,6 +364,15 @@
       "h1": "Our Shop"
     },
     {
+      "url": "/sitemap.html",
+      "id": "sitemap",
+      "title": "Sitemap — RevelTek | Business & Technology Consulting",
+      "family": "utility",
+      "bytes": 1536,
+      "lifecycle": "preserve",
+      "h1": "Visual Sitemap"
+    },
+    {
       "url": "/software.html",
       "id": "software",
       "title": "RevelTek | Software & SaaS Development",
@@ -373,32 +427,7 @@
       "h1": "Why Choose Us"
     }
   ],
-  "retired_redirects": [
-    {
-      "url": "/awards.html",
-      "decision": "redirect",
-      "to": "/about.html",
-      "reason": "referenced by footer+10 pages but file missing (404 today); closest truthful survivor"
-    },
-    {
-      "url": "/jobs.html",
-      "decision": "redirect",
-      "to": "/careers.html",
-      "reason": "referenced but missing; careers is the jobs hub"
-    },
-    {
-      "url": "/government.html",
-      "decision": "redirect",
-      "to": "/industries.html",
-      "reason": "referenced but missing; industries hub is closest survivor"
-    },
-    {
-      "url": "/culture.html",
-      "decision": "redirect",
-      "to": "/story.html",
-      "reason": "referenced but missing; story page carries company narrative"
-    }
-  ],
+  "retired_redirects": [],
   "rtl_duplicates": [
     {
       "url": "/RTL Version/about.html",
