@@ -7817,3 +7817,31 @@ header.sticky-header.sticky-on .site-logo .site-logo-img {
   max-height: 80px;
   width: auto;
 }
+/*======= Performance: content-visibility for below-fold sections =======*/
+/* Skips rendering of off-screen sections until the browser approaches them
+   (auto, never hidden), cutting initial style/layout/paint work on the
+   47-page content site. Generous contain-intrinsic-size placeholders
+   (~800-1000px) keep the scrollbar stable while sections are skipped.
+   EXCLUDED (above-fold or JS-measured at load):
+   - .banner-section / .breadcrumb-section / .breadcrumb-area: above the fold.
+   - .team-section / .testimonial-section* / .latest-post-section: slick
+     measures slide widths at document.ready; skipped layout would leave
+     stale track widths.
+   - .project-section / .project-section-two: isotope masonry lays out at
+     ready; .shop-page-wrap / .shop-details-wrap: jQuery UI price slider +
+     slick product gallery measure at ready. (#factIsotpe on index-3 is
+     isotope-measured, excluded via :has below.)
+   SAFE to include: footer (event bindings only, no measurement), the
+   .client-section strip (vanilla ClientSlider island measures at runtime
+   only while visible via IntersectionObserver), counters/skill/video/faq/
+   blog/contact sections (island or inview-runtime measurement).
+   Anchor links (#job-list, #industries-served) are unaffected: browsers
+   force-render content-visibility:auto targets when scrolling to them. */
+main section:not(.banner-section):not(.breadcrumb-section):not(.breadcrumb-area):not(.team-section):not(.testimonial-section):not(.testimonial-section-two):not(.testimonial-section-three):not(.latest-post-section):not(.project-section):not(.project-section-two):not(.shop-page-wrap):not(.shop-details-wrap):not(:has(#factIsotpe)) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1000px;
+}
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
