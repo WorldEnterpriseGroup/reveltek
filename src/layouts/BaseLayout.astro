@@ -149,8 +149,8 @@ const breadcrumbSchema =
       };
 const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd];
 
-// OG image MIME derived from the file extension (per-page overrides are
-// .avif; the default cover is .png). Width/height declare the standard
+// OG image MIME derived from the file extension (per-page overrides and
+// the default cover are .avif). Width/height declare the standard
 // 1200x630 OG canvas scrapers expect; alt falls back to the page title.
 const ogImageType = ogImage.endsWith('.png')
   ? 'image/png'
