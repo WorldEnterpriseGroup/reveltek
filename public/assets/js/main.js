@@ -40,6 +40,10 @@
 (function ($) {
 	'use strict';
 
+	/* Reduced motion: honor the OS-level preference — all slick carousels
+	   below read this flag for their autoplay setting. */
+	const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 	/* View Transitions: the Astro ClientRouter swaps page DOM without a full
 	   reload, so these deferred bundles execute once while fresh markup
 	   arrives on every navigation. Each initializer below is idempotent
@@ -184,7 +188,7 @@
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: true,
@@ -291,7 +295,7 @@
 			infinite: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: false,
@@ -318,7 +322,7 @@
 			infinite: true,
 			slidesToShow: 5,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: false,
@@ -362,7 +366,7 @@
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: true,
@@ -380,7 +384,7 @@
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: true,
@@ -414,7 +418,7 @@
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: true,
@@ -443,7 +447,7 @@
 			infinite: true,
 			slidesToShow: 5,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: false,
@@ -509,7 +513,7 @@
 			infinite: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 5000,
 			speed: 500,
 			arrows: false,
@@ -636,7 +640,7 @@
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			infinite: true,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 6000,
 			arrows: true,
 			nextArrow: '<button class="slick-arrow next-arrow"><i class="fal fa-long-arrow-right"></i></button>',
@@ -657,7 +661,7 @@
 			slidesToShow: 4,
 			slidesToScroll: 1,
 			infinite: true,
-			autoplay: true,
+			autoplay: !REDUCED,
 			autoplaySpeed: 6000,
 			arrows: false,
 			dots: false,
