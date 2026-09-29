@@ -80,7 +80,11 @@ export const BUSINESS_ACTION = { label: 'Get Started', href: 'contact.html' };
 // variants compare their static hrefs against it. Returns 'page'/true so
 // Astro omits the attribute entirely when there is no match (`undefined`).
 function normalizeNavPath(p: string): string {
-  return p.replace(/^\/+/, '').toLowerCase();
+  const n = p.replace(/^\/+/, '').toLowerCase();
+  // The site root and index.html are the same home page (the home canonical
+  // is "/" since W-1 SEO). Without this alias the home logo link never
+  // matches and the home page renders zero aria-current (W-3 D5).
+  return n === '' ? 'index.html' : n;
 }
 
 /** Exact-match: use on leaf links → `aria-current="page"`. */
