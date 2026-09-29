@@ -102,7 +102,7 @@ export function blogDetailsSchema(): Record<string, unknown> {
     '@type': 'BlogPosting',
     headline:
       'Inspired Design Decisions With Herb Typography Can Be As Exciting As Illustration & Photo',
-    datePublished: '2020-08-25',
+    datePublished: '2024-12-05',
     author: { '@type': 'Organization', name: 'RevelTek Team' },
     image: `${SITE}/assets/img/blog/12.avif`,
     url: `${SITE}/blog-details.html`,
