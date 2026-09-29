@@ -13,6 +13,15 @@
 
 <script>
   function slideToggle(el: HTMLElement, duration = 350): void {
+    // Reduced motion: instant toggle, no height animation (Counters pattern).
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      duration = 0;
+    }
+    if (duration === 0) {
+      const isHiddenNow = window.getComputedStyle(el).display === 'none';
+      el.style.display = isHiddenNow ? 'block' : 'none';
+      return;
+    }
     const computed = window.getComputedStyle(el);
     const isHidden = computed.display === 'none';
     el.style.overflow = 'hidden';
