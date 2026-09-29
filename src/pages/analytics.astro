@@ -170,10 +170,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <!-- Contact Widget (Kept as is, typo corrected) -->
                         <div class="widget contact-widget">
                             <h4 class="widget-title">Contact Us</h4>
-                            <form action="#">
-                                <input type="text" placeholder="Your Email">
-                                <textarea placeholder="Message"></textarea>
+                            <form action="#" data-sidebar-contact>
+                                <input type="text" placeholder="Your Email" aria-label="Your Email">
+                                <textarea placeholder="Message" aria-label="Message"></textarea>
                                 <button type="submit" class="main-btn main-btn-3">Send Message</button>
+                                <div data-form-status role="status" aria-live="polite" hidden></div>
+                                <noscript>
+                                    <div role="note">Prefer email? <a href="mailto:info@reveltek.com?subject=Website%20Inquiry">info@reveltek.com</a></div>
+                                </noscript>
                             </form>
                         </div>
                         <!-- CTA Widget (Kept as is, link updated) -->

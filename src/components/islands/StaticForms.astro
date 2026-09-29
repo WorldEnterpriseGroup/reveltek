@@ -1,0 +1,130 @@
+---
+// StaticForms — zero-dependency vanilla island for backend-less forms.
+//
+// Wires two static form shapes that have no submission endpoint:
+//
+//   - Newsletter (`form[data-newsletter]`, one per footer variant): an
+//     email-only subscribe form. Submit is gated in JS (preventDefault +
+//     validation) and degrades to a prefilled mailto:info@reveltek.com
+//     draft — the permanent last-resort channel — never a dead reload.
+//   - Sidebar contact (`form[data-sidebar-contact]`, e.g. the analytics
+//     page contact widget): email + message, same JS gate + mailto draft.
+//
+// Mirrors the ContactForm-island contract: no backend URL, no secrets, no
+// tracking; per-form `data-wired` idempotency across View Transitions via
+// `astro:page-load`; accessible feedback through a per-form
+// `[data-form-status]` region (role="status", aria-live) plus a <noscript>
+// mailto path rendered server-side. Styling is untouched — the island adds
+// no classes and only unhides the status region after a submit attempt.
+---
+<span data-island="static-forms" hidden aria-hidden="true"></span>
+
+<script>
+  const MAILTO_FALLBACK = 'info@reveltek.com';
+  const NEWSLETTER_SUBJECT = 'RevelTek Insights Subscription';
+  const CONTACT_SUBJECT = 'Website Inquiry';
+
+  function statusFor(form: HTMLFormElement): HTMLElement | null {
+    return form.querySelector('[data-form-status]');
+  }
+
+  function showStatus(form: HTMLFormElement, message: string): void {
+    const target = statusFor(form);
+    if (!target) return;
+    target.textContent = message;
+    target.hidden = false;
+  }
+
+  function clearStatus(form: HTMLFormElement): void {
+    const target = statusFor(form);
+    if (!target) return;
+    target.textContent = '';
+    target.hidden = true;
+  }
+
+  function markInvalid(el: HTMLInputElement | HTMLTextAreaElement, invalid: boolean): void {
+    if (invalid) el.setAttribute('aria-invalid', 'true');
+    else el.removeAttribute('aria-invalid');
+  }
+
+  function initNewsletterForm(form: HTMLFormElement): void {
+    const emailEl = form.querySelector('input[type="email"]');
+    if (!(emailEl instanceof HTMLInputElement)) return;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = emailEl.value.trim();
+      const ok = email.length > 0 && emailEl.checkValidity();
+      markInvalid(emailEl, !ok);
+      if (!ok) {
+        showStatus(form, 'Please enter a valid email address to subscribe.');
+        emailEl.focus({ preventScroll: true });
+        return;
+      }
+      const body = ['Please subscribe this email address to RevelTek insights:', '', email].join('\n');
+      window.location.href =
+        `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(NEWSLETTER_SUBJECT)}` +
+        `&body=${encodeURIComponent(body)}`;
+      showStatus(
+        form,
+        'Your email app has been opened with the subscription details. Send that email to complete your request.',
+      );
+      form.reset();
+    });
+    form.addEventListener('input', () => {
+      markInvalid(emailEl, false);
+      clearStatus(form);
+    });
+  }
+
+  function initSidebarContactForm(form: HTMLFormElement): void {
+    const emailEl = form.querySelector('input[type="text"], input[type="email"]');
+    const messageEl = form.querySelector('textarea');
+    if (!(emailEl instanceof HTMLInputElement) || !(messageEl instanceof HTMLTextAreaElement)) return;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = emailEl.value.trim();
+      const message = messageEl.value.trim();
+      const emailOk = email.length > 0 && /.+@.+\..+/.test(email);
+      const messageOk = message.length > 0;
+      markInvalid(emailEl, !emailOk);
+      markInvalid(messageEl, !messageOk);
+      if (!emailOk || !messageOk) {
+        showStatus(form, 'Please enter your email address and a message.');
+        (emailOk ? messageEl : emailEl).focus({ preventScroll: true });
+        return;
+      }
+      const body = [`Email: ${email}`, '', 'Message:', message].join('\n');
+      window.location.href =
+        `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(CONTACT_SUBJECT)}` +
+        `&body=${encodeURIComponent(body)}`;
+      showStatus(
+        form,
+        'Your email app has been opened with the message details. Send that email to complete your request.',
+      );
+      form.reset();
+    });
+    form.addEventListener('input', (event) => {
+      const target = event.target;
+      if (target instanceof HTMLElement && target.hasAttribute('aria-invalid')) {
+        target.removeAttribute('aria-invalid');
+      }
+      clearStatus(form);
+    });
+  }
+
+  function initStaticForms(): void {
+    document.querySelectorAll('form[data-newsletter]').forEach((node) => {
+      if (!(node instanceof HTMLFormElement) || node.dataset.wired === '1') return;
+      node.dataset.wired = '1';
+      initNewsletterForm(node);
+    });
+    document.querySelectorAll('form[data-sidebar-contact]').forEach((node) => {
+      if (!(node instanceof HTMLFormElement) || node.dataset.wired === '1') return;
+      node.dataset.wired = '1';
+      initSidebarContactForm(node);
+    });
+  }
+
+  document.addEventListener('astro:page-load', initStaticForms);
+  initStaticForms();
+</script>
