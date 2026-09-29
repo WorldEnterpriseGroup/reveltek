@@ -89,7 +89,7 @@ const {
   canonicalPath,
   header = 'main',
   footer = 'main',
-  ogImage = 'https://reveltek.com/assets/img/og-cover.png',
+  ogImage = 'https://reveltek.com/assets/img/og-cover.avif',
   noindex = false,
   breadcrumbName,
   jsonLd = [],
@@ -280,8 +280,10 @@ const extraSchemas = [...(breadcrumbSchema ? [breadcrumbSchema] : []), ...jsonLd
          on every View Transition via window.RevelWidgets.init from the
          MobileNav island; preloader uses transition:persist instead.
          Plugin call sites are guarded, so absent per-page plugins no-op.)
-       NOTE: rtl-main.js ships in assets/js but is not referenced (RTL pages
-       are excluded from this build); kept for the standalone RTL copies. -->
+       NOTE: rtl-main.js removed (W-2 dead weight — 16KB, zero references in
+       src/public): legacy RTL Version/*.html copies referenced
+       ../assets/js/rtl-main.js, which never resolved in the built site
+       (RTL Version/ is not part of the Astro build). -->
   <script defer src="assets/js/bootstrap.min.js"></script>
   <script defer src="assets/js/popper.min.js"></script>
   <script defer src="assets/js/slick.min.js"></script>
