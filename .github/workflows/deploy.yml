@@ -27,6 +27,10 @@ jobs:
           node-version: 26
           cache: npm
       - run: npm ci
+      # Stamp the cache-buster token: overwrite the BUILD_ID fallback with
+      # the short commit SHA so built asset URLs carry ?v=<7-hex>.
+      - name: Stamp build ID
+        run: printf 'export const BUILD_ID = "%s";\n' "${GITHUB_SHA::7}" > src/lib/build-id.ts
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

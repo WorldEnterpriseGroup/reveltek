@@ -22,6 +22,7 @@ import MobileNav from '../components/islands/MobileNav.astro';
 import Counters from '../components/islands/Counters.astro';
 import ClientSlider from '../components/islands/ClientSlider.astro';
 import ScrollReveals from '../components/islands/ScrollReveals.astro';
+import { BUILD_ID } from '../lib/build-id';
 
 type HeaderKind = 'main' | 'alt' | 'overview' | 'contact' | 'inner' | 'two' | 'three';
 type FooterKind =
@@ -212,10 +213,10 @@ const ogImageType = ogImage.endsWith('.png')
     <link rel="preload" as="image" href={heroPreload} type="image/avif" fetchpriority="high" />
   )}
   <!--====== Critical CSS (above-fold theme) ======-->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href={`assets/css/bootstrap.min.css?v=${BUILD_ID}`} />
   <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/flaticon.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href={`assets/css/style.css?v=${BUILD_ID}`} />
   <!--====== Deferred CSS (below-fold widgets only) ======-->
   <link rel="stylesheet" href="assets/css/animate.min.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'" />
@@ -242,7 +243,7 @@ const ogImageType = ogImage.endsWith('.png')
        its own recommendation (html classes before first paint). Everything
        else deferred stays at body end. ======-->
   <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-  <script defer src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script defer src={`assets/js/vendor/jquery-3.6.0.min.js?v=${BUILD_ID}`}></script>
   <!--====== Per-page diet (W-B): pages that need a heavy jQuery plugin pass
        it via extraHead so it executes right here — after jQuery, before the
        body-end bundles. Audit (grep .astro for the trigger selectors):
@@ -305,7 +306,7 @@ const ogImageType = ogImage.endsWith('.png')
   <script defer src="assets/js/slick.min.js"></script>
   <script defer src="assets/js/jquery.inview.min.js"></script>
   <script defer src="assets/js/jquery.easypiechart.min.js"></script>
-  <script defer src="assets/js/main.js"></script>
+  <script defer src={`assets/js/main.js?v=${BUILD_ID}`}></script>
   <!--====== PWA: offline support registration (progressive enhancement) ======-->
   <script defer src="assets/js/sw-register.js"></script>
 </body>
