@@ -8,8 +8,35 @@ interface RouteEntry {
   family: string;
 }
 
-const families = [...new Set((baseline.routes as RouteEntry[]).map((r) => r.family))];
-const byFamily = (f: string) => (baseline.routes as RouteEntry[]).filter((r) => r.family === f);
+// Mirror the astro.config.mjs sitemap filter: never list retired noindex
+// redirect stubs (awards/culture/government/jobs), the 404 page, the noindex
+// commerce pages (cart/checkout/shop/product-details), or the noindex
+// canonical-consolidated variants (index-2/index-3/blog-grid/blog-standard/
+// services-2/portfolio-2). The visual inventory lists exactly the indexable
+// routes — same filter intent as sitemap-0.xml + robots.
+const EXCLUDED_IDS = new Set([
+  'awards',
+  'culture',
+  'government',
+  'jobs',
+  '404',
+  'cart',
+  'checkout',
+  'shop',
+  'product-details',
+  'index-2',
+  'index-3',
+  'blog-grid',
+  'blog-standard',
+  'services-2',
+  'portfolio-2',
+]);
+
+const routeId = (url: string) => url.replace(/^\//, '').replace(/\.html$/, '');
+const routes = (baseline.routes as RouteEntry[]).filter((r) => !EXCLUDED_IDS.has(routeId(r.url)));
+
+const families = [...new Set(routes.map((r) => r.family))];
+const byFamily = (f: string) => routes.filter((r) => r.family === f);
 ---
 
 <BaseLayout
@@ -21,7 +48,7 @@ const byFamily = (f: string) => (baseline.routes as RouteEntry[]).filter((r) => 
   <section class="breadcrumb-area" style="padding: 90px 0 30px;">
     <div class="container">
       <h1>Visual Sitemap</h1>
-      <p>Every page on reveltek.com, grouped by section. One hop to anything.</p>
+      <p>{routes.length} indexable pages on reveltek.com, grouped by section. One hop to anything.</p>
     </div>
   </section>
   <section style="padding: 20px 0 90px;">
