@@ -18,11 +18,13 @@ export default defineConfig({
     sitemap({
       // The sitemap integration emits extensionless route paths; our public
       // URL contract keeps the legacy .html suffix, so re-attach it here.
-      // Never index retired stubs, the 404 page, RTL duplicates, or the
-      // noindex commerce pages (cart/checkout/shop/product-details).
+      // Never index retired stubs, the 404 page, RTL duplicates, the
+      // noindex commerce pages (cart/checkout/shop/product-details), or the
+      // noindex canonical-consolidated variants (index-2/index-3/blog-grid/
+      // blog-standard/services-2/portfolio-2).
       filter: (page) =>
         !/\/RTL Version\//i.test(page) &&
-        !/\/(awards|jobs|government|culture|404|cart|checkout|shop|product-details)$/.test(page),
+        !/\/(awards|jobs|government|culture|404|cart|checkout|shop|product-details|index-2|index-3|blog-grid|blog-standard|services-2|portfolio-2)$/.test(page),
       serialize: (item) => {
         if (!item.url.endsWith('/')) item.url = `${item.url}.html`;
         return item;
