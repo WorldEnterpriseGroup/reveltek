@@ -9,17 +9,19 @@ interface RouteEntry {
 }
 
 // Mirror the astro.config.mjs sitemap filter: never list retired noindex
-// redirect stubs (awards/culture/government/jobs), the 404 page, the noindex
-// commerce pages (cart/checkout/shop/product-details), or the noindex
-// canonical-consolidated variants (index-2/index-3/blog-grid/blog-standard/
-// services-2/portfolio-2). The visual inventory lists exactly the indexable
-// routes — same filter intent as sitemap-0.xml + robots.
+// redirect stubs (awards/culture/government/jobs), the 404 page, the visual
+// sitemap page itself (live at 200, out of sitemap-0.xml like 404), the
+// noindex commerce pages (cart/checkout/shop/product-details), or the
+// noindex canonical-consolidated variants (index-2/index-3/blog-grid/
+// blog-standard/services-2/portfolio-2). The visual inventory lists exactly
+// the indexable routes — same filter intent as sitemap-0.xml + robots.
 const EXCLUDED_IDS = new Set([
   'awards',
   'culture',
   'government',
   'jobs',
   '404',
+  'sitemap',
   'cart',
   'checkout',
   'shop',
