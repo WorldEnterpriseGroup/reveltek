@@ -22,6 +22,7 @@ import MobileNav from '../components/islands/MobileNav.astro';
 import Counters from '../components/islands/Counters.astro';
 import ClientSlider from '../components/islands/ClientSlider.astro';
 import ScrollReveals from '../components/islands/ScrollReveals.astro';
+import StaticForms from '../components/islands/StaticForms.astro';
 import { BUILD_ID } from '../lib/build-id';
 
 type HeaderKind = 'main' | 'alt' | 'overview' | 'contact' | 'inner' | 'two' | 'three';
@@ -274,6 +275,7 @@ const ogImageType = ogImage.endsWith('.png')
   <Counters />
   <ClientSlider />
   <ScrollReveals />
+  <StaticForms />
   <!--====== Deferred scripts: execution order preserved, parser never blocked ======-->
   <!-- Legacy inventory (all defer; zero render-blocking):
        REPLACED by islands above (kept loaded, but their passes early-return
