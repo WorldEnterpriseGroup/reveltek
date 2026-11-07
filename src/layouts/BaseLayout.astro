@@ -218,15 +218,16 @@ const ogImageType = ogImage.endsWith('.png')
   <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/flaticon.css" />
   <link rel="stylesheet" href={`assets/css/style.css?v=${BUILD_ID}`} />
+  <!-- slick.css (0.8 KB) styles the above-the-fold banner slider; loading it after first paint
+       shifted the banner and header (desktop CLS 0.036). Keep it render-blocking. -->
+  <link rel="stylesheet" href="assets/css/slick.css" />
   <!--====== Deferred CSS (below-fold widgets only) ======-->
   <link rel="stylesheet" href="assets/css/animate.min.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'" />
-  <link rel="stylesheet" href="assets/css/slick.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="assets/css/jquery-ui.min.css" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="assets/css/animate.min.css" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/slick.css" />
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
   </noscript>
   <script type="speculationrules">
