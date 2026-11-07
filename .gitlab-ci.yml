@@ -1,0 +1,16 @@
+# Static site (GitHub Pages from gh-pages); there is no build. This pipeline
+# only guards the files themselves: no page or stylesheet may point at a local
+# file that does not exist (hypervoid/HyperVoid-Website#2).
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "gh-pages"
+
+check:local-refs:
+  image: node:26.7.0-trixie
+  variables:
+    GIT_DEPTH: "0"
+  script:
+    - |
+      if [ -n "${CI_MERGE_REQUEST_DIFF_BASE_SHA:-}" ]; then base=$CI_MERGE_REQUEST_DIFF_BASE_SHA; else base=$(git rev-parse HEAD^1); fi
+      bash scripts/check-new-missing-refs.sh "$base"
